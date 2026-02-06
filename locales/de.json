@@ -13,7 +13,8 @@
       "pricing": "Preis",
       "security": "Sicherheit",
       "process": "Ablauf",
-      "faq": "FAQ"
+      "faq": "FAQ",
+      "contact": "Kontakt"
     },
     "cta": "Demo anfordern",
     "mobileMenuTitle": "Navigation"
@@ -852,6 +853,88 @@
       "conveyance": "Auflassung",
       "completionDoc": "Vollzugsdokumentation",
       "notarizationComplete": "Beurkundung abgeschlossen"
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Kontakt",
+      "title": "Sprechen Sie uns an",
+      "description": "Haben Sie Fragen zu Senury? Wir sind für Sie da. Ob Demo-Termin, Angebotsanfrage oder allgemeine Informationen – unser Team hilft Ihnen gerne weiter."
+    },
+    "methods": {
+      "email": {
+        "title": "E-Mail",
+        "value": "kontakt@senury.de"
+      },
+      "phone": {
+        "title": "Telefon",
+        "value": "+49 89 12345678"
+      },
+      "address": {
+        "title": "Adresse",
+        "value": "Musterstraße 1, 80333 München"
+      },
+      "hours": {
+        "title": "Erreichbarkeit",
+        "value": "Mo–Fr: 9:00–18:00 Uhr"
+      }
+    },
+    "form": {
+      "label": "Nachricht",
+      "title": "Schreiben Sie uns",
+      "description": "Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Ihr vollständiger Name"
+        },
+        "email": {
+          "label": "E-Mail",
+          "placeholder": "ihre@email.de"
+        },
+        "company": {
+          "label": "Notariat (optional)",
+          "placeholder": "Name Ihres Notariats"
+        },
+        "message": {
+          "label": "Nachricht",
+          "placeholder": "Wie können wir Ihnen helfen?"
+        }
+      },
+      "submit": "Nachricht senden",
+      "success": {
+        "title": "Vielen Dank!",
+        "message": "Ihre Nachricht wurde erfolgreich übermittelt. Wir melden uns schnellstmöglich bei Ihnen."
+      }
+    },
+    "quickActions": {
+      "label": "Alternativen",
+      "demo": {
+        "title": "Demo vereinbaren",
+        "description": "Erleben Sie Senury in Aktion – mit einer persönlichen Live-Demo.",
+        "button": "Termin auswählen"
+      },
+      "chat": {
+        "title": "Live-Chat",
+        "description": "Schnelle Antworten auf Ihre Fragen per Chat.",
+        "button": "Chat starten"
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Finden Sie sofort Antworten auf häufig gestellte Fragen.",
+        "button": "FAQ ansehen"
+      }
+    },
+    "trust": {
+      "label": "Vertrauen",
+      "title": "Ihre Daten sind bei uns sicher",
+      "description": "Wir behandeln Ihre Anfragen mit der gleichen Sorgfalt und Vertraulichkeit, die Senury für den Notarberuf entwickelt wurde.",
+      "badges": {
+        "stgb": "§203 StGB-konform",
+        "gdpr": "DSGVO-konform",
+        "iso": "ISO 27001 orientiert",
+        "germany": "Made in Germany"
+      }
     }
   }
 }

@@ -45,6 +45,7 @@ export function Navigation() {
     { href: "/sicherheit/", label: t("links.security") },
     { href: "/ablauf/", label: t("links.process") },
     { href: "/faq/", label: t("links.faq") },
+    { href: "/kontakt/", label: t("links.contact") },
   ];
 
   return (
