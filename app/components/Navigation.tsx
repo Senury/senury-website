@@ -104,11 +104,13 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <Button
-              className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white rounded-full h-10 px-6 text-sm font-medium transition-all duration-200"
-            >
-              {t("cta")}
-            </Button>
+            <Link href="/demo/">
+              <Button
+                className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white rounded-full h-10 px-6 text-sm font-medium transition-all duration-200"
+              >
+                {t("cta")}
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu */}
@@ -168,9 +170,11 @@ export function Navigation() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-[#e8e8e8]">
-                <Button className="w-full bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white rounded-full h-11 font-medium">
-                  {t("cta")}
-                </Button>
+                <Link href="/demo/" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white rounded-full h-11 font-medium">
+                    {t("cta")}
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

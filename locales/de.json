@@ -1312,5 +1312,99 @@
       "contact": "Kontakt"
     },
     "reference": "Aktenzeichen"
+  },
+  "demo": {
+    "hero": {
+      "badge": "Persönliche Beratung",
+      "title": "Demo-Termin vereinbaren",
+      "description": "Erleben Sie Senury in Aktion. In einer persönlichen Demo zeigen wir Ihnen, wie unsere KI-gestützte Software Ihren Notariat-Alltag effizienter gestaltet."
+    },
+    "steps": {
+      "date": {
+        "title": "Termin wählen",
+        "description": "Wählen Sie Datum und Uhrzeit für Ihre persönliche Demo."
+      },
+      "info": {
+        "title": "Ihre Daten",
+        "description": "Teilen Sie uns mit, wer Sie sind und wie wir Sie erreichen können."
+      },
+      "confirm": {
+        "title": "Bestätigen",
+        "description": "Überprüfen Sie Ihre Angaben und bestätigen Sie den Termin."
+      }
+    },
+    "meetingType": {
+      "video": "Videoanruf",
+      "inPerson": "Vor-Ort-Termin"
+    },
+    "calendar": {
+      "selectDate": "Datum auswählen",
+      "selectTime": "Uhrzeit auswählen"
+    },
+    "form": {
+      "name": {
+        "label": "Vor- und Nachname *",
+        "placeholder": "Max Mustermann"
+      },
+      "email": {
+        "label": "E-Mail-Adresse *",
+        "placeholder": "max.mustermann@notar.de"
+      },
+      "phone": {
+        "label": "Telefon (optional)",
+        "placeholder": "+49 89 12345678"
+      },
+      "notary": {
+        "label": "Notariat (optional)",
+        "placeholder": "Notariat Dr. Schmidt"
+      },
+      "message": {
+        "label": "Ihre Nachricht (optional)",
+        "placeholder": "Gibt es bestimmte Funktionen oder Fragen, die Sie interessieren?"
+      }
+    },
+    "summary": {
+      "date": "Datum",
+      "time": "Uhrzeit",
+      "type": "Art des Gesprächs",
+      "name": "Name",
+      "email": "E-Mail",
+      "notary": "Notariat"
+    },
+    "privacyNotice": "Ihre Daten werden gemäß unserer Datenschutzerklärung vertraulich behandelt. Sie erhalten eine Bestätigungs-E-Mail mit Termindetails und einem Kalendereintrag.",
+    "booking": {
+      "videoCall": "Videoanruf (Zoom/Teams)",
+      "inPerson": "Persönliches Gespräch"
+    },
+    "buttons": {
+      "back": "Zurück",
+      "cancel": "Abbrechen",
+      "continue": "Weiter",
+      "confirm": "Termin bestätigen"
+    },
+    "sidebar": {
+      "expect": {
+        "title": "Das erwartet Sie",
+        "items": [
+          "Live-Demo der wichtigsten Funktionen",
+          "Individuelle Fragen zu Ihrem Workflow",
+          "Transparente Preisinformationen",
+          "Keine versteckten Kosten oder Verpflichtungen"
+        ]
+      },
+      "duration": {
+        "title": "Dauer",
+        "text": "Ca. 30-45 Minuten, je nach Ihren Fragen und Interessen."
+      },
+      "contact": {
+        "title": "Fragen vorab?",
+        "text": "Schreiben Sie uns jederzeit. Wir antworten innerhalb eines Werktags."
+      }
+    },
+    "success": {
+      "title": "Termin bestätigt!",
+      "description": "Vielen Dank für Ihre Anfrage. Wir haben Ihnen eine Bestätigungs-E-Mail mit allen Details gesendet.",
+      "backHome": "Zurück zur Startseite"
+    }
   }
 }
