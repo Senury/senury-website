@@ -1,0 +1,856 @@
+{
+  "metadata": {
+    "title": "Senury | KI-gestützte Notariatssoftware",
+    "description": "Senury hilft Notaren und Mitarbeitenden bei der effizienten Erstellung von Kaufverträgen und weiteren Urkunden. Unterstützend, nicht ersetzend."
+  },
+  "navigation": {
+    "brand": {
+      "name": "Senury",
+      "tagline": "Notariatssoftware"
+    },
+    "links": {
+      "product": "Produkt",
+      "pricing": "Preis",
+      "security": "Sicherheit",
+      "process": "Ablauf",
+      "faq": "FAQ"
+    },
+    "cta": "Demo anfordern"
+  },
+  "footer": {
+    "brand": {
+      "description": "KI-gestützte Software für Notare. Effizient, sicher und unterstützend.",
+      "badge": "Made in Germany"
+    },
+    "links": {
+      "product": {
+        "title": "Produkt",
+        "features": "Funktionen",
+        "pricing": "Preise",
+        "process": "Ablauf"
+      },
+      "company": {
+        "title": "Unternehmen",
+        "security": "Sicherheit",
+        "faq": "FAQ",
+        "contact": "Kontakt"
+      },
+      "legal": {
+        "title": "Rechtliches",
+        "imprint": "Impressum",
+        "privacy": "Datenschutz",
+        "terms": "AGB"
+      }
+    },
+    "copyright": "© {year} Senury. Alle Rechte vorbehalten.",
+    "tagline": "Mit Sorgfalt für den deutschen Notarstand entwickelt."
+  },
+  "home": {
+    "hero": {
+      "badge": "Jetzt verfügbar — Made in Germany",
+      "title": "Kaufverträge in Minuten.",
+      "subtitle": "Ihre Komplettlösung für das Notariat.",
+      "description": "Weniger Zeit für repetitive Arbeit. Mehr Zeit für Ihre Mandanten – mit unterstützender KI, die Ihnen die Kontrolle lässt.",
+      "ctaPrimary": "Kostenlose Demo vereinbaren",
+      "ctaSecondary": "Sicherheits-Whitepaper"
+    },
+    "trust": {
+      "stgb": "§203 StGB-konform",
+      "gdpr": "DSGVO-konform",
+      "iso": "ISO 27001",
+      "madeInGermany": "Made in Germany"
+    },
+    "stats": {
+      "timeSaved": {
+        "value": "75%",
+        "label": "weniger Zeit für Entwürfe"
+      },
+      "timeComparison": {
+        "value": "30 Min",
+        "label": "statt 4 Stunden"
+      },
+      "gdpr": {
+        "value": "100%",
+        "label": "DSGVO-konform"
+      },
+      "stgb": {
+        "value": "§203",
+        "label": "StGB-konform"
+      }
+    },
+    "problem": {
+      "label": "Das Problem",
+      "title": "Täglich 4+ Stunden für Entwürfe?",
+      "description": "Der nächste Kaufvertrag wartet – und wieder beginnt die mühsame Arbeit: Stammdaten abtippen, Paragraphen prüfen, Klauseln kopieren, Formatierungen korrigieren. Stunden vergehen, bevor der erste Entwurf steht.",
+      "painPoints": [
+        "Repetitive Tipp-Arbeit statt inhaltlicher Prüfung",
+        "Zeitdruck bei begrenzten Kapazitäten",
+        "Hoher Compliance-Druck durch §203 StGB",
+        "Risiko von Übertragungsfehlern"
+      ],
+      "chart": {
+        "title": "Zeitaufwand pro Kaufvertrag",
+        "dataEntry": "Datenerfassung",
+        "drafting": "Entwurfsarbeit",
+        "corrections": "Korrekturen",
+        "total": "Gesamt"
+      }
+    },
+    "solution": {
+      "label": "Die Lösung",
+      "title": "Senury reduziert das auf 30 Minuten",
+      "description": "Senury übernimmt die repetitive Arbeit. Sie behalten die volle Kontrolle über Inhalt und Qualität. Die KI generiert den Entwurf, Sie prüfen und finalisieren.",
+      "benefits": [
+        "Strukturierte Datenerfassung mit Validierung",
+        "KI-gestützte Entwurfserstellung in Minuten",
+        "Intelligente Klausel-Vorschläge",
+        "Lückenlose Dokumentation für Compliance"
+      ],
+      "chart": {
+        "title": "Mit Senury",
+        "dataEntry": "Datenerfassung",
+        "aiDraft": "KI-Entwurf",
+        "yourReview": "Ihre Prüfung",
+        "total": "Gesamt"
+      }
+    },
+    "features": {
+      "label": "Funktionen",
+      "title": "Die Komplettlösung für Ihr Notariat",
+      "description": "Effiziente Kaufverträge und vieles mehr. Von der Erfassung über die Recherche bis zum fertigen Entwurf.",
+      "items": {
+        "intelligentCapture": {
+          "title": "Intelligente Erfassung",
+          "description": "Strukturierte Datenerfassung für Kaufverträge und andere Urkunden. Mit automatischen Plausibilitätsprüfungen."
+        },
+        "aiDrafting": {
+          "title": "KI-gestütztes Drafting",
+          "description": "Kaufverträge in Minuten – und Unterstützung für Schenkungen, Übertragungen und weitere Urkunden."
+        },
+        "aiResearch": {
+          "title": "KI-Recherche",
+          "description": "Chat-basierte Rechtsrecherche mit präzisen, fundierten Antworten aus erstklassigen juristischen Datenquellen."
+        },
+        "clauseLibrary": {
+          "title": "Klauselverwaltung",
+          "description": "Verwalten Sie Ihre bewährten Klauseln zentral. Kontextbewusste Vorschläge inklusive."
+        },
+        "collaboration": {
+          "title": "Team-Kollaboration",
+          "description": "Arbeiten Sie gemeinsam an Entwürfen. Kommentare und Änderungen in Echtzeit."
+        },
+        "integration": {
+          "title": "Nahtlose Integration",
+          "description": "Word- und Outlook-Add-ins für Ihren gewohnten Workflow. Importieren Sie Ihre Vorlagen."
+        }
+      }
+    },
+    "documents": {
+      "label": "Urkunden",
+      "title": "Mehr als nur Kaufverträge",
+      "description": "Während Kaufverträge unser Hauptfokus bleiben, unterstützt Senury auch bei weiteren urkundlichen Beurkundungen – von Schenkungen bis zu Grundstücksübertragungen.",
+      "types": [
+        "Kaufverträge (Grundstücke, Wohnungseigentum)",
+        "Schenkungsverträge",
+        "Grundstücksübertragungen",
+        "Weitere Urkunden (in Vorbereitung)"
+      ],
+      "status": {
+        "purchaseContract": {
+          "name": "Kaufvertrag",
+          "status": "Vollständig unterstützt"
+        },
+        "gift": {
+          "name": "Schenkung",
+          "status": "Verfügbar"
+        },
+        "transfer": {
+          "name": "Übertragung",
+          "status": "Verfügbar"
+        }
+      }
+    },
+    "process": {
+      "label": "Ablauf",
+      "title": "So funktioniert Senury",
+      "description": "Vom Mandantengespräch bis zur Siegelung – in drei klaren Schritten",
+      "steps": {
+        "capture": {
+          "number": "1",
+          "title": "Daten erfassen",
+          "description": "Erfassen Sie Parteien, Objektdaten und Vertragskonditionen in strukturierten Formularen."
+        },
+        "generate": {
+          "number": "2",
+          "title": "Entwurf generieren",
+          "description": "Senury erstellt den ersten Entwurf basierend auf Ihren Vorlagen und Klauseln."
+        },
+        "finalize": {
+          "number": "3",
+          "title": "Prüfen & finalisieren",
+          "description": "Sie prüfen, korrigieren und finalisieren. Export als DOCX oder PDF/A."
+        }
+      }
+    },
+    "testimonial": {
+      "quote": "Senury hat unseren Workflow fundamental verändert. Was früher Stunden gedauert hat, erledigen wir jetzt in unter einer Stunde – bei gleichbleibender Qualität und voller Kontrolle.",
+      "author": "Notar aus Bayern",
+      "role": "Pilot-Kunde seit 2024"
+    },
+    "integrations": {
+      "label": "Integriert mit Ihren Tools",
+      "items": {
+        "word": "Microsoft Word",
+        "outlook": "Microsoft Outlook",
+        "xnotar": "XNotar"
+      }
+    },
+    "cta": {
+      "title": "Zeit sparen. Qualität sichern.",
+      "description": "Vereinbaren Sie eine unverbindliche Demo und erfahren Sie, wie Senury Ihr Notariat unterstützt. Ohne Verpflichtung, mit echten Beispielen aus Ihrem Alltag.",
+      "primary": "Kostenlose Demo vereinbaren",
+      "secondary": "Preise ansehen",
+      "footer": "30-tägige Testphase · Keine Kreditkarte erforderlich · Persönliche Onboarding-Begleitung"
+    }
+  },
+  "product": {
+    "hero": {
+      "badge": "Die Komplettlösung für Ihr Notariat",
+      "title": "Effizienz trifft auf Kontrolle",
+      "description": "Senury vereint alle Werkzeuge, die Sie für effiziente Notariatsarbeit brauchen: Von Kaufverträgen über Recherche bis zum exportierten Entwurf. Alles an einem Ort, alles §203 StGB-konform.",
+      "cta": "Demo anfordern"
+    },
+    "screenshot": {
+      "caption": "Der Senury Workspace: Alle Funktionen übersichtlich an einem Ort"
+    },
+    "features": {
+      "caseManagement": {
+        "label": "Vorgangsverwaltung",
+        "title": "Behalten Sie den Überblick",
+        "description": "Verwalten Sie alle laufenden Kaufverträge und Akten an einem Ort. Status-Tracking, Fristenüberwachung und intelligente Filter helfen Ihnen, nichts zu verpassen.",
+        "benefits": [
+          "Intuitive Listenansicht aller Vorgänge",
+          "Status-Tracking von Entwurf bis Finalisierung",
+          "Automatische Fristenüberwachung",
+          "Intelligente Filter und Suche"
+        ]
+      },
+      "aiDrafting": {
+        "label": "KI-gestütztes Drafting",
+        "title": "Entwürfe in Minuten, nicht Stunden",
+        "description": "Die KI erstellt den ersten Entwurf basierend auf Ihren Vorlagen und den erfassten Daten. Sie behalten die volle Kontrolle und können alle Änderungen nachvollziehen.",
+        "benefits": [
+          "Template-basierte Generierung",
+          "Kontextbewusste Klausel-Vorschläge",
+          "Versionsvergleich mit visueller Diff-Ansicht",
+          "Nachvollziehbare Änderungsverfolgung"
+        ]
+      },
+      "aiResearch": {
+        "label": "KI-Recherche",
+        "title": "Chat-basierte Rechtsrecherche",
+        "description": "Stellen Sie Fragen zu Klauseln und Vorschriften. Erhalten Sie präzise, fundierte Antworten aus erstklassigen juristischen Datenquellen – mit Quellenangaben direkt in Ihrem Workflow.",
+        "benefits": [
+          "Chat-Interface für natürliche Fragen",
+          "Fundierte Antworten aus juristischen Datenquellen",
+          "Quellenangaben zu Gesetzen und Vorschriften",
+          "Kontextbewusst: Integration in den Editor"
+        ]
+      },
+      "dataCapture": {
+        "label": "Datenerfassung",
+        "title": "Strukturiert von Anfang an",
+        "description": "Keine verlorenen Informationen mehr. Senury führt Sie systematisch durch die Datenerfassung und prüft automatisch auf Vollständigkeit.",
+        "benefits": [
+          "Strukturierte Formulare mit Pflichtfeldprüfung",
+          "Automatische Plausibilitätsprüfungen",
+          "Sicherer Dokumenten-Upload",
+          "Smarte Formularvervollständigung"
+        ]
+      }
+    },
+    "detailGrid": {
+      "label": "Details",
+      "title": "Alles, was Sie brauchen",
+      "description": "Eine komplette Übersicht aller Funktionen",
+      "items": {
+        "caseManagement": {
+          "title": "Vorgangsverwaltung",
+          "description": "Behalten Sie den Überblick über alle laufenden Kaufverträge mit Status-Tracking und Fristenüberwachung."
+        },
+        "aiDrafting": {
+          "title": "KI-Drafting",
+          "description": "Erstellen Sie erste Entwürfe in Minuten statt Stunden, basierend auf Ihren Vorlagen."
+        },
+        "clauseLibrary": {
+          "title": "Klauselbibliothek",
+          "description": "Verwalten Sie Ihre bewährten Klauseln zentral und erhalten Sie kontextbewusste Vorschläge."
+        },
+        "research": {
+          "title": "Integrierte Recherche",
+          "description": "Stellen Sie Fragen zu Klauseln und Vorschriften mit kontextuellen Antworten."
+        },
+        "compliance": {
+          "title": "Compliance & Sicherheit",
+          "description": "§203 StGB-konform, DSGVO-konform, mit lückenloser Dokumentation."
+        },
+        "integrations": {
+          "title": "Integrationen",
+          "description": "Word- und Outlook-Add-ins für Ihren gewohnten Workflow."
+        },
+        "control": {
+          "title": "Kontrolle",
+          "description": "Perspektivisch: Minutenschnelle Analyse großer Dokumentenmengen. (In Entwicklung)"
+        }
+      }
+    },
+    "documentTypes": {
+      "label": "Urkunden",
+      "title": "Kaufverträge und mehr",
+      "description": "Kaufverträge bleiben unser Hauptfokus – aber Senury unterstützt auch bei weiteren urkundlichen Beurkundungen.",
+      "types": {
+        "purchaseContract": {
+          "title": "Kaufverträge",
+          "status": "Vollständig",
+          "description": "Grundstücke, Wohnungseigentum, bebaute/unbebaute Grundstücke"
+        },
+        "gift": {
+          "title": "Schenkungen",
+          "status": "Verfügbar",
+          "description": "Schenkungsverträge mit Vorlagen und Klauseln"
+        },
+        "transfer": {
+          "title": "Übertragungen",
+          "status": "Verfügbar",
+          "description": "Grundstücksübertragungen und Erbbaurechte"
+        },
+        "more": {
+          "title": "Weitere",
+          "status": "In Planung",
+          "description": "Erbfolge-, Teilungsverträge, Gesellschaftsverträge"
+        }
+      }
+    },
+    "security": {
+      "label": "Sicherheit",
+      "title": "Sicherheit auf Notariats-Niveau",
+      "description": "Entwickelt für den §203 StGB-Kontext. Ihre Mandantendaten verdienen höchsten Schutz.",
+      "features": {
+        "encryption": {
+          "title": "End-to-End Verschlüsselung",
+          "description": "Alle Daten werden mit AES-256 verschlüsselt – sowohl im Transit (TLS 1.3) als auch im Ruhezustand."
+        },
+        "compliance": {
+          "title": "§203 StGB-konform",
+          "description": "Speziell für den Berufsgeheimnis-Kontext entwickelt. Vertraulichkeitsvereinbarungen, geschultes Personal."
+        },
+        "hosting": {
+          "title": "Deutsche Server",
+          "description": "ISO 27001-zertifizierte Rechenzentren in Deutschland. Keine Datenweitergabe an Dritte."
+        }
+      }
+    },
+    "integrations": {
+      "label": "Integrationen",
+      "title": "Nahtlose Integration in Ihre Arbeitsumgebung",
+      "description": "Senury fügt sich in Ihren bestehenden Workflow ein – ohne disruptives Umlernen.",
+      "word": {
+        "title": "Word Add-In",
+        "description": "Nutzen Sie Senury direkt in Microsoft Word. Importieren und exportieren Sie Dokumente nahtlos. Arbeiten Sie in der gewohnten Umgebung – mit Unterstützung von Senury im Hintergrund."
+      },
+      "outlook": {
+        "title": "Outlook Add-In",
+        "description": "Erstellen Sie Vorgänge direkt aus E-Mails. Automatische Übernahme von Absenderdaten und Anhängen. Nie wieder Informationen manuell übertragen."
+      }
+    },
+    "disclaimer": {
+      "title": "Wichtiger Hinweis",
+      "text": "Senury ist ein unterstützendes Werkzeug für Notare und deren Mitarbeitende. Die Software ersetzt nicht die sorgfältige Prüfung durch qualifizierte Rechtsanwender. Alle KI-generierten Inhalte müssen vor Verwendung auf ihre Richtigkeit und Angemessenheit überprüft werden. Die inhaltliche Verantwortung liegt stets beim Notar."
+    },
+    "cta": {
+      "title": "Bereit für effizientere Entwürfe?",
+      "description": "Vereinbaren Sie eine persönliche Demo und erleben Sie Senury in Aktion. Mit echten Beispielen aus Ihrem Notariat.",
+      "button": "Kostenlose Demo vereinbaren",
+      "footer": "Keine Verpflichtung · Persönliche Beratung · 30-tägige Testphase"
+    }
+  },
+  "pricing": {
+    "hero": {
+      "badge": "Transparente Preise",
+      "title": "Preise für jedes Notariat",
+      "description": "Keine versteckten Kosten, keine Überraschungen. Wählen Sie das Paket, das zu Ihrem Volumen passt. Alle Preise zzgl. MwSt."
+    },
+    "toggle": {
+      "monthly": "Monatlich",
+      "yearly": "Jährlich",
+      "save": "10% sparen"
+    },
+    "tiers": {
+      "pilot": {
+        "name": "Pilot",
+        "description": "Ideal für kleine Notariate, die Senury testen möchten",
+        "priceMonthly": "499",
+        "priceYearly": "449",
+        "cta": "Anfragen",
+        "features": [
+          "Bis zu 50 Vorgänge/Monat",
+          "5 benutzerdefinierte Vorlagen",
+          "E-Mail Support (24h Antwortzeit)",
+          "Standard-Klauselbibliothek",
+          "Export: DOCX & PDF",
+          "§203 StGB-konforme Infrastruktur"
+        ]
+      },
+      "professional": {
+        "name": "Professional",
+        "description": "Das optimale Paket für etablierte Notariate",
+        "priceMonthly": "899",
+        "priceYearly": "809",
+        "cta": "Anfragen",
+        "popular": "Beliebteste Wahl",
+        "features": [
+          "Bis zu 200 Vorgänge/Monat",
+          "20 benutzerdefinierte Vorlagen",
+          "Priorisierter Support (4h Antwortzeit)",
+          "Erweiterte Klauselbibliothek",
+          "Word & Outlook Add-Ins",
+          "Team-Kollaboration",
+          "Versionsvergleich & Audit-Log",
+          "Persönliches Onboarding"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Maßgeschneiderte Lösungen für große Kanzleien",
+        "price": "Auf Anfrage",
+        "cta": "Kontaktieren",
+        "features": [
+          "Unbegrenzte Vorgänge",
+          "Unbegrenzte Vorlagen",
+          "Dedizierter Account Manager",
+          "API-Zugang für Integrationen",
+          "Custom Onboarding & Schulung",
+          "SLA-Garantie (99,9% Uptime)",
+          "24/7 Prioritäts-Support",
+          "On-Premise Hosting möglich"
+        ]
+      }
+    },
+    "trust": {
+      "stgb": "§203 StGB-konform",
+      "gdpr": "DSGVO-konform",
+      "hosting": "Hosting in Deutschland"
+    },
+    "comparison": {
+      "title": "Funktionsübersicht",
+      "description": "Alle Funktionen im direkten Vergleich",
+      "header": {
+        "feature": "Funktion",
+        "pilot": "Pilot",
+        "professional": "Professional",
+        "enterprise": "Enterprise"
+      },
+      "features": {
+        "casesPerMonth": "Vorgänge/Monat",
+        "templates": "Benutzerdefinierte Vorlagen",
+        "wordAddIn": "Word Add-In",
+        "outlookAddIn": "Outlook Add-In",
+        "collaboration": "Team-Kollaboration",
+        "versionCompare": "Versionsvergleich",
+        "auditLog": "Audit-Log",
+        "apiAccess": "API-Zugang",
+        "onPremise": "On-Premise Hosting",
+        "supportResponse": "Support-Antwortzeit"
+      },
+      "values": {
+        "unlimited": "Unbegrenzt",
+        "yes": "Ja",
+        "no": "Nein"
+      }
+    },
+    "faq": {
+      "label": "FAQ",
+      "title": "Häufig gestellte Fragen",
+      "items": {
+        "roi": {
+          "question": "Wie schnell ist der ROI bei Senury?",
+          "answer": "Die meisten Kunden berichten von Zeitersparnissen von 30-50% bei der Entwurfserstellung. Bei durchschnittlich 20 Kaufverträgen pro Monat amortisiert sich die Investition typischerweise innerhalb von 3 Monaten."
+        },
+        "changePackage": {
+          "question": "Kann ich später das Paket wechseln?",
+          "answer": "Ja, Sie können jederzeit zwischen den Paketen upgraden oder downgraden. Änderungen werden zum nächsten Abrechnungszyklus wirksam."
+        },
+        "contractDuration": {
+          "question": "Wie lange läuft der Vertrag?",
+          "answer": "Alle Pakete haben eine Mindestlaufzeit von 12 Monaten mit anschließender automatischer Verlängerung. Kündigungsfrist: 3 Monate zum Vertragsende."
+        },
+        "limitExceeded": {
+          "question": "Was passiert bei Überschreitung des Vorgangslimits?",
+          "answer": "Sie erhalten eine Benachrichtigung bei 80% und 95% Ihres Limits. Zusätzliche Vorgänge können einzeln gebucht werden oder Sie upgraden Ihr Paket."
+        }
+      }
+    },
+    "trustSection": {
+      "label": "Vertrauen",
+      "title": "Warum Notare Senury vertrauen",
+      "description": "Sicherheit, Transparenz und Kontrolle stehen bei uns an erster Stelle.",
+      "items": {
+        "dataSecurity": {
+          "question": "Ist meine Daten sicher?",
+          "answer": "Alle Daten werden ausschließlich in ISO 27001-zertifizierten deutschen Rechenzentren gespeichert. Ende-zu-Ende Verschlüsselung inklusive. AVV auf Wunsch sofort verfügbar."
+        },
+        "onboarding": {
+          "question": "Wie lange dauert die Einführung?",
+          "answer": "Die meisten Kunden sind nach 2-4 Wochen produktiv. Wir begleiten Sie persönlich durch das Onboarding, importieren Ihre Vorlagen und schulen Ihr Team."
+        },
+        "cancellation": {
+          "question": "Kann ich kündigen?",
+          "answer": "Selbstverständlich. Mit einer Kündigungsfrist von 3 Monaten zum Vertragsende. Ihre Daten können jederzeit im Standardformat exportiert werden. Keine versteckten Klauseln."
+        },
+        "trial": {
+          "question": "Gibt es eine Testphase?",
+          "answer": "Ja, alle Pakete können 30 Tage kostenlos getestet werden. Keine Kreditkarte erforderlich. Persönliche Onboarding-Begleitung inklusive."
+        }
+      }
+    },
+    "cta": {
+      "title": "Noch unsicher?",
+      "description": "Vereinbaren Sie eine unverbindliche Demo. Wir zeigen Ihnen Senury anhand echter Beispiele aus Ihrem Notariat – und beantworten alle Ihre Fragen.",
+      "button": "Kostenlose Demo vereinbaren",
+      "faqLink": "Weitere Fragen?"
+    }
+  },
+  "security": {
+    "hero": {
+      "badge": "Sicherheit",
+      "title": "Sicherheit auf Notariats-Niveau",
+      "description": "Ihre Mandantendaten verdienen höchsten Schutz. Senury wurde von Grund auf mit Blick auf §203 StGB, DSGVO und ISO 27001 entwickelt. Made in Germany, hosted in Germany."
+    },
+    "stats": {
+      "encryption": {
+        "value": "256",
+        "label": "Bit AES-Verschlüsselung"
+      },
+      "uptime": {
+        "value": "99.9%",
+        "label": "Uptime-Garantie"
+      },
+      "locations": {
+        "value": "3",
+        "label": "Redundante Standorte"
+      },
+      "exclusive": {
+        "value": "DE",
+        "label": "Exklusiv Deutschland"
+      }
+    },
+    "certifications": {
+      "stgb": {
+        "title": "§203 StGB",
+        "description": "Berufsgeheimnis-konform"
+      },
+      "gdpr": {
+        "title": "DSGVO",
+        "description": "EU-Datenschutzverordnung"
+      },
+      "iso": {
+        "title": "ISO 27001",
+        "description": "Informationssicherheit"
+      },
+      "bsi": {
+        "title": "BSI",
+        "description": "Grundschutz-orientiert"
+      }
+    },
+    "compliance": {
+      "label": "Compliance",
+      "title": "Compliance für den Notarberuf",
+      "description": "Entwickelt für die strengen Anforderungen des deutschen Notarstands.",
+      "cards": {
+        "stgb": {
+          "title": "§203 StGB",
+          "subtitle": "Berufsgeheimnis-konform",
+          "description": "Senury ist speziell für den §203-StGB-Kontext konzipiert. Alle Mitarbeiter unterliegen strengen Vertraulichkeitsvereinbarungen. Prozesse sind auf Verschwiegenheit ausgerichtet."
+        },
+        "gdpr": {
+          "title": "DSGVO & Hosting",
+          "subtitle": "Deutsche Rechenzentren",
+          "description": "Alle Daten werden ausschließlich in ISO 27001-zertifizierten deutschen Rechenzentren gespeichert. Auftragsverarbeitungsverträge (AVV) stehen jederzeit zur Verfügung."
+        },
+        "iso": {
+          "title": "ISO 27001",
+          "subtitle": "Internationale Standards",
+          "description": "Unsere Infrastruktur und Prozesse sind an den ISO 27001 Standard angelehnt. Jährliche Audits und Penetrationstests durch unabhängige Experten."
+        }
+      }
+    },
+    "technical": {
+      "label": "Technik",
+      "title": "Technische Sicherheitsdetails",
+      "description": "Sicherheit ist kein Feature – sie ist das Fundament unserer Architektur.",
+      "features": {
+        "encryption": {
+          "title": "End-to-End Verschlüsselung",
+          "description": "Alle Daten werden mit AES-256 verschlüsselt – sowohl im Transit (TLS 1.3) als auch im Ruhezustand. Ihre Mandantendaten sind jederzeit geschützt."
+        },
+        "rbac": {
+          "title": "RBAC & 2-Faktor-Authentifizierung",
+          "description": "Rollenbasierte Zugriffssteuerung mit granularen Berechtigungen. Zusätzlich verpflichtendes 2FA für alle Accounts – keine Ausnahmen."
+        },
+        "audit": {
+          "title": "Audit-Logs & Versionierung",
+          "description": "Lückenlose Protokollierung aller Systemzugriffe und Datenänderungen. Nachvollziehbarkeit auf Knopfdruck für Compliance-Prüfungen."
+        },
+        "redundancy": {
+          "title": "Geo-Redundanz",
+          "description": "Ihre Daten werden in Echtzeit an mehreren geografisch getrennten Standorten in Deutschland gespiegelt. Maximale Verfügbarkeit, keine Datenverluste."
+        }
+      }
+    },
+    "hosting": {
+      "label": "Hosting",
+      "title": "Ihre Daten bleiben in Deutschland",
+      "description": "Alle Senury-Server stehen in ISO 27001-zertifizierten deutschen Rechenzentren. Wir arbeiten ausschließlich mit deutschen Cloud-Providern zusammen. Keine Datenweitergabe an Dritte, keine Verarbeitung außerhalb der EU.",
+      "benefits": [
+        "Exklusiv deutsche Server-Standorte",
+        "ISO 27001-zertifizierte Rechenzentren",
+        "Keine Datenweitergabe an Dritte",
+        "Geo-Redundanz innerhalb Deutschlands"
+      ],
+      "stats": {
+        "exclusive": {
+          "value": "DE",
+          "label": "Exklusiv Deutschland"
+        },
+        "uptime": {
+          "value": "99.9%",
+          "label": "Uptime-Garantie"
+        },
+        "encryption": {
+          "value": "256",
+          "label": "Bit AES-Verschlüsselung"
+        },
+        "locations": {
+          "value": "3",
+          "label": "Redundante Standorte"
+        }
+      }
+    },
+    "downloads": {
+      "label": "Downloads",
+      "title": "Dokumente zum Download",
+      "description": "Alle Unterlagen für Ihre Compliance-Prüfung und IT-Sicherheit.",
+      "items": {
+        "toms": {
+          "name": "Technische und organisatorische Maßnahmen (TOMs)",
+          "size": "PDF, 1.2 MB",
+          "desc": "Detaillierte Beschreibung aller Sicherheitsmaßnahmen"
+        },
+        "avv": {
+          "name": "Auftragsverarbeitungsvertrag (AVV)",
+          "size": "PDF, 0.8 MB",
+          "desc": "Standard-AVV für Ihre Unterlagen"
+        },
+        "whitepaper": {
+          "name": "Sicherheits-Whitepaper",
+          "size": "PDF, 2.4 MB",
+          "desc": "Umfassende Dokumentation unserer Security-Architektur"
+        }
+      },
+      "downloadButton": "Download"
+    },
+    "cta": {
+      "title": "Vertrauen durch Transparenz",
+      "description": "Haben Sie spezifische Sicherheitsanforderungen oder Compliance-Fragen? Unser Team berät Sie gerne in einem persönlichen Gespräch.",
+      "primary": "Sicherheitsberatung anfragen",
+      "secondary": "Technische Dokumentation"
+    }
+  },
+  "process": {
+    "hero": {
+      "badge": "Prozess",
+      "title": "Effizienz von der ersten Erfassung bis zum Vollzug",
+      "description": "Ein durchdachter Prozess, der Ihr Notariat auf das nächste Level hebt – ohne Kompromisse bei Qualität und Sicherheit."
+    },
+    "timeline": {
+      "steps": {
+        "intake": {
+          "number": "01",
+          "title": "Intake",
+          "subtitle": "Strukturierte Datenerfassung",
+          "description": "Alle relevanten Informationen werden systematisch erfasst. Plausibilitätsprüfungen in Echtzeit verhindern Fehler von Anfang an.",
+          "features": ["Automatische Validierung", "Dokumenten-Upload", "Vollständigkeitsprüfung"]
+        },
+        "drafting": {
+          "number": "02",
+          "title": "Drafting",
+          "subtitle": "KI-gestützte Entwurfserstellung",
+          "description": "Basierend auf den erfassten Daten und Ihren Vorlagen erstellt Senury einen ersten strukturierten Entwurf in Minuten.",
+          "features": ["Template-basierte Generierung", "Klausel-Vorschläge", "Automatische Formatierung"]
+        },
+        "review": {
+          "number": "03",
+          "title": "Review",
+          "subtitle": "Kollaborative Qualitätssicherung",
+          "description": "Notar und Mitarbeitende prüfen den Entwurf im Team. Kommentare und Änderungen werden versioniert und nachvollziehbar.",
+          "features": ["Echtzeit-Kollaboration", "Kommentarfunktion", "Versionsvergleich"]
+        },
+        "finalization": {
+          "number": "04",
+          "title": "Finalisierung",
+          "subtitle": "Vollständigkeits-Check",
+          "description": "Vor der Beurkundung führt Senury einen finalen Vollständigkeits-Check durch und markiert offene Punkte.",
+          "features": ["Checklisten-Modus", "Fristen-Überblick", "Unterschriften-Protokoll"]
+        },
+        "export": {
+          "number": "05",
+          "title": "Export",
+          "subtitle": "Automatisierte Nachbereitung",
+          "description": "Nach der Beurkundung werden alle erforderlichen Schritte automatisch dokumentiert und angebunden an Ihre bestehenden Systeme.",
+          "features": ["XNotar Integration", "Automatische Protokolle", "Audit-Trail"]
+        }
+      }
+    },
+    "flexibility": {
+      "label": "Flexibilität",
+      "title": "Flexibel wie Ihre Kanzlei",
+      "description": "Senury passt sich Ihren etablierten Prozessen an – nicht umgekehrt.",
+      "cards": {
+        "templates": {
+          "title": "Kanzlei-Vorlagen",
+          "description": "Importieren Sie Ihre bewährten Word-Vorlagen. Senury erkennt Strukturen und Klauseln automatisch."
+        },
+        "clauses": {
+          "title": "Dynamische Textbausteine",
+          "description": "Definieren Sie bedingte Klauseln und Textbausteine, die je nach Sachverhalt automatisch eingebunden werden."
+        },
+        "workflows": {
+          "title": "Individuelle Workflows",
+          "description": "Passen Sie den Prozess an Ihre Kanzlei-Struktur an. Verschiedene Workflows für verschiedene Urkundentypen."
+        }
+      }
+    },
+    "cta": {
+      "title": "Bereit für effizientere Prozesse?",
+      "description": "Vereinbaren Sie eine Demo und erfahren Sie, wie Senury speziell in Ihrem Notariat eingesetzt werden kann.",
+      "button": "Demo anfordern",
+      "footer": "Keine Verpflichtung · Persönliche Beratung · 30-tägige Testphase"
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "FAQ",
+      "title": "Häufig gestellte Fragen",
+      "description": "Antworten auf die wichtigsten Fragen zu Senury, Sicherheit und Implementierung."
+    },
+    "search": {
+      "placeholder": "Fragen durchsuchen..."
+    },
+    "categories": {
+      "all": "Alle",
+      "pricing": "Preise",
+      "security": "Sicherheit",
+      "technical": "Technik",
+      "product": "Produkt"
+    },
+    "noResults": "Keine Fragen gefunden.",
+    "items": {
+      "notar": {
+        "question": "Ersetzt Senury den Notar?",
+        "answer": "Nein. Senury ist ein unterstützendes Werkzeug für Notare und deren Mitarbeitende. Die Software übernimmt repetitive Aufgaben bei der Entwurfserstellung, die inhaltliche Prüfung und die Verantwortung für die Richtigkeit bleibt stets beim Notar. Alle KI-generierten Inhalte müssen vor Verwendung sorgfältig geprüft werden."
+      },
+      "stgb": {
+        "question": "Ist die Software konform mit §203 StGB?",
+        "answer": "Ja. Senury wurde speziell für den §203-StGB-Kontext entwickelt. Alle Mitarbeiter unterliegen strengen Vertraulichkeitsvereinbarungen. Die Daten werden ausschließlich in ISO 27001-zertifizierten deutschen Rechenzentren verarbeitet. Wir stellen Auftragsverarbeitungsverträge (AVV) zur Verfügung und unterstützen bei der Einhaltung aller relevanten Compliance-Anforderungen."
+      },
+      "vorlagen": {
+        "question": "Können wir unsere eigenen Vorlagen nutzen?",
+        "answer": "Absolut. Senury ist darauf ausgelegt, Ihre bestehenden Word-Vorlagen zu importieren und zu verstehen. Die Software erkennt automatisch Strukturen, Platzhalter und Klauseln. Sie können beliebig viele eigene Vorlagen hinterlegen und nach Bedarf auswählen. Der Import-Service ist im Standard-Paket inklusive."
+      },
+      "export": {
+        "question": "Welche Exportformate werden unterstützt?",
+        "answer": "Senury unterstützt DOCX (Microsoft Word) als primäres Exportformat für weitere Bearbeitung. Zusätzlich können Dokumente als PDF/A für die Archivierung exportiert werden. Für die Integration in bestehende Notariatssysteme stehen XML-Schnittstellen für gängige Systeme wie TriNotar, NOVO und XNotar zur Verfügung."
+      },
+      "pilot": {
+        "question": "Wie lange dauert die Pilotphase?",
+        "answer": "Wir empfehlen eine Pilotphase von 4-8 Wochen, um Senury in Ihrem Arbeitsalltag testen zu können. In dieser Zeit unterstützen wir Sie bei der Einrichtung Ihrer Vorlagen und Workflows. Der Vertrag kann mit einer Kündigungsfrist von 3 Monaten zum Vertragsende beendet werden."
+      },
+      "daten": {
+        "question": "Wo werden die Daten gespeichert?",
+        "answer": "Alle Daten werden ausschließlich in ISO 27001-zertifizierten deutschen Rechenzentren gespeichert. Wir arbeiten mit deutschen Cloud-Anbietern zusammen, die die höchsten Sicherheitsstandards erfüllen. Geo-Redundanz sorgt für maximale Verfügbarkeit. Für Enterprise-Kunden ist auch On-Premise-Hosting möglich."
+      },
+      "preiswechsel": {
+        "question": "Kann ich später das Paket wechseln?",
+        "answer": "Ja, Sie können jederzeit zwischen den Paketen upgraden oder downgraden. Änderungen werden zum nächsten Abrechnungszyklus wirksam. Bei einem Upgrade können Sie sofort die neuen Funktionen nutzen."
+      },
+      "integration": {
+        "question": "Funktioniert Senury mit XNotar?",
+        "answer": "Ja, Senury bietet eine direkte Integration mit XNotar. Nach der Beurkundung können relevante Daten automatisch an XNotar übergeben werden. Zusätzlich unterstützen wir Exportformate, die mit den meisten Notariatssystemen kompatibel sind."
+      }
+    },
+    "contact": {
+      "title": "Noch Fragen?",
+      "description": "Unser Team steht Ihnen für alle Fragen zur Verfügung. Vereinbaren Sie einen unverbindlichen Termin.",
+      "contactButton": "Kontakt aufnehmen",
+      "demoButton": "Demo anfordern"
+    }
+  },
+  "common": {
+    "buttons": {
+      "demo": "Demo anfordern",
+      "contact": "Kontakt aufnehmen",
+      "learnMore": "Mehr erfahren"
+    },
+    "timeUnits": {
+      "minutes": "Min",
+      "hours": "Std"
+    },
+    "status": {
+      "available": "Verfügbar",
+      "fullySupported": "Vollständig unterstützt",
+      "inPlanning": "In Planung",
+      "complete": "Vollständig"
+    },
+    "values": {
+      "unlimited": "Unbegrenzt",
+      "yes": "Ja",
+      "no": "Nein"
+    },
+    "mockups": {
+      "clauseLibrary": "Klauselbibliothek",
+      "aiAssistant": "KI-Assistent",
+      "generatedIn": "Generiert in 2.3s",
+      "apply": "Übernehmen",
+      "draft": "Entwurf",
+      "compare": "Vergleich",
+      "final": "Final",
+      "status": "Status",
+      "draftGenerated": "Entwurf v2.1 generiert",
+      "review": "Prüfung",
+      "allClausesValid": "Alle Klauseln validiert",
+      "workspace": "Senury Workspace",
+      "current": "Aktuell",
+      "cases": "Vorgänge",
+      "activeCases": "12 aktive",
+      "editor": "Editor",
+      "data": "Daten",
+      "preview": "Vorschau",
+      "dataCapture": "Datenerfassung",
+      "sellerName": "Name Verkäufer",
+      "buyerName": "Name Käufer",
+      "allFieldsFilled": "Alle Pflichtfelder ausgefüllt",
+      "purchasePrice": "Kaufpreis",
+      "propertySize": "Grundstücksgröße",
+      "collaboration": "Kollaboration",
+      "checkPurchasePrice": "Bitte Kaufpreis prüfen",
+      "clauseAdjusted": "Grundschuld-Klausel angepasst",
+      "completenessCheck": "Vollständigkeits-Check",
+      "partiesComplete": "Parteien vollständig",
+      "priceDefined": "Kaufpreis definiert",
+      "paymentTerms": "Zahlungsmodalitäten",
+      "conveyance": "Auflassung",
+      "completionDoc": "Vollzugsdokumentation",
+      "notarizationComplete": "Beurkundung abgeschlossen"
+    }
+  }
+}

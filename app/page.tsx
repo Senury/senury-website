@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, FileText, Zap, Shield, Check, Sparkles, TextCursorInput, BookOpen, Clock, Users, Lock, ChevronRight, Star, MessageSquare, LayoutGrid, Search, Scale } from "lucide-react";
@@ -138,6 +141,9 @@ function ProcessStep({ number, title, description }: { number: string; title: st
 }
 
 export default function LandingPage() {
+  const t = useTranslations("home");
+  const ct = useTranslations("common");
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -148,23 +154,23 @@ export default function LandingPage() {
             <div className="flex flex-col justify-center">
               <div className="mb-6">
                 <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8]">
-                  Jetzt verfügbar — Made in Germany
+                  {t("hero.badge")}
                 </span>
               </div>
               <h1 className="font-serif font-medium text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-[#1a1a1a] mb-6 tracking-tight">
-                Kaufverträge in Minuten.
-                <span className="italic text-[#6b6b6b] block mt-2">Ihre Komplettlösung für das Notariat.</span>
+                {t("hero.title")}
+                <span className="italic text-[#6b6b6b] block mt-2">{t("hero.subtitle")}</span>
               </h1>
               <p className="text-base md:text-lg text-[#6b6b6b] mb-8 max-w-md leading-relaxed">
-                Weniger Zeit für repetitive Arbeit. Mehr Zeit für Ihre Mandanten – mit unterstützender KI, die Ihnen die Kontrolle lässt.
+                {t("hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row items-start gap-4">
                 <Button className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white text-sm font-medium h-12 px-6 rounded-full transition-all">
-                  Kostenlose Demo vereinbaren
+                  {t("hero.ctaPrimary")}
                 </Button>
-                <Link href="/sicherheit" className="group flex items-center gap-2 text-[#6b6b6b] hover:text-[#1a1a1a] h-12 px-2 transition-colors">
+                <Link href="/sicherheit/" className="group flex items-center gap-2 text-[#6b6b6b] hover:text-[#1a1a1a] h-12 px-2 transition-colors">
                   <Shield className="w-4 h-4" />
-                  <span className="text-sm font-medium">Sicherheits-Whitepaper</span>
+                  <span className="text-sm font-medium">{t("hero.ctaSecondary")}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -191,16 +197,16 @@ export default function LandingPage() {
 
                 <div className="absolute top-1/4 -left-12 z-20">
                   <FloatingCardMockup
-                    title="Status"
-                    content="Entwurf v2.1 generiert"
+                    title={ct("mockups.status")}
+                    content={ct("mockups.draftGenerated")}
                     delay={100}
                   />
                 </div>
 
                 <div className="absolute bottom-1/4 -right-16 z-20">
                   <FloatingCardMockup
-                    title="Prüfung"
-                    content="Alle Klauseln validiert"
+                    title={ct("mockups.review")}
+                    content={ct("mockups.allClausesValid")}
                     delay={200}
                   />
                 </div>
@@ -214,13 +220,13 @@ export default function LandingPage() {
       <section className="py-8 bg-white border-y border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            <TrustBadge icon={Shield} label="§203 StGB-konform" />
+            <TrustBadge icon={Shield} label={t("trust.stgb")} />
             <div className="hidden md:block w-px h-4 bg-[#e8e8e8]"></div>
-            <TrustBadge icon={Lock} label="DSGVO-konform" />
+            <TrustBadge icon={Lock} label={t("trust.gdpr")} />
             <div className="hidden md:block w-px h-4 bg-[#e8e8e8]"></div>
-            <TrustBadge icon={Check} label="ISO 27001" />
+            <TrustBadge icon={Check} label={t("trust.iso")} />
             <div className="hidden md:block w-px h-4 bg-[#e8e8e8]"></div>
-            <TrustBadge icon={Star} label="Made in Germany" />
+            <TrustBadge icon={Star} label={t("trust.madeInGermany")} />
           </div>
         </div>
       </section>
@@ -229,10 +235,10 @@ export default function LandingPage() {
       <section className="py-12 bg-[#faf8f7]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCard number="75%" label="weniger Zeit für Entwürfe" />
-            <StatCard number="30 Min" label="statt 4 Stunden" />
-            <StatCard number="100%" label="DSGVO-konform" />
-            <StatCard number="§203" label="StGB-konform" />
+            <StatCard number={t("stats.timeSaved.value")} label={t("stats.timeSaved.label")} />
+            <StatCard number={t("stats.timeComparison.value")} label={t("stats.timeComparison.label")} />
+            <StatCard number={t("stats.gdpr.value")} label={t("stats.gdpr.label")} />
+            <StatCard number={t("stats.stgb.value")} label={t("stats.stgb.label")} />
           </div>
         </div>
       </section>
@@ -242,25 +248,18 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Das Problem</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("problem.label")}</span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                Täglich 4+ Stunden für Entwürfe?
+                {t("problem.title")}
               </h2>
               <p className="text-lg text-[#6b6b6b] mb-8 leading-relaxed">
-                Der nächste Kaufvertrag wartet – und wieder beginnt die mühsame Arbeit: Stammdaten abtippen,
-                Paragraphen prüfen, Klauseln kopieren, Formatierungen korrigieren. Stunden vergehen,
-                bevor der erste Entwurf steht.
+                {t("problem.description")}
               </p>
               <ul className="space-y-4">
-                {[
-                  "Repetitive Tipp-Arbeit statt inhaltlicher Prüfung",
-                  "Zeitdruck bei begrenzten Kapazitäten",
-                  "Hoher Compliance-Druck durch §203 StGB",
-                  "Risiko von Übertragungsfehlern"
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#9a9a9a]" />
-                    <span>{item}</span>
+                    <span>{t(`problem.painPoints.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -270,13 +269,13 @@ export default function LandingPage() {
               <div className="bg-white p-6 shadow-soft">
                 <div className="flex items-center gap-3 mb-6">
                   <Clock className="w-5 h-5 text-[#9a9a9a]" />
-                  <span className="font-medium text-[#1a1a1a]">Zeitaufwand pro Kaufvertrag</span>
+                  <span className="font-medium text-[#1a1a1a]">{t("problem.chart.title")}</span>
                 </div>
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-[#6b6b6b]">Datenerfassung</span>
-                      <span className="text-[#1a1a1a] font-medium">45 Min</span>
+                      <span className="text-[#6b6b6b]">{t("problem.chart.dataEntry")}</span>
+                      <span className="text-[#1a1a1a] font-medium">45 {ct("timeUnits.minutes")}</span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
                       <div className="h-2 bg-[#9a9a9a] rounded-full w-[60%]"></div>
@@ -284,8 +283,8 @@ export default function LandingPage() {
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-[#6b6b6b]">Entwurfsarbeit</span>
-                      <span className="text-[#1a1a1a] font-medium">2.5 Std</span>
+                      <span className="text-[#6b6b6b]">{t("problem.chart.drafting")}</span>
+                      <span className="text-[#1a1a1a] font-medium">2.5 {ct("timeUnits.hours")}</span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
                       <div className="h-2 bg-[#9a9a9a] rounded-full w-[90%]"></div>
@@ -293,8 +292,8 @@ export default function LandingPage() {
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-[#6b6b6b]">Korrekturen</span>
-                      <span className="text-[#1a1a1a] font-medium">1 Std</span>
+                      <span className="text-[#6b6b6b]">{t("problem.chart.corrections")}</span>
+                      <span className="text-[#1a1a1a] font-medium">1 {ct("timeUnits.hours")}</span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
                       <div className="h-2 bg-[#9a9a9a] rounded-full w-[40%]"></div>
@@ -303,8 +302,8 @@ export default function LandingPage() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-[#e8e8e8]">
                   <div className="flex justify-between items-center">
-                    <span className="text-[#6b6b6b]">Gesamt</span>
-                    <span className="text-xl font-serif font-medium text-[#1a1a1a]">~4 Std</span>
+                    <span className="text-[#6b6b6b]">{t("problem.chart.total")}</span>
+                    <span className="text-xl font-serif font-medium text-[#1a1a1a]">~4 {ct("timeUnits.hours")}</span>
                   </div>
                 </div>
               </div>
@@ -321,13 +320,13 @@ export default function LandingPage() {
               <div className="bg-[#fafafa] p-6 border border-[#e8e8e8]">
                 <div className="flex items-center gap-3 mb-6">
                   <Zap className="w-5 h-5 text-[#c9a66b]" />
-                  <span className="font-medium text-[#1a1a1a]">Mit Senury</span>
+                  <span className="font-medium text-[#1a1a1a]">{t("solution.chart.title")}</span>
                 </div>
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-[#6b6b6b]">Datenerfassung</span>
-                      <span className="text-[#1a1a1a] font-medium">15 Min</span>
+                      <span className="text-[#6b6b6b]">{t("solution.chart.dataEntry")}</span>
+                      <span className="text-[#1a1a1a] font-medium">15 {ct("timeUnits.minutes")}</span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
                       <div className="h-2 bg-[#c9a66b] rounded-full w-[20%]"></div>
@@ -335,8 +334,8 @@ export default function LandingPage() {
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-[#6b6b6b]">KI-Entwurf</span>
-                      <span className="text-[#1a1a1a] font-medium">5 Min</span>
+                      <span className="text-[#6b6b6b]">{t("solution.chart.aiDraft")}</span>
+                      <span className="text-[#1a1a1a] font-medium">5 {ct("timeUnits.minutes")}</span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
                       <div className="h-2 bg-[#c9a66b] rounded-full w-[10%]"></div>
@@ -344,8 +343,8 @@ export default function LandingPage() {
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-[#6b6b6b]">Ihre Prüfung</span>
-                      <span className="text-[#1a1a1a] font-medium">10 Min</span>
+                      <span className="text-[#6b6b6b]">{t("solution.chart.yourReview")}</span>
+                      <span className="text-[#1a1a1a] font-medium">10 {ct("timeUnits.minutes")}</span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
                       <div className="h-2 bg-[#c9a66b] rounded-full w-[15%]"></div>
@@ -354,32 +353,26 @@ export default function LandingPage() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-[#e8e8e8]">
                   <div className="flex justify-between items-center">
-                    <span className="text-[#6b6b6b]">Gesamt</span>
-                    <span className="text-xl font-serif font-medium text-[#c9a66b]">~30 Min</span>
+                    <span className="text-[#6b6b6b]">{t("solution.chart.total")}</span>
+                    <span className="text-xl font-serif font-medium text-[#c9a66b]">~30 {ct("timeUnits.minutes")}</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="order-1 lg:order-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">Die Lösung</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">{t("solution.label")}</span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                Senury reduziert das auf 30 Minuten
+                {t("solution.title")}
               </h2>
               <p className="text-lg text-[#6b6b6b] mb-8 leading-relaxed">
-                Senury übernimmt die repetitive Arbeit. Sie behalten die volle Kontrolle über Inhalt und Qualität.
-                Die KI generiert den Entwurf, Sie prüfen und finalisieren.
+                {t("solution.description")}
               </p>
               <ul className="space-y-4">
-                {[
-                  "Strukturierte Datenerfassung mit Validierung",
-                  "KI-gestützte Entwurfserstellung in Minuten",
-                  "Intelligente Klausel-Vorschläge",
-                  "Lückenlose Dokumentation für Compliance"
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
-                    <span>{item}</span>
+                    <span>{t(`solution.benefits.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -392,45 +385,45 @@ export default function LandingPage() {
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Funktionen</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("features.label")}</span>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              Die Komplettlösung für Ihr Notariat
+              {t("features.title")}
             </h2>
             <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
-              Effiziente Kaufverträge und vieles mehr. Von der Erfassung über die Recherche bis zum fertigen Entwurf.
+              {t("features.description")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e8e8e8]">
             <FeatureCard
               icon={TextCursorInput}
-              title="Intelligente Erfassung"
-              description="Strukturierte Datenerfassung für Kaufverträge und andere Urkunden. Mit automatischen Plausibilitätsprüfungen."
+              title={t("features.items.intelligentCapture.title")}
+              description={t("features.items.intelligentCapture.description")}
             />
             <FeatureCard
               icon={FileText}
-              title="KI-gestütztes Drafting"
-              description="Kaufverträge in Minuten – und Unterstützung für Schenkungen, Übertragungen und weitere Urkunden."
+              title={t("features.items.aiDrafting.title")}
+              description={t("features.items.aiDrafting.description")}
             />
             <FeatureCard
               icon={Search}
-              title="KI-Recherche"
-              description="Chat-basierte Rechtsrecherche mit präzisen, fundierten Antworten aus erstklassigen juristischen Datenquellen."
+              title={t("features.items.aiResearch.title")}
+              description={t("features.items.aiResearch.description")}
             />
             <FeatureCard
               icon={BookOpen}
-              title="Klauselverwaltung"
-              description="Verwalten Sie Ihre bewährten Klauseln zentral. Kontextbewusste Vorschläge inklusive."
+              title={t("features.items.clauseLibrary.title")}
+              description={t("features.items.clauseLibrary.description")}
             />
             <FeatureCard
               icon={Users}
-              title="Team-Kollaboration"
-              description="Arbeiten Sie gemeinsam an Entwürfen. Kommentare und Änderungen in Echtzeit."
+              title={t("features.items.collaboration.title")}
+              description={t("features.items.collaboration.description")}
             />
             <FeatureCard
               icon={LayoutGrid}
-              title="Nahtlose Integration"
-              description="Word- und Outlook-Add-ins für Ihren gewohnten Workflow. Importieren Sie Ihre Vorlagen."
+              title={t("features.items.integration.title")}
+              description={t("features.items.integration.description")}
             />
           </div>
         </div>
@@ -441,23 +434,18 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Urkunden</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("documents.label")}</span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                Mehr als nur Kaufverträge
+                {t("documents.title")}
               </h2>
               <p className="text-lg text-[#6b6b6b] mb-6 leading-relaxed">
-                Während Kaufverträge unser Hauptfokus bleiben, unterstützt Senury auch bei weiteren urkundlichen Beurkundungen – von Schenkungen bis zu Grundstücksübertragungen.
+                {t("documents.description")}
               </p>
               <ul className="space-y-3">
-                {[
-                  "Kaufverträge (Grundstücke, Wohnungseigentum)",
-                  "Schenkungsverträge",
-                  "Grundstücksübertragungen",
-                  "Weitere Urkunden (in Vorbereitung)"
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Scale className="w-4 h-4 text-[#c9a66b]" />
-                    <span>{item}</span>
+                    <span>{t(`documents.types.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -469,8 +457,8 @@ export default function LandingPage() {
                     <FileText className="w-5 h-5 text-[#c9a66b]" />
                   </div>
                   <div>
-                    <div className="font-medium text-[#1a1a1a]">Kaufvertrag</div>
-                    <div className="text-sm text-[#6b6b6b]">Vollständig unterstützt</div>
+                    <div className="font-medium text-[#1a1a1a]">{t("documents.status.purchaseContract.name")}</div>
+                    <div className="text-sm text-[#6b6b6b]">{t("documents.status.purchaseContract.status")}</div>
                   </div>
                 </div>
                 <div className="p-4 bg-white border border-[#e8e8e8] rounded-lg flex items-center gap-4">
@@ -478,8 +466,8 @@ export default function LandingPage() {
                     <Star className="w-5 h-5 text-[#6b6b6b]" />
                   </div>
                   <div>
-                    <div className="font-medium text-[#1a1a1a]">Schenkung</div>
-                    <div className="text-sm text-[#6b6b6b]">Verfügbar</div>
+                    <div className="font-medium text-[#1a1a1a]">{t("documents.status.gift.name")}</div>
+                    <div className="text-sm text-[#6b6b6b]">{t("documents.status.gift.status")}</div>
                   </div>
                 </div>
                 <div className="p-4 bg-white border border-[#e8e8e8] rounded-lg flex items-center gap-4">
@@ -487,8 +475,8 @@ export default function LandingPage() {
                     <MessageSquare className="w-5 h-5 text-[#9a9a9a]" />
                   </div>
                   <div>
-                    <div className="font-medium text-[#1a1a1a]">Übertragung</div>
-                    <div className="text-sm text-[#6b6b6b]">Verfügbar</div>
+                    <div className="font-medium text-[#1a1a1a]">{t("documents.status.transfer.name")}</div>
+                    <div className="text-sm text-[#6b6b6b]">{t("documents.status.transfer.status")}</div>
                   </div>
                 </div>
               </div>
@@ -501,12 +489,12 @@ export default function LandingPage() {
       <section className="py-24 lg:py-32 bg-[#faf8f7]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Ablauf</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("process.label")}</span>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              So funktioniert Senury
+              {t("process.title")}
             </h2>
             <p className="text-[#6b6b6b] text-lg max-w-xl mx-auto">
-              Vom Mandantengespräch bis zur Siegelung – in drei klaren Schritten
+              {t("process.description")}
             </p>
           </div>
 
@@ -514,19 +502,19 @@ export default function LandingPage() {
             <div className="hidden md:block absolute top-12 left-1/3 right-1/3 h-px bg-[#e8e8e8]"></div>
 
             <ProcessStep
-              number="1"
-              title="Daten erfassen"
-              description="Erfassen Sie Parteien, Objektdaten und Vertragskonditionen in strukturierten Formularen."
+              number={t("process.steps.capture.number")}
+              title={t("process.steps.capture.title")}
+              description={t("process.steps.capture.description")}
             />
             <ProcessStep
-              number="2"
-              title="Entwurf generieren"
-              description="Senury erstellt den ersten Entwurf basierend auf Ihren Vorlagen und Klauseln."
+              number={t("process.steps.generate.number")}
+              title={t("process.steps.generate.title")}
+              description={t("process.steps.generate.description")}
             />
             <ProcessStep
-              number="3"
-              title="Prüfen & finalisieren"
-              description="Sie prüfen, korrigieren und finalisieren. Export als DOCX oder PDF/A."
+              number={t("process.steps.finalize.number")}
+              title={t("process.steps.finalize.title")}
+              description={t("process.steps.finalize.description")}
             />
           </div>
         </div>
@@ -545,8 +533,7 @@ export default function LandingPage() {
                 </div>
 
                 <blockquote className="font-serif text-xl md:text-2xl text-[#1a1a1a] mb-8 leading-relaxed">
-                  "Senury hat unseren Workflow fundamental verändert. Was früher Stunden gedauert hat,
-                  erledigen wir jetzt in unter einer Stunde – bei gleichbleibender Qualität und voller Kontrolle."
+                  &ldquo;{t("testimonial.quote")}&rdquo;
                 </blockquote>
 
                 <div className="flex items-center gap-4">
@@ -554,8 +541,8 @@ export default function LandingPage() {
                     <span className="text-sm font-medium text-[#6b6b6b]">N</span>
                   </div>
                   <div className="text-left">
-                    <div className="font-medium text-[#1a1a1a]">Notar aus Bayern</div>
-                    <div className="text-sm text-[#6b6b6b]">Pilot-Kunde seit 2024</div>
+                    <div className="font-medium text-[#1a1a1a]">{t("testimonial.author")}</div>
+                    <div className="text-sm text-[#6b6b6b]">{t("testimonial.role")}</div>
                   </div>
                 </div>
               </div>
@@ -568,20 +555,20 @@ export default function LandingPage() {
       <section className="py-16 bg-[#faf8f7] border-y border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-8">
-            <p className="text-sm text-[#9a9a9a] uppercase tracking-widest">Integriert mit Ihren Tools</p>
+            <p className="text-sm text-[#9a9a9a] uppercase tracking-widest">{t("integrations.label")}</p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
             <div className="flex items-center gap-3 px-4 py-2 bg-white border border-[#e8e8e8]">
               <FileText className="w-5 h-5 text-[#1a1a1a]" />
-              <span className="text-sm font-medium text-[#1a1a1a]">Microsoft Word</span>
+              <span className="text-sm font-medium text-[#1a1a1a]">{t("integrations.items.word")}</span>
             </div>
             <div className="flex items-center gap-3 px-4 py-2 bg-white border border-[#e8e8e8]">
               <MessageSquare className="w-5 h-5 text-[#1a1a1a]" />
-              <span className="text-sm font-medium text-[#1a1a1a]">Microsoft Outlook</span>
+              <span className="text-sm font-medium text-[#1a1a1a]">{t("integrations.items.outlook")}</span>
             </div>
             <div className="flex items-center gap-3 px-4 py-2 bg-white border border-[#e8e8e8]">
               <LayoutGrid className="w-5 h-5 text-[#1a1a1a]" />
-              <span className="text-sm font-medium text-[#1a1a1a]">XNotar</span>
+              <span className="text-sm font-medium text-[#1a1a1a]">{t("integrations.items.xnotar")}</span>
             </div>
           </div>
         </div>
@@ -591,22 +578,21 @@ export default function LandingPage() {
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="font-serif font-medium text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] mb-6">
-            Zeit sparen. Qualität sichern.
+            {t("cta.title")}
           </h2>
           <p className="text-[#6b6b6b] text-lg mb-8 max-w-xl mx-auto">
-            Vereinbaren Sie eine unverbindliche Demo und erfahren Sie, wie Senury Ihr Notariat unterstützt.
-            Ohne Verpflichtung, mit echten Beispielen aus Ihrem Alltag.
+            {t("cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white h-12 px-8 text-sm rounded-full">
-              Kostenlose Demo vereinbaren
+              {t("cta.primary")}
             </Button>
             <Button variant="outline" className="border-[#d0d0d0] text-[#1a1a1a] hover:bg-[#fafafa] h-12 px-8 text-sm rounded-full">
-              Preise ansehen
+              {t("cta.secondary")}
             </Button>
           </div>
           <p className="text-xs text-[#9a9a9a] mt-6">
-            30-tägige Testphase · Keine Kreditkarte erforderlich · Persönliche Onboarding-Begleitung
+            {t("cta.footer")}
           </p>
         </div>
       </section>

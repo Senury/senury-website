@@ -1,25 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Separator } from "@/components/ui/separator";
 
-const footerLinks = {
-  product: [
-    { href: "/produkt", label: "Funktionen" },
-    { href: "/preis", label: "Preise" },
-    { href: "/ablauf", label: "Ablauf" },
-  ],
-  company: [
-    { href: "/sicherheit", label: "Sicherheit" },
-    { href: "/faq", label: "FAQ" },
-    { href: "#", label: "Kontakt" },
-  ],
-  legal: [
-    { href: "#", label: "Impressum" },
-    { href: "#", label: "Datenschutz" },
-    { href: "#", label: "AGB" },
-  ],
-};
-
 export function Footer() {
+  const t = useTranslations("footer");
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-[#faf8f7] border-t border-[#e8e8e8]">
       <div className="max-w-6xl mx-auto px-6 py-12 lg:py-16">
@@ -30,67 +18,109 @@ export function Footer() {
               <span className="text-xl font-medium tracking-tight text-[#1a1a1a]">Senury</span>
             </Link>
             <p className="mt-4 text-sm text-[#6b6b6b] leading-relaxed">
-              KI-gestützte Software für Notare. Effizient, sicher und unterstützend.
+              {t("brand.description")}
             </p>
             <div className="mt-4 flex items-center gap-2">
-              <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b]">Made in Germany</span>
+              <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b]">{t("brand.badge")}</span>
             </div>
           </div>
 
           {/* Product Links */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4">
-              Produkt
+              {t("links.product.title")}
             </h3>
             <ul className="space-y-2">
-              {footerLinks.product.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/produkt/"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.product.features")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/preis/"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.product.pricing")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/ablauf/"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.product.process")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Company Links */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4">
-              Unternehmen
+              {t("links.company.title")}
             </h3>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/sicherheit/"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.company.security")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq/"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.company.faq")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.company.contact")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Legal Links */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4">
-              Rechtliches
+              {t("links.legal.title")}
             </h3>
             <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.legal.imprint")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.legal.privacy")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.legal.terms")}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -99,10 +129,10 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#9a9a9a]">
-            © {new Date().getFullYear()} Senury. Alle Rechte vorbehalten.
+            {t("copyright", { year: currentYear })}
           </p>
           <p className="text-xs text-[#9a9a9a]">
-            Mit Sorgfalt für den deutschen Notarstand entwickelt.
+            {t("tagline")}
           </p>
         </div>
       </div>

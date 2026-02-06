@@ -3,18 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { href: "/produkt", label: "Produkt" },
-  { href: "/preis", label: "Preis" },
-  { href: "/sicherheit", label: "Sicherheit" },
-  { href: "/ablauf", label: "Ablauf" },
-  { href: "/faq", label: "FAQ" },
-];
 
 // Monogram Logo Component
 function MonogramLogo() {
@@ -36,6 +29,7 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const t = useTranslations("navigation");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +38,14 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: "/produkt/", label: t("links.product") },
+    { href: "/preis/", label: t("links.pricing") },
+    { href: "/sicherheit/", label: t("links.security") },
+    { href: "/ablauf/", label: t("links.process") },
+    { href: "/faq/", label: t("links.faq") },
+  ];
 
   return (
     <header
@@ -61,10 +63,10 @@ export function Navigation() {
             <MonogramLogo />
             <div className="flex flex-col">
               <span className="text-xl font-serif font-semibold tracking-tight text-[#1a1a1a] leading-tight">
-                Senury
+                {t("brand.name")}
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#9a9a9a] leading-tight">
-                Notariatssoftware
+                {t("brand.tagline")}
               </span>
             </div>
           </Link>
@@ -104,7 +106,7 @@ export function Navigation() {
             <Button
               className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white rounded-full h-10 px-6 text-sm font-medium transition-all duration-200"
             >
-              Demo anfordern
+              {t("cta")}
             </Button>
           </div>
 
@@ -134,10 +136,10 @@ export function Navigation() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-serif font-semibold text-[#1a1a1a] leading-tight">
-                    Senury
+                    {t("brand.name")}
                   </span>
                   <span className="text-[9px] uppercase tracking-[0.18em] text-[#9a9a9a]">
-                    Notariatssoftware
+                    {t("brand.tagline")}
                   </span>
                 </div>
               </div>
@@ -165,7 +167,7 @@ export function Navigation() {
 
               <div className="mt-8 pt-6 border-t border-[#e8e8e8]">
                 <Button className="w-full bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white rounded-full h-11 font-medium">
-                  Demo anfordern
+                  {t("cta")}
                 </Button>
               </div>
             </SheetContent>

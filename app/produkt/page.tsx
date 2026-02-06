@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, FileText, Search, FolderOpen, FileSpreadsheet, Mail, AlertTriangle, Clock, Shield, Zap, Lock, Sparkles, MessageSquare, GitCompare, BookOpen, Scale, Star, Gift } from "lucide-react";
@@ -186,6 +189,8 @@ function FeatureDetailCard({ icon: Icon, title, description }: { icon: React.Ele
 }
 
 export default function ProduktPage() {
+  const t = useTranslations("product");
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -193,18 +198,16 @@ export default function ProduktPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">
-              Die Komplettlösung für Ihr Notariat
+              {t("hero.badge")}
             </span>
             <h1 className="font-serif font-medium text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] mb-6 tracking-tight">
-              Effizienz trifft auf Kontrolle
+              {t("hero.title")}
             </h1>
             <p className="text-lg text-[#6b6b6b] mb-8">
-              Senury vereint alle Werkzeuge, die Sie für effiziente Notariatsarbeit brauchen:
-              Von Kaufverträgen über Recherche bis zum exportierten Entwurf.
-              Alles an einem Ort, alles §203 StGB-konform.
+              {t("hero.description")}
             </p>
             <Button className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white h-14 px-8 text-base rounded-full transition-colors">
-              Demo anfordern
+              {t("hero.cta")}
             </Button>
           </div>
         </div>
@@ -217,7 +220,7 @@ export default function ProduktPage() {
             <WorkspaceMockup />
           </div>
           <p className="text-center text-sm text-[#9a9a9a] mt-6">
-            Der Senury Workspace: Alle Funktionen übersichtlich an einem Ort
+            {t("screenshot.caption")}
           </p>
         </div>
       </section>
@@ -227,24 +230,18 @@ export default function ProduktPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Vorgangsverwaltung</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("features.caseManagement.label")}</span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                Behalten Sie den Überblick
+                {t("features.caseManagement.title")}
               </h2>
               <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
-                Verwalten Sie alle laufenden Kaufverträge und Akten an einem Ort. Status-Tracking,
-                Fristenüberwachung und intelligente Filter helfen Ihnen, nichts zu verpassen.
+                {t("features.caseManagement.description")}
               </p>
               <ul className="space-y-3">
-                {[
-                  "Intuitive Listenansicht aller Vorgänge",
-                  "Status-Tracking von Entwurf bis Finalisierung",
-                  "Automatische Fristenüberwachung",
-                  "Intelligente Filter und Suche"
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
-                    <span>{item}</span>
+                    <span>{t(`features.caseManagement.benefits.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -270,24 +267,18 @@ export default function ProduktPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">KI-gestütztes Drafting</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">{t("features.aiDrafting.label")}</span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                Entwürfe in Minuten, nicht Stunden
+                {t("features.aiDrafting.title")}
               </h2>
               <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
-                Die KI erstellt den ersten Entwurf basierend auf Ihren Vorlagen und den erfassten Daten.
-                Sie behalten die volle Kontrolle und können alle Änderungen nachvollziehen.
+                {t("features.aiDrafting.description")}
               </p>
               <ul className="space-y-3">
-                {[
-                  "Template-basierte Generierung",
-                  "Kontextbewusste Klausel-Vorschläge",
-                  "Versionsvergleich mit visueller Diff-Ansicht",
-                  "Nachvollziehbare Änderungsverfolgung"
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
-                    <span>{item}</span>
+                    <span>{t(`features.aiDrafting.benefits.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -301,24 +292,18 @@ export default function ProduktPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">KI-Recherche</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("features.aiResearch.label")}</span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                Chat-basierte Rechtsrecherche
+                {t("features.aiResearch.title")}
               </h2>
               <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
-                Stellen Sie Fragen zu Klauseln und Vorschriften. Erhalten Sie präzise, fundierte Antworten
-                aus erstklassigen juristischen Datenquellen – mit Quellenangaben direkt in Ihrem Workflow.
+                {t("features.aiResearch.description")}
               </p>
               <ul className="space-y-3">
-                {[
-                  "Chat-Interface für natürliche Fragen",
-                  "Fundierte Antworten aus juristischen Datenquellen",
-                  "Quellenangaben zu Gesetzen und Vorschriften",
-                  "Kontextbewusst: Integration in den Editor"
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
-                    <span>{item}</span>
+                    <span>{t(`features.aiResearch.benefits.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -338,24 +323,18 @@ export default function ProduktPage() {
               <FormMockup />
             </div>
             <div className="order-1 lg:order-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">Datenerfassung</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">{t("features.dataCapture.label")}</span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                Strukturiert von Anfang an
+                {t("features.dataCapture.title")}
               </h2>
               <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
-                Keine verlorenen Informationen mehr. Senury führt Sie systematisch durch die Datenerfassung
-                und prüft automatisch auf Vollständigkeit.
+                {t("features.dataCapture.description")}
               </p>
               <ul className="space-y-3">
-                {[
-                  "Strukturierte Formulare mit Pflichtfeldprüfung",
-                  "Automatische Plausibilitätsprüfungen",
-                  "Sicherer Dokumenten-Upload",
-                  "Smarte Formularvervollständigung"
-                ].map((item, i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
-                    <span>{item}</span>
+                    <span>{t(`features.dataCapture.benefits.${i}`)}</span>
                   </li>
                 ))}
               </ul>
@@ -368,50 +347,50 @@ export default function ProduktPage() {
       <section className="py-24 lg:py-32 bg-[#faf8f7]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Details</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("detailGrid.label")}</span>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              Alles, was Sie brauchen
+              {t("detailGrid.title")}
             </h2>
             <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
-              Eine komplette Übersicht aller Funktionen
+              {t("detailGrid.description")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e8e8e8]">
             <FeatureDetailCard
               icon={FolderOpen}
-              title="Vorgangsverwaltung"
-              description="Behalten Sie den Überblick über alle laufenden Kaufverträge mit Status-Tracking und Fristenüberwachung."
+              title={t("detailGrid.items.caseManagement.title")}
+              description={t("detailGrid.items.caseManagement.description")}
             />
             <FeatureDetailCard
               icon={FileText}
-              title="KI-Drafting"
-              description="Erstellen Sie erste Entwürfe in Minuten statt Stunden, basierend auf Ihren Vorlagen."
+              title={t("detailGrid.items.aiDrafting.title")}
+              description={t("detailGrid.items.aiDrafting.description")}
             />
             <FeatureDetailCard
               icon={BookOpen}
-              title="Klauselbibliothek"
-              description="Verwalten Sie Ihre bewährten Klauseln zentral und erhalten Sie kontextbewusste Vorschläge."
+              title={t("detailGrid.items.clauseLibrary.title")}
+              description={t("detailGrid.items.clauseLibrary.description")}
             />
             <FeatureDetailCard
               icon={Search}
-              title="Integrierte Recherche"
-              description="Stellen Sie Fragen zu Klauseln und Vorschriften mit kontextuellen Antworten."
+              title={t("detailGrid.items.research.title")}
+              description={t("detailGrid.items.research.description")}
             />
             <FeatureDetailCard
               icon={Shield}
-              title="Compliance & Sicherheit"
-              description="§203 StGB-konform, DSGVO-konform, mit lückenloser Dokumentation."
+              title={t("detailGrid.items.compliance.title")}
+              description={t("detailGrid.items.compliance.description")}
             />
             <FeatureDetailCard
               icon={Zap}
-              title="Integrationen"
-              description="Word- und Outlook-Add-ins für Ihren gewohnten Workflow."
+              title={t("detailGrid.items.integrations.title")}
+              description={t("detailGrid.items.integrations.description")}
             />
             <FeatureDetailCard
               icon={GitCompare}
-              title="Kontrolle"
-              description="Perspektivisch: Minutenschnelle Analyse großer Dokumentenmengen. (In Entwicklung)"
+              title={t("detailGrid.items.control.title")}
+              description={t("detailGrid.items.control.description")}
             />
           </div>
         </div>
@@ -421,60 +400,40 @@ export default function ProduktPage() {
       <section className="py-24 lg:py-32 bg-white border-y border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Urkunden</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("documentTypes.label")}</span>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              Kaufverträge und mehr
+              {t("documentTypes.title")}
             </h2>
             <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
-              Kaufverträge bleiben unser Hauptfokus – aber Senury unterstützt auch bei weiteren urkundlichen Beurkundungen.
+              {t("documentTypes.description")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                icon: FileText,
-                title: "Kaufverträge",
-                status: "Vollständig",
-                description: "Grundstücke, Wohnungseigentum, bebaute/unbebaute Grundstücke"
-              },
-              {
-                icon: Gift,
-                title: "Schenkungen",
-                status: "Verfügbar",
-                description: "Schenkungsverträge mit Vorlagen und Klauseln"
-              },
-              {
-                icon: Scale,
-                title: "Übertragungen",
-                status: "Verfügbar",
-                description: "Grundstücksübertragungen und Erbbaurechte"
-              },
-              {
-                icon: Star,
-                title: "Weitere",
-                status: "In Planung",
-                description: "Erbfolge-, Teilungsverträge, Gesellschaftsverträge"
-              }
-            ].map((doc, i) => (
-              <Card key={i} className="bg-[#faf8f7] border-[#e8e8e8] rounded-xl overflow-hidden">
+              { key: "purchaseContract", icon: FileText },
+              { key: "gift", icon: Gift },
+              { key: "transfer", icon: Scale },
+              { key: "more", icon: Star },
+            ].map((doc) => (
+              <Card key={doc.key} className="bg-[#faf8f7] border-[#e8e8e8] rounded-xl overflow-hidden">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-white border border-[#e8e8e8] flex items-center justify-center rounded-lg mb-4">
                     <doc.icon className="w-6 h-6 text-[#1a1a1a]" />
                   </div>
                   <div className="flex items-center gap-2 mb-2">
-                    <h3 className="font-serif text-lg font-medium text-[#1a1a1a]">{doc.title}</h3>
+                    <h3 className="font-serif text-lg font-medium text-[#1a1a1a]">{t(`documentTypes.types.${doc.key}.title`)}</h3>
                   </div>
                   <span className={`text-[10px] px-2 py-0.5 rounded-full ${
-                    doc.status === "Vollständig"
+                    t(`documentTypes.types.${doc.key}.status`) === "Vollständig"
                       ? "bg-[#c9a66b]/10 text-[#c9a66b]"
-                      : doc.status === "Verfügbar"
+                      : t(`documentTypes.types.${doc.key}.status`) === "Verfügbar"
                       ? "bg-[#6b6b6b]/10 text-[#6b6b6b]"
                       : "bg-[#e5e5e5] text-[#9a9a9a]"
                   }`}>
-                    {doc.status}
+                    {t(`documentTypes.types.${doc.key}.status`)}
                   </span>
-                  <p className="text-[#6b6b6b] text-sm leading-relaxed mt-3">{doc.description}</p>
+                  <p className="text-[#6b6b6b] text-sm leading-relaxed mt-3">{t(`documentTypes.types.${doc.key}.description`)}</p>
                 </CardContent>
               </Card>
             ))}
@@ -486,40 +445,28 @@ export default function ProduktPage() {
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Sicherheit</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("security.label")}</span>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              Sicherheit auf Notariats-Niveau
+              {t("security.title")}
             </h2>
             <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
-              Entwickelt für den §203 StGB-Kontext. Ihre Mandantendaten verdienen höchsten Schutz.
+              {t("security.description")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                icon: Lock,
-                title: "End-to-End Verschlüsselung",
-                description: "Alle Daten werden mit AES-256 verschlüsselt – sowohl im Transit (TLS 1.3) als auch im Ruhezustand."
-              },
-              {
-                icon: Shield,
-                title: "§203 StGB-konform",
-                description: "Speziell für den Berufsgeheimnis-Kontext entwickelt. Vertraulichkeitsvereinbarungen, geschultes Personal."
-              },
-              {
-                icon: Clock,
-                title: "Deutsche Server",
-                description: "ISO 27001-zertifizierte Rechenzentren in Deutschland. Keine Datenweitergabe an Dritte."
-              }
-            ].map((feature, i) => (
-              <Card key={i} className="bg-[#faf8f7] border-[#e8e8e8] rounded-none">
+              { key: "encryption", icon: Lock },
+              { key: "compliance", icon: Shield },
+              { key: "hosting", icon: Clock },
+            ].map((feature) => (
+              <Card key={feature.key} className="bg-[#faf8f7] border-[#e8e8e8] rounded-none">
                 <CardContent className="p-8">
                   <div className="w-12 h-12 bg-white border border-[#e8e8e8] flex items-center justify-center rounded-lg mb-6">
                     <feature.icon className="w-6 h-6 text-[#1a1a1a]" />
                   </div>
-                  <h3 className="font-serif text-lg font-medium text-[#1a1a1a] mb-2">{feature.title}</h3>
-                  <p className="text-[#6b6b6b] text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="font-serif text-lg font-medium text-[#1a1a1a] mb-2">{t(`security.features.${feature.key}.title`)}</h3>
+                  <p className="text-[#6b6b6b] text-sm leading-relaxed">{t(`security.features.${feature.key}.description`)}</p>
                 </CardContent>
               </Card>
             ))}
@@ -531,12 +478,12 @@ export default function ProduktPage() {
       <section className="py-24 lg:py-32 bg-[#faf8f7] border-y border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Integrationen</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("integrations.label")}</span>
             <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              Nahtlose Integration in Ihre Arbeitsumgebung
+              {t("integrations.title")}
             </h2>
             <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
-              Senury fügt sich in Ihren bestehenden Workflow ein – ohne disruptives Umlernen.
+              {t("integrations.description")}
             </p>
           </div>
 
@@ -546,10 +493,9 @@ export default function ProduktPage() {
                 <div className="w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg mb-6">
                   <FileText className="w-6 h-6 text-[#1a1a1a]" />
                 </div>
-                <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">Word Add-In</h3>
+                <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">{t("integrations.word.title")}</h3>
                 <p className="text-[#6b6b6b] text-sm leading-relaxed">
-                  Nutzen Sie Senury direkt in Microsoft Word. Importieren und exportieren Sie Dokumente nahtlos.
-                  Arbeiten Sie in der gewohnten Umgebung – mit Unterstützung von Senury im Hintergrund.
+                  {t("integrations.word.description")}
                 </p>
               </CardContent>
             </Card>
@@ -559,10 +505,9 @@ export default function ProduktPage() {
                 <div className="w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg mb-6">
                   <Mail className="w-6 h-6 text-[#1a1a1a]" />
                 </div>
-                <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">Outlook Add-In</h3>
+                <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">{t("integrations.outlook.title")}</h3>
                 <p className="text-[#6b6b6b] text-sm leading-relaxed">
-                  Erstellen Sie Vorgänge direkt aus E-Mails. Automatische Übernahme von Absenderdaten und Anhängen.
-                  Nie wieder Informationen manuell übertragen.
+                  {t("integrations.outlook.description")}
                 </p>
               </CardContent>
             </Card>
@@ -576,9 +521,9 @@ export default function ProduktPage() {
           <div className="bg-[#faf8f7] border border-[#e8e8e8] p-6 flex gap-4 rounded-lg">
             <AlertTriangle className="w-6 h-6 text-[#6b6b6b] flex-shrink-0 mt-0.5" />
             <div>
-              <h4 className="font-medium text-[#1a1a1a] mb-2">Wichtiger Hinweis</h4>
+              <h4 className="font-medium text-[#1a1a1a] mb-2">{t("disclaimer.title")}</h4>
               <p className="text-sm text-[#6b6b6b] leading-relaxed">
-                Senury ist ein unterstützendes Werkzeug für Notare und deren Mitarbeitende. Die Software ersetzt nicht die sorgfältige Prüfung durch qualifizierte Rechtsanwender. Alle KI-generierten Inhalte müssen vor Verwendung auf ihre Richtigkeit und Angemessenheit überprüft werden. Die inhaltliche Verantwortung liegt stets beim Notar.
+                {t("disclaimer.text")}
               </p>
             </div>
           </div>
@@ -589,17 +534,16 @@ export default function ProduktPage() {
       <section className="py-24 lg:py-32 bg-[#1a1a1a] text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif font-medium text-3xl md:text-4xl lg:text-5xl mb-6">
-            Bereit für effizientere Entwürfe?
+            {t("cta.title")}
           </h2>
           <p className="text-[#9a9a9a] text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie eine persönliche Demo und erleben Sie Senury in Aktion.
-            Mit echten Beispielen aus Ihrem Notariat.
+            {t("cta.description")}
           </p>
           <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors">
-            Kostenlose Demo vereinbaren
+            {t("cta.button")}
           </Button>
           <p className="text-xs text-[#6b6b6b] mt-6">
-            Keine Verpflichtung · Persönliche Beratung · 30-tägige Testphase
+            {t("cta.footer")}
           </p>
         </div>
       </section>

@@ -1,72 +1,147 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { TextCursorInput, FileText, Search, PenTool, CheckCircle, Settings, Database, Puzzle, Workflow, ArrowRight, Check, Users, FileCheck, Download } from "lucide-react";
+import { TextCursorInput, FileText, Search, PenTool, CheckCircle, Settings, Database, Puzzle, Workflow, Check, Users, FileCheck, Download } from "lucide-react";
 
-const timelineSteps = [
-  {
-    number: "01",
-    icon: TextCursorInput,
-    title: "Intake",
-    subtitle: "Strukturierte Datenerfassung",
-    description: "Alle relevanten Informationen werden systematisch erfasst. Plausibilitätsprüfungen in Echtzeit verhindern Fehler von Anfang an.",
-    features: ["Automatische Validierung", "Dokumenten-Upload", "Vollständigkeitsprüfung"],
-    color: "bg-[#c9a66b]"
-  },
-  {
-    number: "02",
-    icon: FileText,
-    title: "Drafting",
-    subtitle: "KI-gestützte Entwurfserstellung",
-    description: "Basierend auf den erfassten Daten und Ihren Vorlagen erstellt Senury einen ersten strukturierten Entwurf in Minuten.",
-    features: ["Template-basierte Generierung", "Klausel-Vorschläge", "Automatische Formatierung"],
-    color: "bg-[#6b6b6b]"
-  },
-  {
-    number: "03",
-    icon: Search,
-    title: "Review",
-    subtitle: "Kollaborative Qualitätssicherung",
-    description: "Notar und Mitarbeitende prüfen den Entwurf im Team. Kommentare und Änderungen werden versioniert und nachvollziehbar.",
-    features: ["Echtzeit-Kollaboration", "Kommentarfunktion", "Versionsvergleich"],
-    color: "bg-[#3d3d3d]"
-  },
-  {
-    number: "04",
-    icon: PenTool,
-    title: "Finalisierung",
-    subtitle: "Vollständigkeits-Check",
-    description: "Vor der Beurkundung führt Senury einen finalen Vollständigkeits-Check durch und markiert offene Punkte.",
-    features: ["Checklisten-Modus", "Fristen-Überblick", "Unterschriften-Protokoll"],
-    color: "bg-[#1a1a1a]"
-  },
-  {
-    number: "05",
-    icon: CheckCircle,
-    title: "Export",
-    subtitle: "Automatisierte Nachbereitung",
-    description: "Nach der Beurkundung werden alle erforderlichen Schritte automatisch dokumentiert und angebunden an Ihre bestehenden Systeme.",
-    features: ["XNotar Integration", "Automatische Protokolle", "Audit-Trail"],
-    color: "bg-[#c9a66b]"
-  }
-];
+export default function AblaufPage() {
+  const t = useTranslations("process");
 
-const flexibilityCards = [
-  {
-    icon: Database,
-    title: "Kanzlei-Vorlagen",
-    description: "Importieren Sie Ihre bewährten Word-Vorlagen. Senury erkennt Strukturen und Klauseln automatisch."
-  },
-  {
-    icon: Puzzle,
-    title: "Dynamische Textbausteine",
-    description: "Definieren Sie bedingte Klauseln und Textbausteine, die je nach Sachverhalt automatisch eingebunden werden."
-  },
-  {
-    icon: Workflow,
-    title: "Individuelle Workflows",
-    description: "Passen Sie den Prozess an Ihre Kanzlei-Struktur an. Verschiedene Workflows für verschiedene Urkundentypen."
-  }
-];
+  const timelineSteps = [
+    { key: "intake", icon: TextCursorInput, color: "bg-[#c9a66b]" },
+    { key: "drafting", icon: FileText, color: "bg-[#6b6b6b]" },
+    { key: "review", icon: Search, color: "bg-[#3d3d3d]" },
+    { key: "finalization", icon: PenTool, color: "bg-[#1a1a1a]" },
+    { key: "export", icon: CheckCircle, color: "bg-[#c9a66b]" },
+  ];
+
+  const flexibilityCards = [
+    { key: "templates", icon: Database },
+    { key: "clauses", icon: Puzzle },
+    { key: "workflows", icon: Workflow },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">
+              {t("hero.badge")}
+            </span>
+            <h1 className="font-serif font-medium text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] mb-6 tracking-tight">
+              {t("hero.title")}
+            </h1>
+            <p className="text-lg text-[#6b6b6b]">
+              {t("hero.description")}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="space-y-24">
+            {timelineSteps.map((step, index) => (
+              <div key={step.key} className="relative">
+                {/* Connection Line */}
+                {index < timelineSteps.length - 1 && (
+                  <div className="hidden lg:block absolute left-8 top-24 w-px h-24 bg-[#e8e8e8]"></div>
+                )}
+
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className={`w-16 h-16 ${step.color} text-white flex items-center justify-center rounded-xl font-serif text-2xl shadow-soft`}>
+                        {t(`timeline.steps.${step.key}.number`)}
+                      </div>
+                      <div className={`w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg`}>
+                        <step.icon className="w-6 h-6 text-[#1a1a1a]" />
+                      </div>
+                    </div>
+                    <h2 className="font-serif text-3xl font-medium text-[#1a1a1a] mb-2">{t(`timeline.steps.${step.key}.title`)}</h2>
+                    <p className="text-[#6b6b6b] font-medium mb-4">{t(`timeline.steps.${step.key}.subtitle`)}</p>
+                    <p className="text-[#6b6b6b] leading-relaxed mb-6">{t(`timeline.steps.${step.key}.description`)}</p>
+                    <ul className="space-y-2">
+                      {[0, 1, 2].map((i) => (
+                        <li key={i} className="flex items-center gap-2 text-sm text-[#3d3d3d]">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#9a9a9a]"></div>
+                          {t(`timeline.steps.${step.key}.features.${i}`)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                    <div className="bg-[#faf8f7] p-8 border border-[#e8e8e8] rounded-xl">
+                      {/* Mockup content based on step */}
+                      {index === 0 && <FormMockup />}
+                      {index === 1 && <EditorMockup />}
+                      {index === 2 && <CollaborationMockup />}
+                      {index === 3 && <ChecklistMockup />}
+                      {index === 4 && <ExportMockup />}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Flexibility Section */}
+      <section className="py-24 lg:py-32 bg-[#faf8f7] border-y border-[#e8e8e8]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">{t("flexibility.label")}</span>
+            <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
+              {t("flexibility.title")}
+            </h2>
+            <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
+              {t("flexibility.description")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {flexibilityCards.map((card) => (
+              <Card key={card.key} className="bg-white border-[#e8e8e8] rounded-xl">
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center mb-6 rounded-lg">
+                    <card.icon className="w-6 h-6 text-[#1a1a1a]" />
+                  </div>
+                  <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">{t(`flexibility.cards.${card.key}.title`)}</h3>
+                  <p className="text-[#6b6b6b] text-sm leading-relaxed">{t(`flexibility.cards.${card.key}.description`)}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 lg:py-32 bg-[#1a1a1a] text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Settings className="w-16 h-16 text-[#6b6b6b] mx-auto mb-8" />
+          <h2 className="font-serif font-medium text-3xl md:text-4xl lg:text-5xl mb-6">
+            {t("cta.title")}
+          </h2>
+          <p className="text-[#9a9a9a] text-lg mb-10 max-w-2xl mx-auto">
+            {t("cta.description")}
+          </p>
+          <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors">
+            {t("cta.button")}
+          </Button>
+          <p className="text-xs text-[#6b6b6b] mt-6">
+            {t("cta.footer")}
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
 
 // Mockup Components
 function FormMockup() {
@@ -161,7 +236,7 @@ function ChecklistMockup() {
           "Parteien vollständig",
           "Kaufpreis definiert",
           "Zahlungsmodalitäten",
-          "Auflassung"
+          "Auflassung",
         ].map((item, i) => (
           <div key={i} className="flex items-center gap-2">
             <CheckCircle className="w-4 h-4 text-[#1a1a1a]" />
@@ -193,127 +268,6 @@ function ExportMockup() {
           <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">PDF</span>
         </div>
       </div>
-    </div>
-  );
-}
-
-export default function AblaufPage() {
-  return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">
-              Prozess
-            </span>
-            <h1 className="font-serif font-medium text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] mb-6 tracking-tight">
-              Effizienz von der ersten Erfassung bis zum Vollzug
-            </h1>
-            <p className="text-lg text-[#6b6b6b]">
-              Ein durchdachter Prozess, der Ihr Notariat auf das nächste Level hebt – ohne Kompromisse bei Qualität und Sicherheit.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="space-y-24">
-            {timelineSteps.map((step, index) => (
-              <div key={step.number} className="relative">
-                {/* Connection Line */}
-                {index < timelineSteps.length - 1 && (
-                  <div className="hidden lg:block absolute left-8 top-24 w-px h-24 bg-[#e8e8e8]"></div>
-                )}
-
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-16 h-16 ${step.color} text-white flex items-center justify-center rounded-xl font-serif text-2xl shadow-soft`}>
-                        {step.number}
-                      </div>
-                      <div className={`w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg`}>
-                        <step.icon className="w-6 h-6 text-[#1a1a1a]" />
-                      </div>
-                    </div>
-                    <h2 className="font-serif text-3xl font-medium text-[#1a1a1a] mb-2">{step.title}</h2>
-                    <p className="text-[#6b6b6b] font-medium mb-4">{step.subtitle}</p>
-                    <p className="text-[#6b6b6b] leading-relaxed mb-6">{step.description}</p>
-                    <ul className="space-y-2">
-                      {step.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm text-[#3d3d3d]">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#9a9a9a]" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="bg-[#faf8f7] p-8 border border-[#e8e8e8] rounded-xl">
-                      {index === 0 && <FormMockup />}
-                      {index === 1 && <EditorMockup />}
-                      {index === 2 && <CollaborationMockup />}
-                      {index === 3 && <ChecklistMockup />}
-                      {index === 4 && <ExportMockup />}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Flexibility Section */}
-      <section className="py-24 lg:py-32 bg-[#faf8f7] border-y border-[#e8e8e8]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">Flexibilität</span>
-            <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              Flexibel wie Ihre Kanzlei
-            </h2>
-            <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
-              Senury passt sich Ihren etablierten Prozessen an – nicht umgekehrt.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {flexibilityCards.map((card) => (
-              <Card key={card.title} className="bg-white border-[#e8e8e8] rounded-xl">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center mb-6 rounded-lg">
-                    <card.icon className="w-6 h-6 text-[#1a1a1a]" />
-                  </div>
-                  <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">{card.title}</h3>
-                  <p className="text-[#6b6b6b] text-sm leading-relaxed">{card.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-[#1a1a1a] text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <Settings className="w-16 h-16 text-[#6b6b6b] mx-auto mb-8" />
-          <h2 className="font-serif font-medium text-3xl md:text-4xl lg:text-5xl mb-6">
-            Bereit für effizientere Prozesse?
-          </h2>
-          <p className="text-[#9a9a9a] text-lg mb-10 max-w-2xl mx-auto">
-            Vereinbaren Sie eine Demo und erfahren Sie, wie Senury speziell in Ihrem Notariat eingesetzt werden kann.
-          </p>
-          <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors">
-            Demo anfordern
-          </Button>
-          <p className="text-xs text-[#6b6b6b] mt-6">
-            Keine Verpflichtung · Persönliche Beratung · 30-tägige Testphase
-          </p>
-        </div>
-      </section>
     </div>
   );
 }
