@@ -86,26 +86,6 @@ export default function DatenschutzPage() {
                       ))}
                     </nav>
 
-                    {/* Quick Contact Card - at bottom of scrollable area */}
-                    <div className="p-4">
-                      <Card className="bg-[#1a1a1a] border-0 rounded-xl overflow-hidden">
-                        <CardContent className="p-6">
-                          <h3 className="font-serif text-lg text-white mb-2">
-                            {t("sidebar.contactTitle")}
-                          </h3>
-                          <p className="text-sm text-[#9a9a9a] mb-4">
-                            {t("sidebar.contactText")}
-                          </p>
-                          <Link
-                            href="/kontakt/"
-                            className="inline-flex items-center gap-2 text-sm text-[#c9a66b] hover:text-white transition-colors"
-                          >
-                            {t("sidebar.contactLink")}
-                            <ChevronRight className="w-4 h-4" />
-                          </Link>
-                        </CardContent>
-                      </Card>
-                    </div>
                   </CardContent>
                 </Card>
               </div>
@@ -504,24 +484,36 @@ export default function DatenschutzPage() {
                   </div>
                 </div>
 
-                {/* Final Note */}
+                {/* Final Note + Contact Combined */}
                 <div className="mt-16 pt-8 border-t border-[#e8e8e8]">
-                  <div className="bg-[#1a1a1a] rounded-xl p-6 sm:p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-white/10 flex items-center justify-center rounded-lg flex-shrink-0">
-                        <Shield className="w-6 h-6 text-[#c9a66b]" />
+                  <Card className="bg-[#1a1a1a] border-0 rounded-xl overflow-hidden">
+                    <CardContent className="p-6 sm:p-8">
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="w-12 h-12 bg-white/10 flex items-center justify-center rounded-lg flex-shrink-0">
+                          <Shield className="w-6 h-6 text-[#c9a66b]" />
+                        </div>
+                        <div>
+                          <h3 className="font-serif text-xl text-white mb-2">
+                            {t("final.title")}
+                          </h3>
+                          <p className="text-[#9a9a9a] text-sm leading-relaxed">
+                            {t("final.text")}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-serif text-xl text-white mb-2">
-                          {t("final.title")}
-                        </h3>
-                        <p className="text-[#9a9a9a] text-sm leading-relaxed">
-                          {t("final.text")}
-                        </p>
+                      <div className="pt-6 border-t border-white/10">
+                        <Link
+                          href="/kontakt/"
+                          className="inline-flex items-center gap-2 text-sm text-[#c9a66b] hover:text-white transition-colors font-medium"
+                        >
+                          {t("sidebar.contactLink")}
+                          <ChevronRight className="w-4 h-4" />
+                        </Link>
                       </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 </div>
+
               </div>
             </div>
           </div>
