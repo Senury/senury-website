@@ -936,5 +936,205 @@
         "germany": "Made in Germany"
       }
     }
+  },
+  "datenschutz": {
+    "hero": {
+      "badge": "Rechtliche Informationen",
+      "title": "Datenschutzerklärung",
+      "description": "Der Schutz Ihrer personenbezogenen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten im Einklang mit der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG).",
+      "lastUpdated": "Stand: Februar 2025"
+    },
+    "sidebar": {
+      "contactTitle": "Fragen zum Datenschutz?",
+      "contactText": "Unser Datenschutzbeauftragter steht Ihnen für alle datenschutzrechtlichen Fragen zur Verfügung.",
+      "contactLink": "Kontakt aufnehmen"
+    },
+    "sections": {
+      "geltungsbereich": {
+        "title": "Geltungsbereich",
+        "p1": "Diese Datenschutzerklärung gilt für alle über unsere Website erreichbaren Angebote und Dienstleistungen. Sie informiert Sie über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten.",
+        "p2": "Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen. Hierzu gehören beispielsweise Name, Adresse, E-Mail-Adresse oder Nutzerverhalten.",
+        "note": {
+          "title": "Hinweis zur Datenübermittlung",
+          "text": "Beachten Sie, dass die Datenübertragung im Internet grundsätzlich mit Sicherheitslücken behaftet sein kann. Ein lückenloser Schutz vor dem Zugriff durch Dritte ist nicht möglich."
+        }
+      },
+      "verantwortlicher": {
+        "title": "Verantwortlicher",
+        "p1": "Verantwortlicher im Sinne der Datenschutz-Grundverordnung und anderer nationaler Datenschutzgesetze ist:",
+        "company": "Senury GmbH",
+        "name": "Senury GmbH",
+        "street": "Musterstraße 1",
+        "city": "80333 München",
+        "emailLabel": "E-Mail",
+        "email": "datenschutz@senury.de",
+        "phoneLabel": "Telefon",
+        "phone": "+49 89 12345678"
+      },
+      "datenschutzbeauftragter": {
+        "title": "Datenschutzbeauftragter",
+        "p1": "Wir haben einen Datenschutzbeauftragten bestellt, der bei allen Fragen zum Datenschutz zur Verfügung steht:",
+        "contactTitle": "Kontakt Datenschutzbeauftragter",
+        "name": "Max Mustermann",
+        "emailLabel": "E-Mail",
+        "email": "dpo@senury.de"
+      },
+      "datenarten": {
+        "title": "Arten der verarbeiteten Daten",
+        "p1": "Wir verarbeiten folgende Kategorien personenbezogener Daten:",
+        "items": {
+          "kontakt": {
+            "title": "Kontaktdaten",
+            "description": "Name, E-Mail-Adresse, Telefonnummer, Postanschrift"
+          },
+          "nutzung": {
+            "title": "Nutzungsdaten",
+            "description": "IP-Adresse, Zugriffszeiten, besuchte Seiten, Browsertyp"
+          },
+          "vertrag": {
+            "title": "Vertragsdaten",
+            "description": "Vertragsinhalt, Laufzeit, Zahlungsinformationen"
+          },
+          "technisch": {
+            "title": "Technische Daten",
+            "description": "Geräteinformationen, Betriebssystem, Log-Dateien"
+          }
+        }
+      },
+      "zwecke": {
+        "title": "Zwecke der Verarbeitung",
+        "p1": "Die Verarbeitung Ihrer personenbezogenen Daten erfolgt zu folgenden Zwecken:",
+        "items": {
+          "bereitstellung": {
+            "title": "Bereitstellung der Website",
+            "description": "Technisch notwendige Datenverarbeitung"
+          },
+          "vertrag": {
+            "title": "Vertragserfüllung",
+            "description": "Abwicklung von Verträgen und Leistungen"
+          },
+          "kommunikation": {
+            "title": "Kommunikation",
+            "description": "Beantwortung von Anfragen und Support"
+          },
+          "sicherheit": {
+            "title": "Sicherheit",
+            "description": "Erkennung und Verhinderung von Angriffen"
+          }
+        }
+      },
+      "rechtsgrundlagen": {
+        "title": "Rechtsgrundlagen der Verarbeitung",
+        "p1": "Die Verarbeitung Ihrer Daten erfolgt auf Basis folgender Rechtsgrundlagen:",
+        "items": {
+          "einwilligung": {
+            "article": "Art. 6 Abs. 1 lit. a",
+            "title": "Einwilligung",
+            "description": "Sie haben uns eine Einwilligung zur Verarbeitung erteilt."
+          },
+          "vertrag": {
+            "article": "Art. 6 Abs. 1 lit. b",
+            "title": "Vertragserfüllung",
+            "description": "Die Verarbeitung ist für die Erfüllung eines Vertrags erforderlich."
+          },
+          "rechtliche": {
+            "article": "Art. 6 Abs. 1 lit. c",
+            "title": "Rechtliche Verpflichtung",
+            "description": "Die Verarbeitung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich."
+          },
+          "interessen": {
+            "article": "Art. 6 Abs. 1 lit. f",
+            "title": "Berechtigtes Interesse",
+            "description": "Die Verarbeitung ist zur Wahrung berechtigter Interessen erforderlich."
+          }
+        }
+      },
+      "empfaenger": {
+        "title": "Empfänger und Drittländer",
+        "p1": "Eine Übermittlung Ihrer personenbezogenen Daten an Dritte findet nur statt, wenn dies zur Erfüllung unserer Dienstleistungen erforderlich ist oder wir gesetzlich hierzu verpflichtet sind.",
+        "p2": "Mögliche Empfänger können sein: IT-Dienstleister, Zahlungsdienstleister, Rechtsberater, Steuerberater.",
+        "drittländer": {
+          "title": "Datenübermittlung in Drittländer",
+          "text": "Eine Übermittlung personenbezogener Daten in Länder außerhalb der EU oder des EWR (sog. Drittländer) erfolgt nur, wenn dies gesetzlich vorgesehen ist oder Sie uns Ihre Einwilligung erteilt haben. Bei Übermittlungen in die USA werden Standardvertragsklauseln gemäß Art. 46 DSGVO verwendet."
+        }
+      },
+      "speicherdauer": {
+        "title": "Speicherdauer",
+        "p1": "Wir speichern Ihre personenbezogenen Daten nur so lange, wie dies zur Erreichung der genannten Zwecke erforderlich ist oder wie es gesetzliche Aufbewahrungsfristen vorsehen.",
+        "p2": "Nach Ablauf der jeweiligen Fristen werden die Daten routinemäßig gelöscht, sofern sie nicht mehr für die Vertragserfüllung oder Vertragsanbahnung erforderlich sind.",
+        "items": {
+          "kontakt": {
+            "title": "Kontaktdaten",
+            "duration": "Bis zur Widerrufung Ihrer Einwilligung oder 2 Jahre nach letztem Kontakt"
+          },
+          "nutzungs": {
+            "title": "Nutzungsdaten",
+            "duration": "14 Tage (Logfiles), 26 Monate (anonymisiert für Analyse)"
+          },
+          "vertrags": {
+            "title": "Vertragsdaten",
+            "duration": "10 Jahre nach Vertragsende (gesetzliche Aufbewahrung)"
+          },
+          "gesetzliche": {
+            "title": "Gesetzliche Aufbewahrung",
+            "duration": "6-10 Jahre gemäß HGB, AO, BDSG"
+          }
+        }
+      },
+      "betroffenenrechte": {
+        "title": "Betroffenenrechte",
+        "p1": "Als betroffene Person haben Sie folgende Rechte gemäß der Datenschutz-Grundverordnung:",
+        "items": {
+          "auskunft": {
+            "article": "Art. 15",
+            "title": "Recht auf Auskunft",
+            "description": "Sie können jederzeit Auskunft über die von uns verarbeiteten personenbezogenen Daten verlangen."
+          },
+          "berichtigung": {
+            "article": "Art. 16",
+            "title": "Recht auf Berichtigung",
+            "description": "Sie haben das Recht, die Berichtigung unrichtiger oder Vervollständigung unvollständiger Daten zu verlangen."
+          },
+          "loeschung": {
+            "article": "Art. 17",
+            "title": "Recht auf Löschung",
+            "description": "Unter bestimmten Voraussetzungen können Sie die Löschung Ihrer personenbezogenen Daten verlangen."
+          },
+          "einschraenkung": {
+            "article": "Art. 18",
+            "title": "Recht auf Einschränkung",
+            "description": "Sie können unter bestimmten Umständen die Einschränkung der Verarbeitung verlangen."
+          },
+          "uebertragbarkeit": {
+            "article": "Art. 20",
+            "title": "Recht auf Datenübertragbarkeit",
+            "description": "Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen Format zu erhalten."
+          },
+          "widerspruch": {
+            "article": "Art. 21",
+            "title": "Widerspruchsrecht",
+            "description": "Sie können der Verarbeitung Ihrer Daten aus Gründen, die sich aus Ihrer besonderen Situation ergeben, widersprechen."
+          }
+        }
+      },
+      "widerruf": {
+        "title": "Widerrufsrecht",
+        "p1": "Haben Sie uns eine Einwilligung zur Verarbeitung Ihrer personenbezogenen Daten erteilt, können Sie diese jederzeit widerrufen. Der Widerruf hat zur Folge, dass wir die Datenverarbeitung, die auf dieser Einwilligung beruhte, für die Zukunft nicht mehr fortführen.",
+        "p2": "Der Widerruf kann formlos per E-Mail an datenschutz@senury.de oder postalisch erfolgen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt."
+      },
+      "beschwerde": {
+        "title": "Beschwerderecht",
+        "p1": "Sie haben das Recht, jederzeit bei einer Datenschutz-Aufsichtsbehörde Beschwerde einzulegen. Zuständig ist die Aufsichtsbehörde des Bundeslandes, in dem wir unseren Sitz haben:",
+        "authority": "Bayerisches Landesamt für Datenschutzaufsicht",
+        "name": "Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)",
+        "street": "Promenade 27",
+        "city": "91522 Ansbach",
+        "websiteLabel": "Website"
+      }
+    },
+    "final": {
+      "title": "Ihre Privatsphäre ist uns wichtig",
+      "text": "Wir nehmen den Schutz Ihrer personenbezogenen Daten sehr ernst. Sollten Sie weitere Fragen zum Datenschutz bei Senury haben, zögern Sie nicht, uns zu kontaktieren."
+    }
   }
 }
