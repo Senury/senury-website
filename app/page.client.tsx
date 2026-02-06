@@ -238,8 +238,8 @@ export default function HomePageClient() {
                 {t("hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-                <Button className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white text-sm font-medium h-12 px-6 rounded-full transition-all w-full sm:w-auto">
-                  {t("hero.ctaPrimary")}
+                <Button className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white text-sm font-medium h-12 px-6 rounded-full transition-all w-full sm:w-auto" asChild>
+                  <Link href="/demo/">{t("hero.ctaPrimary")}</Link>
                 </Button>
                 <Link
                   href="/sicherheit/"
@@ -747,14 +747,15 @@ export default function HomePageClient() {
             {t("cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white h-12 px-8 text-sm rounded-full">
-              {t("cta.primary")}
+            <Button className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white h-12 px-8 text-sm rounded-full" asChild>
+              <Link href="/demo/">{t("cta.primary")}</Link>
             </Button>
             <Button
               variant="outline"
               className="border-[#d0d0d0] text-[#1a1a1a] hover:bg-[#fafafa] h-12 px-8 text-sm rounded-full"
+              asChild
             >
-              {t("cta.secondary")}
+              <Link href="/kontakt/">{t("cta.secondary")}</Link>
             </Button>
           </div>
           <p className="text-xs text-[#9a9a9a] mt-6">{t("cta.footer")}</p>

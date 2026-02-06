@@ -126,8 +126,11 @@ export default function PreisPageClient() {
                         ? "bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white"
                         : "bg-white border border-[#e8e8e8] text-[#1a1a1a] hover:bg-[#fafafa]"
                     }`}
+                    asChild
                   >
-                    {t(`tiers.${tier.key}.cta`)}
+                    <Link href="/demo/">
+                      {t(`tiers.${tier.key}.cta`)}
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -291,8 +294,10 @@ export default function PreisPageClient() {
             {t("cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors">
-              {t("cta.button")}
+            <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors" asChild>
+              <Link href="/demo/">
+                {t("cta.button")}
+              </Link>
             </Button>
             <Link href="/faq/" className="group flex items-center gap-2 text-[#9a9a9a] hover:text-white transition-colors">
               <span>{t("cta.faqLink")}</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TextCursorInput, FileText, Search, PenTool, CheckCircle, Settings, Database, Puzzle, Workflow, Check, Users, FileCheck, Download } from "lucide-react";
@@ -131,8 +132,10 @@ export default function AblaufPageClient() {
           <p className="text-[#9a9a9a] text-lg mb-10 max-w-2xl mx-auto">
             {t("cta.description")}
           </p>
-          <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors">
-            {t("cta.button")}
+          <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors" asChild>
+            <Link href="/demo/">
+              {t("cta.button")}
+            </Link>
           </Button>
           <p className="text-xs text-[#6b6b6b] mt-6">
             {t("cta.footer")}

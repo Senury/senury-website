@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 import { Shield, Lock, Eye, Database, FileCheck, Download, CheckCircle, Server, Fingerprint, FileText, Globe, Clock, Award } from "lucide-react";
 
 export default function SicherheitPageClient() {
@@ -226,9 +227,16 @@ export default function SicherheitPageClient() {
                 </div>
                 <div className="flex items-center gap-4 ml-8 md:ml-0">
                   <span className="text-sm text-[#9a9a9a]">{t(`downloads.items.${item.key}.size`)}</span>
-                  <Button variant="outline" size="sm" className="gap-2 rounded-full">
-                    <Download className="w-4 h-4" />
-                    {t("downloads.downloadButton")}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="gap-2 rounded-full border-[#e8e8e8] bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] hover:text-[#1a1a1a]"
+                    asChild
+                  >
+                    <Link href={`/downloads/${item.key}.pdf`} target="_blank" rel="noopener noreferrer">
+                      <Download className="w-4 h-4" />
+                      {t("downloads.downloadButton")}
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -250,11 +258,17 @@ export default function SicherheitPageClient() {
             {t("cta.description")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors">
-              {t("cta.primary")}
+            <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-14 px-8 text-base rounded-full transition-colors" asChild>
+              <Link href="/demo/">{t("cta.primary")}</Link>
             </Button>
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 h-14 px-8 text-base rounded-full">
-              {t("cta.secondary")}
+            <Button
+              variant="outline"
+              className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white h-14 px-8 text-base rounded-full"
+              asChild
+            >
+              <Link href="/kontakt/">
+                {t("cta.secondary")}
+              </Link>
             </Button>
           </div>
         </div>

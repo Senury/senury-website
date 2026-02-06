@@ -129,7 +129,7 @@ export default function KontaktPageClient() {
                   </CardContent>
                 </Card>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[#1a1a1a]">
@@ -228,35 +228,12 @@ export default function KontaktPageClient() {
                       <Button
                         variant="outline"
                         className="border-[#e8e8e8] text-[#1a1a1a] hover:bg-[#faf8f7] rounded-full h-10 px-6 text-sm"
+                        asChild
                       >
-                        {t("quickActions.demo.button")}
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Chat Card */}
-              <Card className="bg-white border-[#e8e8e8] rounded-xl overflow-hidden">
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-[#faf8f7] border border-[#e8e8e8] flex items-center justify-center flex-shrink-0 rounded-lg">
-                      <MessageSquare className="w-6 h-6 text-[#1a1a1a]" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-serif text-lg font-medium text-[#1a1a1a] mb-1">
-                        {t("quickActions.chat.title")}
-                      </h3>
-                      <p className="text-sm text-[#6b6b6b] mb-4">
-                        {t("quickActions.chat.description")}
-                      </p>
-                      <Button
-                        variant="outline"
-                        className="border-[#e8e8e8] text-[#1a1a1a] hover:bg-[#faf8f7] rounded-full h-10 px-6 text-sm"
-                      >
-                        {t("quickActions.chat.button")}
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                        <Link href="/demo/">
+                          {t("quickActions.demo.button")}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
                       </Button>
                     </div>
                   </div>
@@ -279,10 +256,13 @@ export default function KontaktPageClient() {
                       </p>
                       <Button
                         variant="outline"
-                        className="border-white/30 text-white hover:bg-white/10 rounded-full h-10 px-6 text-sm"
+                        className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white rounded-full h-10 px-6 text-sm"
+                        asChild
                       >
-                        {t("quickActions.faq.button")}
-                        <ArrowRight className="w-4 h-4 ml-2" />
+                        <Link href="/faq/">
+                          {t("quickActions.faq.button")}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
                       </Button>
                     </div>
                   </div>

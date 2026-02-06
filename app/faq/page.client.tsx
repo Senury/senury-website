@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 import { Mail, Scale, Shield, FileText, Download, Clock, Database, HelpCircle, Search, ChevronRight } from "lucide-react";
 
 export default function FAQPageClient() {
@@ -142,12 +143,20 @@ export default function FAQPageClient() {
                 {t("contact.description")}
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
-                <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base rounded-full transition-colors w-full sm:w-auto">
-                  <Mail className="w-4 h-4 mr-2" />
-                  {t("contact.contactButton")}
+                <Button className="bg-white text-[#1a1a1a] hover:bg-[#f5f5f5] h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base rounded-full transition-colors w-full sm:w-auto" asChild>
+                  <Link href="/kontakt/">
+                    <Mail className="w-4 h-4 mr-2" />
+                    {t("contact.contactButton")}
+                  </Link>
                 </Button>
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base rounded-full transition-colors w-full sm:w-auto">
-                  {t("contact.demoButton")}
+                <Button
+                  variant="outline"
+                  className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base rounded-full w-full sm:w-auto"
+                  asChild
+                >
+                  <Link href="/demo/">
+                    {t("contact.demoButton")}
+                  </Link>
                 </Button>
               </div>
             </CardContent>
