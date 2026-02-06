@@ -26,7 +26,11 @@ export default function AblaufPageClient() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white">
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white overflow-hidden">
+        {/* Subtle path line - suggests flow/process */}
+        <svg className="absolute top-1/2 left-0 w-full h-32 -translate-y-1/2 opacity-[0.03] hidden lg:block" viewBox="0 0 1200 100" preserveAspectRatio="none">
+          <path d="M0,50 Q300,20 600,50 T1200,50" fill="none" stroke="#1a1a1a" strokeWidth="2"/>
+        </svg>
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">

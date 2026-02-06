@@ -44,6 +44,7 @@ export function Navigation() {
     { href: "/preis/", label: t("links.pricing") },
     { href: "/sicherheit/", label: t("links.security") },
     { href: "/ablauf/", label: t("links.process") },
+    { href: "/ueber-uns/", label: t("links.about") },
     { href: "/kontakt/", label: t("links.contact") },
   ];
 

@@ -339,8 +339,13 @@ export default function ProduktPageClient() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-24 pb-12 sm:pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="relative pt-24 pb-12 sm:pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white overflow-hidden">
+        {/* Subtle document lines - suggests text/contract */}
+        <div className="absolute inset-0 opacity-[0.02] hidden lg:block" style={{
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 32px, #1a1a1a 32px, #1a1a1a 33px)`,
+        }} />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">
               {t("hero.badge")}

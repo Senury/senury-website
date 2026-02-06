@@ -56,8 +56,13 @@ export default function KontaktPageClient() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-28 sm:pt-32 pb-16 sm:pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-b from-[#fdfcfb] to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="relative pt-24 pb-16 sm:pb-20 lg:pt-32 lg:pb-28 bg-gradient-to-b from-[#fdfcfb] to-white overflow-hidden">
+        {/* Subtle arc - suggests reaching out */}
+        <svg className="absolute bottom-0 left-1/2 -translate-x-1/2 opacity-[0.03] hidden lg:block" width="600" height="200" viewBox="0 0 600 200" fill="none">
+          <path d="M0,200 Q300,0 600,200" stroke="#1a1a1a" strokeWidth="1"/>
+        </svg>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] text-xs sm:text-sm mb-6 inline-block">
               {t("hero.badge")}

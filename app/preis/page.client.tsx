@@ -35,8 +35,15 @@ export default function PreisPageClient() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="pt-24 pb-12 sm:pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="relative pt-24 pb-12 sm:pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white overflow-hidden">
+        {/* Subtle tier bars - suggests pricing levels */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-[0.03] hidden lg:flex items-end gap-4">
+          <div className="w-16 h-16 bg-[#1a1a1a] rounded-sm" />
+          <div className="w-16 h-24 bg-[#1a1a1a] rounded-sm" />
+          <div className="w-16 h-32 bg-[#1a1a1a] rounded-sm" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">
               {t("hero.badge")}

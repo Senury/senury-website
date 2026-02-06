@@ -66,6 +66,14 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
+                  href="/ueber-uns/"
+                  className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
+                >
+                  {t("links.company.about")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/sicherheit/"
                   className="text-sm text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors"
                 >

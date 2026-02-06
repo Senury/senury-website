@@ -43,8 +43,14 @@ export default function FAQPageClient() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white overflow-hidden">
+        {/* Subtle vertical lines - suggests list/columns */}
+        <div className="absolute inset-0 opacity-[0.02] hidden lg:block" style={{
+          backgroundImage: `linear-gradient(90deg, #1a1a1a 1px, transparent 1px)`,
+          backgroundSize: '120px 100%',
+        }} />
+
+        <div className="relative max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">
               {t("hero.badge")}
