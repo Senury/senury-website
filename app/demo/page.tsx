@@ -11,7 +11,6 @@ import {
   Calendar,
   Clock,
   ChevronLeft,
-  ChevronRight,
   Check,
   Video,
   Building2,
@@ -57,7 +56,6 @@ export default function DemoPage() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
-  const [meetingType, setMeetingType] = useState<"video" | "inperson">("video");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -124,17 +122,8 @@ export default function DemoPage() {
                 <span className="text-[#1a1a1a] font-medium">{selectedTime} Uhr</span>
               </div>
               <div className="flex items-center gap-3">
-                {meetingType === "video" ? (
-                  <>
-                    <Video className="w-5 h-5 text-[#c9a66b]" />
-                    <span className="text-[#1a1a1a]">{t("booking.videoCall")}</span>
-                  </>
-                ) : (
-                  <>
-                    <Building2 className="w-5 h-5 text-[#c9a66b]" />
-                    <span className="text-[#1a1a1a]">{t("booking.inPerson")}</span>
-                  </>
-                )}
+                <Video className="w-5 h-5 text-[#c9a66b]" />
+                <span className="text-[#1a1a1a]">{t("booking.videoCall")}</span>
               </div>
             </div>
             <Link
@@ -216,58 +205,6 @@ export default function DemoPage() {
                           {t("steps.date.title")}
                         </h2>
                         <p className="text-[#6b6b6b]">{t("steps.date.description")}</p>
-                      </div>
-
-                      {/* Meeting Type Toggle */}
-                      <div className="grid grid-cols-2 gap-3">
-                        <button
-                          onClick={() => setMeetingType("video")}
-                          className={cn(
-                            "flex flex-col items-center gap-3 p-4 rounded-xl border-2 transition-all",
-                            meetingType === "video"
-                              ? "border-[#1a1a1a] bg-[#faf8f7]"
-                              : "border-[#e8e8e8] hover:border-[#c9a66b]"
-                          )}
-                        >
-                          <Video
-                            className={cn(
-                              "w-6 h-6",
-                              meetingType === "video" ? "text-[#c9a66b]" : "text-[#9a9a9a]"
-                            )}
-                          />
-                          <span
-                            className={cn(
-                              "text-sm font-medium",
-                              meetingType === "video" ? "text-[#1a1a1a]" : "text-[#6b6b6b]"
-                            )}
-                          >
-                            {t("meetingType.video")}
-                          </span>
-                        </button>
-                        <button
-                          onClick={() => setMeetingType("inperson")}
-                          className={cn(
-                            "flex flex-col items-center gap-3 p-4 rounded-xl border-2 transition-all",
-                            meetingType === "inperson"
-                              ? "border-[#1a1a1a] bg-[#faf8f7]"
-                              : "border-[#e8e8e8] hover:border-[#c9a66b]"
-                          )}
-                        >
-                          <Building2
-                            className={cn(
-                              "w-6 h-6",
-                              meetingType === "inperson" ? "text-[#c9a66b]" : "text-[#9a9a9a]"
-                            )}
-                          />
-                          <span
-                            className={cn(
-                              "text-sm font-medium",
-                              meetingType === "inperson" ? "text-[#1a1a1a]" : "text-[#6b6b6b]"
-                            )}
-                          >
-                            {t("meetingType.inPerson")}
-                          </span>
-                        </button>
                       </div>
 
                       {/* Date Selection */}
@@ -477,18 +414,10 @@ export default function DemoPage() {
                         </div>
 
                         <div className="flex items-start gap-4 pb-4 border-b border-[#e8e8e8]">
-                          {meetingType === "video" ? (
-                            <Video className="w-5 h-5 text-[#c9a66b] mt-0.5" />
-                          ) : (
-                            <Building2 className="w-5 h-5 text-[#c9a66b] mt-0.5" />
-                          )}
+                          <Video className="w-5 h-5 text-[#c9a66b] mt-0.5" />
                           <div>
                             <p className="text-sm text-[#9a9a9a]">{t("summary.type")}</p>
-                            <p className="text-[#1a1a1a] font-medium">
-                              {meetingType === "video"
-                                ? t("meetingType.video")
-                                : t("meetingType.inPerson")}
-                            </p>
+                            <p className="text-[#1a1a1a] font-medium">{t("meetingType.video")}</p>
                           </div>
                         </div>
 
