@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { FileX, Home, Search, ArrowRight, FolderOpen } from "lucide-react";
+import { Home, Search, ArrowRight, FolderOpen } from "lucide-react";
 
 export default function NotFoundPage() {
   const t = useTranslations("notFound");
@@ -57,20 +57,6 @@ export default function NotFoundPage() {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6">
         <div className="max-w-2xl w-full text-center">
-
-          {/* Icon and Badge */}
-          <div className="flex flex-col items-center mb-8">
-            <div className="relative">
-              {/* Animated rings */}
-              <div className="absolute inset-0 bg-[#c9a66b] opacity-10 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
-              <div className="relative w-24 h-24 bg-[#1a1a1a] rounded-2xl flex items-center justify-center shadow-elevated">
-                <FileX className="w-12 h-12 text-[#c9a66b]" strokeWidth={1.5} />
-              </div>
-            </div>
-            <span className="mt-6 px-4 py-1.5 bg-[#f5f5f5] border border-[#e8e8e8] rounded-full text-xs font-medium uppercase tracking-widest text-[#9a9a9a]">
-              {t("badge")}
-            </span>
-          </div>
 
           {/* Main Typography */}
           <h1 className="font-serif text-6xl sm:text-7xl md:text-8xl font-medium text-[#1a1a1a] tracking-tight mb-4">
