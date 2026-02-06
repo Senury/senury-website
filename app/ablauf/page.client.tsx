@@ -10,10 +10,10 @@ export default function AblaufPageClient() {
   const t = useTranslations("process");
 
   const timelineSteps = [
-    { key: "intake", icon: TextCursorInput, color: "bg-[#c9a66b]" },
-    { key: "drafting", icon: FileText, color: "bg-[#6b6b6b]" },
-    { key: "review", icon: Search, color: "bg-[#3d3d3d]" },
-    { key: "finalization", icon: PenTool, color: "bg-[#1a1a1a]" },
+    { key: "intake", icon: FileText, color: "bg-[#c9a66b]" },
+    { key: "extraction", icon: Database, color: "bg-[#6b6b6b]" },
+    { key: "drafting", icon: PenTool, color: "bg-[#6b6b6b]" },
+    { key: "review", icon: Search, color: "bg-[#6b6b6b]" },
     { key: "export", icon: CheckCircle, color: "bg-[#c9a66b]" },
   ];
 
@@ -55,12 +55,12 @@ export default function AblaufPageClient() {
 
                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                   <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className="flex items-center gap-3 sm:gap-4 mb-4">
-                      <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ${step.color} text-white flex items-center justify-center rounded-lg sm:rounded-xl font-serif text-xl sm:text-2xl shadow-soft flex-shrink-0`}>
+                    <div className="flex items-center gap-2 sm:gap-3 mb-4">
+                      <div className={`w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 ${step.color} text-white flex items-center justify-center rounded-lg font-serif text-lg sm:text-xl shadow-soft flex-shrink-0`}>
                         {t(`timeline.steps.${step.key}.number`)}
                       </div>
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg flex-shrink-0`}>
-                        <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#1a1a1a]" />
+                      <div className={`w-8 h-8 sm:w-9 sm:h-9 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg flex-shrink-0`}>
+                        <step.icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#1a1a1a]" />
                       </div>
                     </div>
                     <h2 className="font-serif text-2xl sm:text-3xl font-medium text-[#1a1a1a] mb-2">{t(`timeline.steps.${step.key}.title`)}</h2>
@@ -79,10 +79,10 @@ export default function AblaufPageClient() {
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
                     <div className="bg-[#faf8f7] p-4 sm:p-6 lg:p-8 border border-[#e8e8e8] rounded-xl">
                       {/* Mockup content based on step */}
-                      {index === 0 && <FormMockup />}
-                      {index === 1 && <EditorMockup />}
-                      {index === 2 && <CollaborationMockup />}
-                      {index === 3 && <ChecklistMockup />}
+                      {index === 0 && <DocumentUploadMockup />}
+                      {index === 1 && <DataExtractionMockup />}
+                      {index === 2 && <AIDraftingMockup />}
+                      {index === 3 && <ReviewMockup />}
                       {index === 4 && <ExportMockup />}
                     </div>
                   </div>
@@ -146,106 +146,149 @@ export default function AblaufPageClient() {
   );
 }
 
-// Mockup Components
-function FormMockup() {
+// Mockup Components for 4-Step Workflow
+
+function DocumentUploadMockup() {
   return (
     <div className="bg-white shadow-soft border border-[#e8e8e8] rounded-xl overflow-hidden">
       <div className="bg-[#fafafa] border-b border-[#e8e8e8] p-3 flex items-center gap-2">
-        <TextCursorInput className="w-4 h-4 text-[#c9a66b]" />
-        <span className="text-xs font-medium text-[#1a1a1a]">Datenerfassung</span>
+        <FileText className="w-4 h-4 text-[#c9a66b]" />
+        <span className="text-xs font-medium text-[#1a1a1a]">Dokumenten-Upload</span>
       </div>
       <div className="p-4 space-y-3">
-        <div>
-          <label className="text-[10px] text-[#9a9a9a] block mb-1">Name Verkäufer</label>
-          <div className="h-8 bg-[#f5f5f5] border border-[#e8e8e8] rounded flex items-center px-3">
-            <span className="text-xs text-[#1a1a1a]">Dr. Schmidt GmbH</span>
+        <div className="border-2 border-dashed border-[#e8e8e8] rounded-lg p-4 bg-[#fafafa] text-center">
+          <div className="w-10 h-10 bg-[#c9a66b]/10 rounded-full flex items-center justify-center mx-auto mb-2">
+            <Download className="w-5 h-5 text-[#c9a66b] rotate-180" />
           </div>
+          <span className="text-xs text-[#6b6b6b]">Dokumente hier ablegen</span>
         </div>
-        <div>
-          <label className="text-[10px] text-[#9a9a9a] block mb-1">Name Käufer</label>
-          <div className="h-8 bg-[#f5f5f5] border border-[#e8e8e8] rounded flex items-center px-3">
-            <span className="text-xs text-[#1a1a1a]">Müller & Co. KG</span>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 p-2 bg-[#f5f5f5] rounded-lg">
+            <div className="w-8 h-8 bg-[#c9a66b]/20 rounded flex items-center justify-center">
+              <FileText className="w-4 h-4 text-[#c9a66b]" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-xs text-[#1a1a1a] truncate">Grundbuchauszug.pdf</div>
+              <div className="text-[10px] text-[#9a9a9a]">2.4 MB</div>
+            </div>
+            <Check className="w-4 h-4 text-[#c9a66b]" />
           </div>
-        </div>
-        <div className="flex items-center gap-2 p-2 bg-[#c9a66b]/10 rounded border border-[#c9a66b]/20">
-          <Check className="w-4 h-4 text-[#c9a66b]" />
-          <span className="text-[10px] text-[#1a1a1a]">Alle Pflichtfelder ausgefüllt</span>
+          <div className="flex items-center gap-2 p-2 bg-[#f5f5f5] rounded-lg">
+            <div className="w-8 h-8 bg-[#c9a66b]/20 rounded flex items-center justify-center">
+              <FileText className="w-4 h-4 text-[#c9a66b]" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="text-xs text-[#1a1a1a] truncate">Notaranschreiben.pdf</div>
+              <div className="text-[10px] text-[#9a9a9a]">1.1 MB</div>
+            </div>
+            <Check className="w-4 h-4 text-[#c9a66b]" />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function EditorMockup() {
+function DataExtractionMockup() {
   return (
     <div className="bg-white shadow-soft border border-[#e8e8e8] rounded-xl overflow-hidden">
       <div className="bg-[#fafafa] border-b border-[#e8e8e8] p-3 flex items-center gap-2">
-        <FileText className="w-4 h-4 text-[#6b6b6b]" />
-        <span className="text-xs font-medium text-[#1a1a1a]">Kaufvertrag_Entwurf.docx</span>
+        <Database className="w-4 h-4 text-[#6b6b6b]" />
+        <span className="text-xs font-medium text-[#1a1a1a]">Datenextraktion</span>
+      </div>
+      <div className="p-4 space-y-3">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="flex-1 h-1.5 bg-[#f5f5f5] rounded-full overflow-hidden">
+            <div className="h-full w-3/4 bg-[#6b6b6b] rounded-full"></div>
+          </div>
+          <span className="text-[10px] text-[#6b6b6b]">75%</span>
+        </div>
+        <div className="space-y-2">
+          <div className="flex items-center justify-between p-2 bg-[#f5f5f5] rounded-lg">
+            <span className="text-xs text-[#6b6b6b]">Grundstücksgröße</span>
+            <span className="text-xs text-[#1a1a1a] font-medium">1.250 m²</span>
+          </div>
+          <div className="flex items-center justify-between p-2 bg-[#f5f5f5] rounded-lg">
+            <span className="text-xs text-[#6b6b6b]">Eigentümer</span>
+            <span className="text-xs text-[#1a1a1a] font-medium">Dr. Schmidt GmbH</span>
+          </div>
+          <div className="flex items-center justify-between p-2 bg-[#f5f5f5] rounded-lg">
+            <span className="text-xs text-[#6b6b6b]">Grundbuchblatt</span>
+            <span className="text-xs text-[#1a1a1a] font-medium">Buch 12, Blatt 847</span>
+          </div>
+          <div className="flex items-center gap-2 p-2 bg-[#c9a66b]/10 rounded-lg border border-[#c9a66b]/20">
+            <Check className="w-3.5 h-3.5 text-[#c9a66b]" />
+            <span className="text-[10px] text-[#1a1a1a]">Alle Pflichtangaben extrahiert</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AIDraftingMockup() {
+  return (
+    <div className="bg-white shadow-soft border border-[#e8e8e8] rounded-xl overflow-hidden">
+      <div className="bg-[#fafafa] border-b border-[#e8e8e8] p-3 flex items-center gap-2">
+        <PenTool className="w-4 h-4 text-[#3d3d3d]" />
+        <span className="text-xs font-medium text-[#1a1a1a]">KI-Entwurf</span>
       </div>
       <div className="p-4">
-        <div className="space-y-2">
+        <div className="space-y-2 mb-4">
           <div className="h-2 bg-[#f5f5f5] rounded w-full"></div>
           <div className="h-2 bg-[#f5f5f5] rounded w-11/12"></div>
-          <div className="h-2 bg-[#f5f5f5] rounded w-4/5"></div>
-          <div className="h-2 bg-[#e5e5e5] rounded w-full"></div>
+          <div className="h-2 bg-[#c9a66b]/30 rounded w-4/5"></div>
+          <div className="h-2 bg-[#f5f5f5] rounded w-full"></div>
           <div className="h-2 bg-[#f5f5f5] rounded w-5/6"></div>
         </div>
-        <div className="flex gap-2 mt-4">
+        <div className="flex items-center gap-2 p-2 bg-[#3d3d3d] rounded-lg">
+          <div className="w-2 h-2 bg-[#c9a66b] rounded-full animate-pulse"></div>
+          <span className="text-[10px] text-white">Paragraph 3 wird generiert...</span>
+        </div>
+        <div className="flex gap-2 mt-3">
           <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">§433 BGB</span>
-          <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">8 Klauseln</span>
+          <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">§925 BGB</span>
+          <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">12 Klauseln</span>
         </div>
       </div>
     </div>
   );
 }
 
-function CollaborationMockup() {
+function ReviewMockup() {
   return (
     <div className="bg-white shadow-soft border border-[#e8e8e8] rounded-xl overflow-hidden">
       <div className="bg-[#fafafa] border-b border-[#e8e8e8] p-3 flex items-center gap-2">
-        <Users className="w-4 h-4 text-[#3d3d3d]" />
-        <span className="text-xs font-medium text-[#1a1a1a]">Kollaboration</span>
+        <CheckCircle className="w-4 h-4 text-[#1a1a1a]" />
+        <span className="text-xs font-medium text-[#1a1a1a]">Prüfung & Freigabe</span>
       </div>
       <div className="p-4 space-y-3">
-        <div className="flex items-center gap-3 p-3 bg-[#fafafa] rounded-lg">
-          <div className="w-8 h-8 bg-[#e5e5e5] rounded-full flex items-center justify-center text-xs text-[#6b6b6b]">M</div>
+        <div className="flex items-center gap-3 p-3 bg-[#fafafa] rounded-lg border border-[#e8e8e8]">
+          <div className="w-8 h-8 bg-[#1a1a1a] rounded-full flex items-center justify-center">
+            <span className="text-xs text-white font-medium">N</span>
+          </div>
           <div className="flex-1">
-            <div className="text-sm text-[#1a1a1a]">Bitte Kaufpreis prüfen</div>
-            <div className="text-xs text-[#9a9a9a]">vor 5 Minuten</div>
+            <div className="text-xs text-[#1a1a1a] font-medium">Notar prüft Entwurf</div>
+            <div className="text-[10px] text-[#9a9a9a]">In Bearbeitung</div>
           </div>
+          <div className="w-4 h-4 border-2 border-[#c9a66b] border-t-transparent rounded-full animate-spin"></div>
         </div>
-        <div className="flex items-center gap-3 p-3 bg-[#fafafa] rounded-lg">
-          <div className="w-8 h-8 bg-[#e5e5e5] rounded-full flex items-center justify-center text-xs text-[#6b6b6b]">K</div>
-          <div className="flex-1">
-            <div className="text-sm text-[#1a1a1a]">Grundschuld-Klausel angepasst</div>
-            <div className="text-xs text-[#9a9a9a]">vor 12 Minuten</div>
-          </div>
+        <div className="space-y-2">
+          {[
+            "Parteienangaben vollständig",
+            "Kaufpreis geprüft",
+            "Grundbuchdaten korrekt",
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-[#1a1a1a]" />
+              <span className="text-xs text-[#3d3d3d]">{item}</span>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
-  );
-}
-
-function ChecklistMockup() {
-  return (
-    <div className="bg-white shadow-soft border border-[#e8e8e8] rounded-xl overflow-hidden">
-      <div className="bg-[#fafafa] border-b border-[#e8e8e8] p-3 flex items-center gap-2">
-        <FileCheck className="w-4 h-4 text-[#1a1a1a]" />
-        <span className="text-xs font-medium text-[#1a1a1a]">Vollständigkeits-Check</span>
-      </div>
-      <div className="p-4 space-y-2">
-        {[
-          "Parteien vollständig",
-          "Kaufpreis definiert",
-          "Zahlungsmodalitäten",
-          "Auflassung",
-        ].map((item, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-[#1a1a1a]" />
-            <span className="text-sm text-[#3d3d3d]">{item}</span>
-          </div>
-        ))}
+        <div className="flex items-center gap-2 p-2 bg-[#c9a66b]/10 rounded-lg border border-[#c9a66b]/20">
+          <Check className="w-4 h-4 text-[#c9a66b]" />
+          <span className="text-[10px] text-[#1a1a1a]">Zur Beurkundung freigegeben</span>
+        </div>
       </div>
     </div>
   );
@@ -256,19 +299,55 @@ function ExportMockup() {
     <div className="bg-white shadow-soft border border-[#e8e8e8] rounded-xl overflow-hidden">
       <div className="bg-[#fafafa] border-b border-[#e8e8e8] p-3 flex items-center gap-2">
         <Download className="w-4 h-4 text-[#c9a66b]" />
-        <span className="text-xs font-medium text-[#1a1a1a]">Vollzugsdokumentation</span>
+        <span className="text-xs font-medium text-[#1a1a1a]">Export & Integration</span>
       </div>
-      <div className="p-4 space-y-3">
-        <div className="p-3 bg-[#fafafa] rounded-lg">
-          <div className="flex items-center gap-2 mb-2">
-            <CheckCircle className="w-4 h-4 text-[#6b6b6b]" />
-            <span className="text-sm font-medium text-[#1a1a1a]">Beurkundung abgeschlossen</span>
+      <div className="p-4 space-y-4">
+        {/* Success indicator */}
+        <div className="flex items-center gap-3 p-3 bg-[#c9a66b]/10 rounded-lg border border-[#c9a66b]/20">
+          <div className="w-8 h-8 bg-[#c9a66b] rounded-full flex items-center justify-center">
+            <Check className="w-4 h-4 text-white" />
           </div>
-          <div className="text-xs text-[#6b6b6b]">Nr. 234/2024 - 15.03.2024</div>
+          <div>
+            <div className="text-xs font-medium text-[#1a1a1a]">Beurkundung abgeschlossen</div>
+            <div className="text-[10px] text-[#6b6b6b]">Nr. 234/2024 • 15.03.2024</div>
+          </div>
         </div>
-        <div className="flex gap-2">
-          <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">XNotar</span>
-          <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">PDF</span>
+
+        {/* Export formats */}
+        <div className="grid grid-cols-3 gap-2">
+          <div className="flex flex-col items-center gap-2 p-3 bg-[#fafafa] rounded-lg border border-[#e8e8e8] hover:border-[#c9a66b]/50 transition-colors">
+            <div className="w-10 h-10 bg-[#1a1a1a] rounded-lg flex items-center justify-center">
+              <FileText className="w-5 h-5 text-white" />
+            </div>
+            <div className="text-center">
+              <div className="text-[10px] font-medium text-[#1a1a1a]">DOCX</div>
+              <div className="text-[9px] text-[#9a9a9a]">Bearbeitbar</div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-2 p-3 bg-[#fafafa] rounded-lg border border-[#e8e8e8] hover:border-[#c9a66b]/50 transition-colors">
+            <div className="w-10 h-10 bg-[#6b6b6b] rounded-lg flex items-center justify-center">
+              <FileText className="w-5 h-5 text-white" />
+            </div>
+            <div className="text-center">
+              <div className="text-[10px] font-medium text-[#1a1a1a]">PDF/A</div>
+              <div className="text-[9px] text-[#9a9a9a]">Archiv</div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-2 p-3 bg-[#fafafa] rounded-lg border border-[#e8e8e8] hover:border-[#c9a66b]/50 transition-colors">
+            <div className="w-10 h-10 bg-[#c9a66b] rounded-lg flex items-center justify-center">
+              <Database className="w-5 h-5 text-white" />
+            </div>
+            <div className="text-center">
+              <div className="text-[10px] font-medium text-[#1a1a1a]">XNotar</div>
+              <div className="text-[9px] text-[#9a9a9a]">Direkt</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Audit trail info */}
+        <div className="flex items-center gap-2 p-2 bg-[#f5f5f5] rounded-lg">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#c9a66b]"></div>
+          <span className="text-[10px] text-[#6b6b6b]">Vollständiger Audit-Trail dokumentiert</span>
         </div>
       </div>
     </div>

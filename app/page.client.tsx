@@ -176,17 +176,6 @@ function TrustBadge({
   );
 }
 
-function StatCard({ number, label }: { number: string; label: string }) {
-  return (
-    <div className="text-center">
-      <div className="font-serif text-3xl md:text-4xl font-medium text-[#1a1a1a] mb-1 tracking-tight">
-        {number}
-      </div>
-      <div className="text-xs text-[#6b6b6b]">{label}</div>
-    </div>
-  );
-}
-
 function ProcessStep({
   number,
   title,
@@ -309,30 +298,6 @@ export default function HomePageClient() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="py-10 sm:py-12 bg-[#faf8f7]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
-            <StatCard
-              number={t("stats.timeSaved.value")}
-              label={t("stats.timeSaved.label")}
-            />
-            <StatCard
-              number={t("stats.timeComparison.value")}
-              label={t("stats.timeComparison.label")}
-            />
-            <StatCard
-              number={t("stats.gdpr.value")}
-              label={t("stats.gdpr.label")}
-            />
-            <StatCard
-              number={t("stats.stgb.value")}
-              label={t("stats.stgb.label")}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Problem Section - Pain Point */}
       <section className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -438,14 +403,14 @@ export default function HomePageClient() {
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="text-[#6b6b6b]">
-                        {t("solution.chart.dataEntry")}
+                        {t("solution.chart.upload")}
                       </span>
                       <span className="text-[#1a1a1a] font-medium">
-                        15 {ct("timeUnits.minutes")}
+                        5 {ct("timeUnits.minutes")}
                       </span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
-                      <div className="h-2 bg-[#c9a66b] rounded-full w-[20%]"></div>
+                      <div className="h-2 bg-[#c9a66b] rounded-full w-[25%]"></div>
                     </div>
                   </div>
                   <div>
@@ -458,7 +423,7 @@ export default function HomePageClient() {
                       </span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
-                      <div className="h-2 bg-[#c9a66b] rounded-full w-[10%]"></div>
+                      <div className="h-2 bg-[#c9a66b] rounded-full w-[25%]"></div>
                     </div>
                   </div>
                   <div>
@@ -471,7 +436,7 @@ export default function HomePageClient() {
                       </span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full">
-                      <div className="h-2 bg-[#c9a66b] rounded-full w-[15%]"></div>
+                      <div className="h-2 bg-[#c9a66b] rounded-full w-[50%]"></div>
                     </div>
                   </div>
                 </div>
@@ -481,7 +446,7 @@ export default function HomePageClient() {
                       {t("solution.chart.total")}
                     </span>
                     <span className="text-xl font-serif font-medium text-[#c9a66b]">
-                      ~30 {ct("timeUnits.minutes")}
+                      ~20 {ct("timeUnits.minutes")}
                     </span>
                   </div>
                 </div>
@@ -646,23 +611,28 @@ export default function HomePageClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-12 left-1/3 right-1/3 h-px bg-[#e8e8e8]"></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-[#e8e8e8]"></div>
 
             <ProcessStep
-              number={t("process.steps.capture.number")}
-              title={t("process.steps.capture.title")}
-              description={t("process.steps.capture.description")}
+              number={t("process.steps.upload.number")}
+              title={t("process.steps.upload.title")}
+              description={t("process.steps.upload.description")}
             />
             <ProcessStep
-              number={t("process.steps.generate.number")}
-              title={t("process.steps.generate.title")}
-              description={t("process.steps.generate.description")}
+              number={t("process.steps.extract.number")}
+              title={t("process.steps.extract.title")}
+              description={t("process.steps.extract.description")}
             />
             <ProcessStep
-              number={t("process.steps.finalize.number")}
-              title={t("process.steps.finalize.title")}
-              description={t("process.steps.finalize.description")}
+              number={t("process.steps.draft.number")}
+              title={t("process.steps.draft.title")}
+              description={t("process.steps.draft.description")}
+            />
+            <ProcessStep
+              number={t("process.steps.review.number")}
+              title={t("process.steps.review.title")}
+              description={t("process.steps.review.description")}
             />
           </div>
         </div>

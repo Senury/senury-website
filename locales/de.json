@@ -50,9 +50,9 @@
   "home": {
     "hero": {
       "badge": "Jetzt verfügbar — Made in Germany",
-      "title": "Kaufverträge in Minuten.",
+      "title": "Urkunden in Minuten.",
       "subtitle": "Ihre Komplettlösung für das Notariat.",
-      "description": "Weniger Zeit für repetitive Arbeit. Mehr Zeit für Ihre Mandanten – mit unterstützender KI, die Ihnen die Kontrolle lässt.",
+      "description": "Laden Sie vorliegende Unterlagen hoch, lassen Sie Daten extrahieren, prüfen Sie den Entwurf – mit unterstützender KI, die Ihnen die volle Kontrolle lässt.",
       "ctaPrimary": "Kostenlose Demo vereinbaren",
       "ctaSecondary": "Sicherheits-Whitepaper"
     },
@@ -82,13 +82,13 @@
     },
     "problem": {
       "label": "Das Problem",
-      "title": "Täglich 4+ Stunden für Entwürfe?",
-      "description": "Der nächste Kaufvertrag wartet – und wieder beginnt die mühsame Arbeit: Stammdaten abtippen, Paragraphen prüfen, Klauseln kopieren, Formatierungen korrigieren. Stunden vergehen, bevor der erste Entwurf steht.",
+      "title": "Stundenlange manuelle Datenerfassung?",
+      "description": "Die vorliegenden Unterlagen sind umfangreich – und nun beginnt die mühsame Arbeit: Daten per Hand übertragen, strukturieren, Querschnitte prüfen. Stunden vergehen, bevor Sie mit der inhaltlichen Arbeit beginnen können.",
       "painPoints": [
-        "Repetitive Tipp-Arbeit statt inhaltlicher Prüfung",
-        "Zeitdruck bei begrenzten Kapazitäten",
-        "Hoher Compliance-Druck durch §203 StGB",
-        "Risiko von Übertragungsfehlern"
+        "Manuelle Extraktion aus vorliegenden Dokumenten",
+        "Risiko von Übertragungsfehlern bei komplexen Daten",
+        "Zeitverlust statt inhaltlicher Prüfung",
+        "Compliance-Druck durch §203 StGB"
       ],
       "chart": {
         "title": "Zeitaufwand pro Kaufvertrag",
@@ -100,17 +100,17 @@
     },
     "solution": {
       "label": "Die Lösung",
-      "title": "Senury reduziert das auf 30 Minuten",
-      "description": "Senury übernimmt die repetitive Arbeit. Sie behalten die volle Kontrolle über Inhalt und Qualität. Die KI generiert den Entwurf, Sie prüfen und finalisieren.",
+      "title": "Von Dokumenten zum Entwurf in Minuten",
+      "description": "Laden Sie vorliegende Sachunterlagen und Kundendokumente hoch. Senury extrahiert automatisch alle relevanten Daten, prüft sie auf Vollständigkeit und erstellt den Vertrag Absatz für Absatz. Sie prüfen und finalisieren.",
       "benefits": [
-        "Strukturierte Datenerfassung mit Validierung",
-        "KI-gestützte Entwurfserstellung in Minuten",
-        "Intelligente Klausel-Vorschläge",
-        "Lückenlose Dokumentation für Compliance"
+        "Automatische Extraktion aus vorliegenden Unterlagen",
+        "Intelligente Validierung der strukturierten Daten",
+        "KI-gestützte Texterstellung Absatz für Absatz",
+        "Fachkundige Prüfung vor der Beurkundung"
       ],
       "chart": {
         "title": "Mit Senury",
-        "dataEntry": "Datenerfassung",
+        "upload": "Dokumente hochladen",
         "aiDraft": "KI-Entwurf",
         "yourReview": "Ihre Prüfung",
         "total": "Gesamt"
@@ -175,22 +175,27 @@
     "process": {
       "label": "Ablauf",
       "title": "So funktioniert Senury",
-      "description": "Vom Mandantengespräch bis zur Siegelung – in drei klaren Schritten",
+      "description": "Vom Upload bis zur Beurkundung – vier klare Schritte",
       "steps": {
-        "capture": {
+        "upload": {
           "number": "1",
-          "title": "Daten erfassen",
-          "description": "Erfassen Sie Parteien, Objektdaten und Vertragskonditionen in strukturierten Formularen."
+          "title": "Dokumente hochladen",
+          "description": "Laden Sie vorliegende Sachunterlagen und Kundendokumente hoch. Weitere Dokumente können ergänzt werden."
         },
-        "generate": {
+        "extract": {
           "number": "2",
-          "title": "Entwurf generieren",
-          "description": "Senury erstellt den ersten Entwurf basierend auf Ihren Vorlagen und Klauseln."
+          "title": "Daten extrahieren",
+          "description": "Die KI erkennt und extrahiert automatisch alle relevanten Informationen mit Validierung."
         },
-        "finalize": {
+        "draft": {
           "number": "3",
-          "title": "Prüfen & finalisieren",
-          "description": "Sie prüfen, korrigieren und finalisieren. Export als DOCX oder PDF/A."
+          "title": "KI schreibt den Entwurf",
+          "description": "Senury generiert die Urkunde Absatz für Absatz – basierend auf Ihren bewährten Klauseln und Vorlagen."
+        },
+        "review": {
+          "number": "4",
+          "title": "Prüfen & beurkunden",
+          "description": "Sie überprüfen den Entwurf inhaltlich, nehmen Korrekturen vor und finalisieren zur Beurkundung."
         }
       }
     },
@@ -671,38 +676,38 @@
   "process": {
     "hero": {
       "badge": "Prozess",
-      "title": "Effizienz von der ersten Erfassung bis zum Vollzug",
-      "description": "Ein durchdachter Prozess, der Ihr Notariat auf das nächste Level hebt – ohne Kompromisse bei Qualität und Sicherheit."
+      "title": "Vier Schritte zur fertigen Urkunde",
+      "description": "Senury unterstützt Sie durch den gesamten Erstellungsprozess – von der Dokumentenerfassung bis zur finalen Prüfung. Sie behalten stets die volle Kontrolle."
     },
     "timeline": {
       "steps": {
         "intake": {
           "number": "01",
-          "title": "Intake",
-          "subtitle": "Strukturierte Datenerfassung",
-          "description": "Alle relevanten Informationen werden systematisch erfasst. Plausibilitätsprüfungen in Echtzeit verhindern Fehler von Anfang an.",
-          "features": ["Automatische Validierung", "Dokumenten-Upload", "Vollständigkeitsprüfung"]
+          "title": "Erfassung",
+          "subtitle": "Dokumente hochladen",
+          "description": "Laden Sie vorliegende Sachunterlagen und Kundendokumente bequem hoch. Senury erkennt automatisch die Dokumententypen und bereitet die Daten für die Extraktion vor.",
+          "features": ["Drag-and-Drop Upload", "Automatische Dokumentenerkennung", "Sichere AES-256-Verschlüsselung"]
+        },
+        "extraction": {
+          "number": "02",
+          "title": "Extraktion",
+          "subtitle": "Daten extrahieren",
+          "description": "Die KI extrahiert automatisch alle relevanten Daten aus Ihren Dokumenten. Pflichtfelder werden validiert, Unstimmigkeiten markiert – für eine fehlerfreie Grundlage.",
+          "features": ["KI-gestützte Texterkennung", "Echtzeit-Validierung", "Plausibilitätsprüfung"]
         },
         "drafting": {
-          "number": "02",
+          "number": "03",
           "title": "Drafting",
-          "subtitle": "KI-gestützte Entwurfserstellung",
-          "description": "Basierend auf den erfassten Daten und Ihren Vorlagen erstellt Senury einen ersten strukturierten Entwurf in Minuten.",
-          "features": ["Template-basierte Generierung", "Klausel-Vorschläge", "Automatische Formatierung"]
+          "subtitle": "KI-Entwurf erstellen",
+          "description": "Basierend auf den extrahierten Daten und Ihren bewährten Vorlagen erstellt Senury einen strukturierten Vertragsentwurf. Jede Klausel wird einzeln generiert und kann nachvollzogen werden.",
+          "features": ["Template-basierte Generierung", "Rechtsnorm-Referenzen", "Nachvollziehbare Entwurfshistorie"]
         },
         "review": {
-          "number": "03",
-          "title": "Review",
-          "subtitle": "Kollaborative Qualitätssicherung",
-          "description": "Notar und Mitarbeitende prüfen den Entwurf im Team. Kommentare und Änderungen werden versioniert und nachvollziehbar.",
-          "features": ["Echtzeit-Kollaboration", "Kommentarfunktion", "Versionsvergleich"]
-        },
-        "finalization": {
           "number": "04",
-          "title": "Finalisierung",
-          "subtitle": "Vollständigkeits-Check",
-          "description": "Vor der Beurkundung führt Senury einen finalen Vollständigkeits-Check durch und markiert offene Punkte.",
-          "features": ["Checklisten-Modus", "Fristen-Überblick", "Unterschriften-Protokoll"]
+          "title": "Review",
+          "subtitle": "Prüfen & finalisieren",
+          "description": "Sie prüfen den Entwurf auf inhaltliche Richtigkeit und Vollständigkeit. Alle Änderungen werden dokumentiert. Nach Ihrer Freigabe steht die Urkunde zur Beurkundung bereit.",
+          "features": ["Integrierter Prüfmodus", "Vollständigkeits-Checkliste", "Freigabe-Workflow"]
         },
         "export": {
           "number": "05",
