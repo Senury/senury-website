@@ -67,10 +67,10 @@ export default function DatenschutzPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Sidebar Navigation - Sticky on Desktop */}
             <div className="lg:col-span-4 xl:col-span-3">
-              <div className="lg:sticky lg:top-28 lg:h-[calc(100vh-8rem)] lg:flex lg:flex-col">
-                <Card className="bg-[#faf8f7] border-[#e8e8e8] rounded-xl overflow-hidden lg:flex-1 lg:flex lg:flex-col">
-                  <CardContent className="p-0 lg:flex-1 lg:flex lg:flex-col lg:overflow-hidden">
-                    <nav className="divide-y divide-[#e8e8e8] lg:overflow-y-auto lg:flex-1">
+              <div className="lg:sticky lg:top-28 lg:h-[calc(100vh-8rem)]">
+                <Card className="bg-[#faf8f7] border-[#e8e8e8] rounded-xl overflow-hidden h-full">
+                  <CardContent className="p-0 h-full overflow-y-auto">
+                    <nav className="divide-y divide-[#e8e8e8]">
                       {sections.map((section) => (
                         <Link
                           key={section.id}
@@ -85,25 +85,27 @@ export default function DatenschutzPage() {
                         </Link>
                       ))}
                     </nav>
-                  </CardContent>
-                </Card>
 
-                {/* Quick Contact Card */}
-                <Card className="mt-4 bg-[#1a1a1a] border-0 rounded-xl overflow-hidden flex-shrink-0">
-                  <CardContent className="p-6">
-                    <h3 className="font-serif text-lg text-white mb-2">
-                      {t("sidebar.contactTitle")}
-                    </h3>
-                    <p className="text-sm text-[#9a9a9a] mb-4">
-                      {t("sidebar.contactText")}
-                    </p>
-                    <Link
-                      href="/kontakt/"
-                      className="inline-flex items-center gap-2 text-sm text-[#c9a66b] hover:text-white transition-colors"
-                    >
-                      {t("sidebar.contactLink")}
-                      <ChevronRight className="w-4 h-4" />
-                    </Link>
+                    {/* Quick Contact Card - at bottom of scrollable area */}
+                    <div className="p-4">
+                      <Card className="bg-[#1a1a1a] border-0 rounded-xl overflow-hidden">
+                        <CardContent className="p-6">
+                          <h3 className="font-serif text-lg text-white mb-2">
+                            {t("sidebar.contactTitle")}
+                          </h3>
+                          <p className="text-sm text-[#9a9a9a] mb-4">
+                            {t("sidebar.contactText")}
+                          </p>
+                          <Link
+                            href="/kontakt/"
+                            className="inline-flex items-center gap-2 text-sm text-[#c9a66b] hover:text-white transition-colors"
+                          >
+                            {t("sidebar.contactLink")}
+                            <ChevronRight className="w-4 h-4" />
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
