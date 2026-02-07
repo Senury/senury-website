@@ -33,9 +33,13 @@ export default function AblaufPageClient() {
         </svg>
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8] mb-6 inline-block">
-              {t("hero.badge")}
-            </span>
+            <div className="inline-flex items-center gap-3 mb-6">
+              <div className="w-8 h-px bg-[#c9a66b]/40" />
+              <span className="inline-flex items-center px-4 py-2 bg-white border border-[#e8e8e8] text-xs font-medium text-[#6b6b6b] rounded-full shadow-sm">
+                {t("hero.badge")}
+              </span>
+              <div className="w-8 h-px bg-[#c9a66b]/40" />
+            </div>
             <h1 className="font-serif font-medium text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] mb-6 tracking-tight">
               {t("hero.title")}
             </h1>
@@ -247,12 +251,12 @@ function AIDraftingMockup() {
         </div>
         <div className="flex items-center gap-2 p-2 bg-[#3d3d3d] rounded-lg">
           <div className="w-2 h-2 bg-[#c9a66b] rounded-full animate-pulse"></div>
-          <span className="text-[10px] text-white">Paragraph 3 wird generiert...</span>
+          <span className="text-[10px] text-white">3: "Kaufpreis; Fälligkeit" wird generiert...</span>
         </div>
         <div className="flex gap-2 mt-3">
           <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">§433 BGB</span>
           <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">§925 BGB</span>
-          <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">12 Klauseln</span>
+          <span className="px-2 py-1 bg-[#f5f5f5] text-[#6b6b6b] text-[10px] rounded">16 Klauseln</span>
         </div>
       </div>
     </div>
@@ -321,7 +325,7 @@ function ExportMockup() {
         <div className="grid grid-cols-3 gap-2">
           <div className="flex flex-col items-center gap-2 p-3 bg-[#fafafa] rounded-lg border border-[#e8e8e8] hover:border-[#c9a66b]/50 transition-colors">
             <div className="w-10 h-10 bg-[#1a1a1a] rounded-lg flex items-center justify-center">
-              <FileText className="w-5 h-5 text-white" />
+              <img src="/icons/docx-file-icon.svg" alt="DOCX" className="w-6 h-6 brightness-0 invert" />
             </div>
             <div className="text-center">
               <div className="text-[10px] font-medium text-[#1a1a1a]">DOCX</div>
@@ -330,7 +334,7 @@ function ExportMockup() {
           </div>
           <div className="flex flex-col items-center gap-2 p-3 bg-[#fafafa] rounded-lg border border-[#e8e8e8] hover:border-[#c9a66b]/50 transition-colors">
             <div className="w-10 h-10 bg-[#6b6b6b] rounded-lg flex items-center justify-center">
-              <FileText className="w-5 h-5 text-white" />
+              <img src="/icons/pdf-file-icon.svg" alt="PDF/A" className="w-6 h-6 brightness-0 invert" />
             </div>
             <div className="text-center">
               <div className="text-[10px] font-medium text-[#1a1a1a]">PDF/A</div>
@@ -339,11 +343,11 @@ function ExportMockup() {
           </div>
           <div className="flex flex-col items-center gap-2 p-3 bg-[#fafafa] rounded-lg border border-[#e8e8e8] hover:border-[#c9a66b]/50 transition-colors">
             <div className="w-10 h-10 bg-[#c9a66b] rounded-lg flex items-center justify-center">
-              <Database className="w-5 h-5 text-white" />
+              <span className="text-[10px] font-bold text-white">{'{ }'}</span>
             </div>
             <div className="text-center">
-              <div className="text-[10px] font-medium text-[#1a1a1a]">XNotar</div>
-              <div className="text-[9px] text-[#9a9a9a]">Direkt</div>
+              <div className="text-[10px] font-medium text-[#1a1a1a]">JSON</div>
+              <div className="text-[9px] text-[#9a9a9a]">Daten</div>
             </div>
           </div>
         </div>

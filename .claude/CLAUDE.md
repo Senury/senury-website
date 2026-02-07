@@ -129,11 +129,17 @@ Usage: bg-[#f5f5f5] text-[#6b6b6b] border border-[#e8e8e8]
 | Sicherheit | `/sicherheit` | Compliance, security details, certifications |
 | Ablauf | `/ablauf` | Process timeline (5 steps), flexibility cards |
 | FAQ | `/faq` | Searchable, categorized accordion |
+| Über uns | `/ueber-uns` | Team, mission, company information |
+| Kontakt | `/kontakt` | Contact form and company details |
+| Demo | `/demo` | Demo request page |
+| AGB | `/agb` | Terms of service (legal) |
+| Datenschutz | `/datenschutz` | Privacy policy (legal) |
+| Impressum | `/impressum` | Legal notice (legal) |
 
 ### Shared Components
 
-- `Navigation.tsx`: Fixed header with backdrop-blur, pill nav items, rounded-full CTA
-- `Footer.tsx`: 4-column layout, warm cream background, pill badge
+- `components/layout/Navigation.tsx`: Fixed header with backdrop-blur, pill nav items, rounded-full CTA
+- `components/layout/Footer.tsx`: 4-column layout, warm cream background, pill badge
 
 ### UI Mockup Patterns
 

@@ -4,7 +4,7 @@
 **bun** - Fast JavaScript runtime and package manager
 
 ## Framework & Runtime
-- **Next.js 14+** - React framework with App Router
+- **Next.js 16+** - React framework with App Router
 - **React 18+** - UI library
 - **TypeScript** - Type safety
 
@@ -32,10 +32,21 @@ app/
 │   └── page.tsx
 ├── faq/
 │   └── page.tsx
-└── components/
-    ├── Navigation.tsx      # Fixed header with mobile menu
-    ├── Footer.tsx          # Site footer
-    └── ui/                 # shadcn components
+├── ueber-uns/
+│   └── page.tsx
+└── (legal)/
+    ├── agb/
+    │   └── page.tsx
+    ├── datenschutz/
+    │   └── page.tsx
+    └── impressum/
+        └── page.tsx
+
+components/
+├── layout/
+│   ├── Navigation.tsx      # Fixed header with mobile menu
+│   └── Footer.tsx          # Site footer
+└── ui/                     # shadcn components
 ```
 
 ## Commands
@@ -61,14 +72,14 @@ bun add <package>
 
 ### Color Palette
 ```
---navy-900: #0f172a       (Primary text, headers)
---navy-800: #1e293b       (Secondary elements)
---navy-700: #334155       (Muted navy)
---slate-500: #64748b      (Secondary text)
---slate-200: #e2e8f0      (Borders)
---slate-50: #f8fafc       (Subtle backgrounds)
---white: #ffffff          (Primary background)
---accent: #3b82f6         (Subtle blue highlights)
+--color-charcoal: #1a1a1a       (Primary text, headings, dark sections)
+--color-warm-gray-600: #6b6b6b  (Secondary text, descriptions)
+--color-warm-gray-400: #9a9a9a  (Tertiary text, placeholders)
+--color-warm-gray-200: #e5e5e5  (Light borders, dividers)
+--color-border-subtle: #e8e8e8  (Card borders, section dividers)
+--color-warm-white: #fdfcfb     (Hero backgrounds, gradient start)
+--color-warm-cream: #faf8f7     (Section backgrounds, cards)
+--color-accent: #c9a66b         (Accent color - copper, highlights, CTAs)
 ```
 
 ## shadcn/ui Components Used
