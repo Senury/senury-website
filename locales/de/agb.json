@@ -58,7 +58,7 @@
         "model": {
           "title": "Muster-Widerrufsformular",
           "recipient": "An: Senury UG (haftungsbeschränkt)",
-          "address": "Musterstraße 1, 80333 München",
+          "address": "Baron-Voght-Straße 19d, 22609 Hamburg",
           "text": "Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*)"
         }
       },
@@ -101,7 +101,7 @@
       "schlussbestimmungen": {
         "title": "§9 Schlussbestimmungen",
         "p1": "Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts.",
-        "p2": "Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist München, sofern der Kunde Kaufmann ist.",
+        "p2": "Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist Hamburg, sofern der Kunde Kaufmann ist.",
         "p3": "Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt der Vertrag im Übrigen wirksam. Die unwirksame Bestimmung wird durch eine wirksame ersetzt, die dem wirtschaftlichen Zweck am nächsten kommt."
       }
     },
