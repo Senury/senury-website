@@ -20,9 +20,6 @@ export function Footer() {
             <p className="mt-4 text-sm text-[#6b6b6b] leading-relaxed">
               {t("brand.description")}
             </p>
-            <div className="mt-4 flex items-center gap-2">
-              <span className="pill-badge bg-[#f5f5f5] text-[#6b6b6b]">{t("brand.badge")}</span>
-            </div>
           </div>
 
           {/* Product Links */}
