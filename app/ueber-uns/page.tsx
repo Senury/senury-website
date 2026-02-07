@@ -18,9 +18,9 @@ const teamMembers = [
     },
     education: "Studiert Mathematik, Wirtschaft und Programmieren in Utrecht",
     bio: [
-      "Für mich ist es ein großes Glück mit Notaren zu arbeiten. Ich selbst komme aus einer Notarenfamilie in Blankenese. Daher ist dies ein Teil meiner Kindheit. Etwas, das damals fern und unverständlich war, ist jetzt Ambition und Interesse. Es bringt mich näher an meine Familie, an mein Team, aber auch an mich selbst. Und genau so hoffe ich, dass es mich näher an Sie bringt – an Notare, mit denen wir gemeinsam etwas verändern wollen.",
+      "Für mich ist es ein großes Glück, mit Notaren zusammenzuarbeiten. Ich selbst komme aus einer Notarsfamilie in Blankenese. Daher ist dies ein Teil meiner Kindheit. Etwas, das damals fern und unverständlich war, ist jetzt Ambition und Interesse. Es bringt mich näher an meine Familie, an mein Team, aber auch an mich selbst. Und genau so hoffe ich, dass es mich näher an Sie bringt. An Notare, mit denen wir gemeinsam etwas verändern wollen.",
       "Was ist Senury für mich?",
-      "Ein Restaurant mit guter Qualität, aber noch besseren Preisen, wo dir Leitungswasser kostenlos angeboten wird, wo die Bedienung Spaß am Job hat und dich herzlich empfängt. Das ist Senury für mich. Etwas Reales, Veränderndes. Was Notare entlastet und zufriedenstellt."
+      "Ein Restaurant mit guter Qualität, aber noch besseren Preisen; wo dir Leitungswasser kostenlos angeboten wird, wo die Bedienung Spaß am Job hat und dich herzlich empfängt. Das ist Senury für mich. Etwas Reales, Veränderndes. Etwas, das Notare entlastet und zufriedenstellt."
     ],
     number: "01",
   },
