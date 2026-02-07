@@ -80,7 +80,7 @@ function WorkspaceMockup() {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-[#c9a66b] animate-pulse"></div>
                 <span className="text-[9px] text-[#9a9a9a]">Gespeichert</span>
               </div>
             </div>
@@ -144,7 +144,7 @@ function WorkspaceMockup() {
                 <span className="text-[9px] text-[#9a9a9a]">Zeile 142, Spalte 12</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 bg-green-100 text-green-700 text-[8px] rounded">§203 OK</span>
+                <span className="px-2 py-0.5 bg-[#c9a66b]/10 text-[#1a1a1a] text-[8px] rounded">§203 OK</span>
                 <span className="text-[9px] text-[#9a9a9a]">1.240 Wörter</span>
               </div>
             </div>
@@ -277,11 +277,11 @@ function VersionCompareMockup() {
         <GitCompare className="w-4 h-4 text-[#9a9a9a]" />
       </div>
       <div className="p-3 space-y-2">
-        <div className="flex items-center gap-2 p-2 bg-red-50 rounded border border-red-100">
-          <span className="text-[10px] text-red-600 line-through">450.000 €</span>
+        <div className="flex items-center gap-2 p-2 bg-[#fafafa] rounded border border-[#e8e8e8]">
+          <span className="text-[10px] text-[#9a9a9a] line-through">450.000 €</span>
         </div>
-        <div className="flex items-center gap-2 p-2 bg-green-50 rounded border border-green-100">
-          <span className="text-[10px] text-green-600">475.000 €</span>
+        <div className="flex items-center gap-2 p-2 bg-[#faf8f7] rounded border border-[#c9a66b]/20">
+          <span className="text-[10px] text-[#1a1a1a] font-medium">475.000 €</span>
           <span className="text-[9px] text-[#9a9a9a]">— Kaufpreis angepasst</span>
         </div>
       </div>
