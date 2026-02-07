@@ -14,8 +14,8 @@
       "pilot": {
         "name": "Pilot",
         "description": "Ideal für kleine Notariate, die Senury testen möchten",
-        "priceMonthly": "499",
-        "priceYearly": "449",
+        "priceMonthly": "199",
+        "priceYearly": "179",
         "cta": "Anfragen",
         "features": [
           "Bis zu 50 Vorgänge/Monat",
@@ -29,8 +29,8 @@
       "professional": {
         "name": "Professional",
         "description": "Das optimale Paket für etablierte Notariate",
-        "priceMonthly": "899",
-        "priceYearly": "809",
+        "priceMonthly": "499",
+        "priceYearly": "449",
         "cta": "Anfragen",
         "popular": "Beliebteste Wahl",
         "features": [
