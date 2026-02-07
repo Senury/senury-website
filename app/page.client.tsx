@@ -188,7 +188,7 @@ function ProcessStep({
 }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="w-14 h-14 bg-white border-2 border-[#1a1a1a] text-[#1a1a1a] flex items-center justify-center rounded-full mb-5 font-serif text-lg font-medium">
+      <div className="w-14 h-14 bg-white border-2 border-[#1a1a1a] text-[#1a1a1a] flex items-center justify-center rounded-full mb-5 font-serif text-lg font-medium relative z-10">
         {number}
       </div>
       <h3 className="font-serif text-lg font-medium text-[#1a1a1a] mb-2">

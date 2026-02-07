@@ -85,47 +85,53 @@ function WorkspaceMockup() {
               </div>
             </div>
 
-            {/* Document Content with better typography simulation */}
+            {/* Document Content - Kaufvertrag Draft */}
             <div className="flex-1 p-5 overflow-hidden">
               <div className="max-w-lg mx-auto space-y-4">
                 {/* Document title area */}
                 <div className="text-center pb-4 border-b border-[#f0f0f0]">
-                  <div className="h-2 w-24 bg-[#e8e8e8] rounded mx-auto mb-3"></div>
-                  <div className="h-1.5 w-32 bg-[#f5f5f5] rounded mx-auto"></div>
+                  <div className="font-serif text-[11px] text-[#1a1a1a] tracking-wide">Kaufvertrag</div>
+                  <div className="text-[8px] text-[#9a9a9a] mt-1">Entwurf vom 7. Februar 2025</div>
                 </div>
 
-                {/* Paragraph blocks with varying opacity for depth */}
-                <div className="space-y-2.5">
+                {/* Contract Paragraphs with real legal content */}
+                <div className="space-y-3">
+                  {/* § 1 Kaufgegenstand */}
                   <div className="flex gap-2 items-start">
                     <div className="w-4 h-4 rounded bg-[#c9a66b]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-[7px] text-[#c9a66b]">§1</span>
+                      <span className="text-[7px] text-[#c9a66b] font-serif">§1</span>
                     </div>
-                    <div className="flex-1 space-y-1.5">
-                      <div className="h-2 bg-[#f0f0f0] rounded w-full"></div>
-                      <div className="h-2 bg-[#f5f5f5] rounded w-11/12"></div>
-                      <div className="h-2 bg-[#f8f8f8] rounded w-4/5"></div>
+                    <div className="flex-1">
+                      <div className="font-serif text-[9px] text-[#1a1a1a] font-medium mb-0.5">Kaufgegenstand</div>
+                      <div className="text-[8px] text-[#6b6b6b] leading-relaxed">
+                        Der Verkäufer veräußert das im Grundbuch...
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex gap-2 items-start pt-2">
+                  {/* § 2 Kaufpreis */}
+                  <div className="flex gap-2 items-start pt-1">
                     <div className="w-4 h-4 rounded bg-[#9a9a9a]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-[7px] text-[#9a9a9a]">§2</span>
+                      <span className="text-[7px] text-[#9a9a9a] font-serif">§2</span>
                     </div>
-                    <div className="flex-1 space-y-1.5">
-                      <div className="h-2 bg-[#f0f0f0] rounded w-full"></div>
-                      <div className="h-2 bg-[#f5f5f5] rounded w-5/6"></div>
-                      <div className="h-2 bg-[#f8f8f8] rounded w-full"></div>
-                      <div className="h-2 bg-[#f5f5f5] rounded w-3/4"></div>
+                    <div className="flex-1">
+                      <div className="font-serif text-[9px] text-[#1a1a1a] font-medium mb-0.5">Kaufpreis und Fälligkeit</div>
+                      <div className="text-[8px] text-[#6b6b6b] leading-relaxed">
+                        Der Kaufpreis beträgt <span className="text-[#c9a66b] font-medium">EUR 485.000,00</span>...
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex gap-2 items-start pt-2">
+                  {/* § 3 Auflassung */}
+                  <div className="flex gap-2 items-start pt-1">
                     <div className="w-4 h-4 rounded bg-[#c9a66b]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-[7px] text-[#c9a66b]">§3</span>
+                      <span className="text-[7px] text-[#c9a66b] font-serif">§3</span>
                     </div>
-                    <div className="flex-1 space-y-1.5">
-                      <div className="h-2 bg-[#f5f5f5] rounded w-11/12"></div>
-                      <div className="h-2 bg-[#f8f8f8] rounded w-full"></div>
+                    <div className="flex-1">
+                      <div className="font-serif text-[9px] text-[#1a1a1a] font-medium mb-0.5">Auflassung</div>
+                      <div className="text-[8px] text-[#6b6b6b] leading-relaxed">
+                        Der Verkäufer lässt sich das Eigentum...
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -386,7 +392,7 @@ export default function ProduktPageClient() {
                 {t("features.caseManagement.description")}
               </p>
               <ul className="space-y-3">
-                {[0, 1, 2, 3].map((i) => (
+                {[0, 1, 2, 3, 4].map((i) => (
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
                     <span>{t(`features.caseManagement.benefits.${i}`)}</span>
@@ -532,11 +538,6 @@ export default function ProduktPageClient() {
               icon={Search}
               title={t("detailGrid.items.research.title")}
               description={t("detailGrid.items.research.description")}
-            />
-            <FeatureDetailCard
-              icon={Shield}
-              title={t("detailGrid.items.compliance.title")}
-              description={t("detailGrid.items.compliance.description")}
             />
             <FeatureDetailCard
               icon={Zap}

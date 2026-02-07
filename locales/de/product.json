@@ -3,7 +3,7 @@
     "hero": {
       "badge": "Die Komplettlösung für Ihr Notariat",
       "title": "Effizienz trifft auf Kontrolle",
-      "description": "Senury vereint alle Werkzeuge, die Sie für effiziente Notariatsarbeit brauchen: Von Kaufverträgen über Recherche bis zum exportierten Entwurf. Alles an einem Ort, alles §203 StGB-konform.",
+      "description": "Senury begleitet Sie durch den gesamten notariellen Arbeitsprozess: Von der strukturierten Vorarbeit über den Urkundenentwurf bis zum finalen, exportfähigen Dokument. Juristische Recherche, Entwurfserstellung und Datenverwaltung zentral gebündelt und vollständig §203 StGB-konform.",
       "cta": "Demo anfordern"
     },
     "screenshot": {
@@ -13,18 +13,19 @@
       "caseManagement": {
         "label": "Vorgangsverwaltung",
         "title": "Behalten Sie den Überblick",
-        "description": "Verwalten Sie alle laufenden Kaufverträge und Akten an einem Ort. Status-Tracking, Fristenüberwachung und intelligente Filter helfen Ihnen, nichts zu verpassen.",
+        "description": "Verwalten Sie alle laufenden Kaufverträge und Akten an einem Ort. Status-Tracking, Fristenüberwachung und intelligente Filter helfen Ihnen, Ihre Arbeit organisiert zu halten.",
         "benefits": [
-          "Intuitive Listenansicht aller Vorgänge",
+          "Listenansicht aller Vorgänge",
           "Status-Tracking von Entwurf bis Finalisierung",
           "Automatische Fristenüberwachung",
+          "Sicherheits-Checkliste zur Fehlervermeidung",
           "Intelligente Filter und Suche"
         ]
       },
       "aiDrafting": {
         "label": "KI-gestütztes Drafting",
         "title": "Entwürfe in Minuten, nicht Stunden",
-        "description": "Die KI erstellt den ersten Entwurf basierend auf Ihren Vorlagen und den erfassten Daten. Sie behalten die volle Kontrolle und können alle Änderungen nachvollziehen.",
+        "description": "Die KI erstellt einen ersten Entwurf auf Basis Ihrer Vorlagen und der erfassten Daten. Sie behalten jederzeit die volle Kontrolle und können alle Änderungen nachvollziehen sowie direkt in Word weiterbearbeiten.",
         "benefits": [
           "Template-basierte Generierung",
           "Kontextbewusste Klausel-Vorschläge",
@@ -35,9 +36,9 @@
       "aiResearch": {
         "label": "KI-Recherche",
         "title": "Chat-basierte Rechtsrecherche",
-        "description": "Stellen Sie Fragen zu Klauseln und Vorschriften. Erhalten Sie präzise, fundierte Antworten aus erstklassigen juristischen Datenquellen – mit Quellenangaben direkt in Ihrem Workflow.",
+        "description": "Stellen Sie Fragen zu Klauseln, gesetzlichen Vorschriften oder rechtlichen Sachverhalten. Fundierte Antworten mit nachvollziehbaren Quellenangaben stehen Ihnen direkt im Workflow zur Verfügung.",
         "benefits": [
-          "Chat-Interface für natürliche Fragen",
+          "Chat-Interface für Standardfragen",
           "Fundierte Antworten aus juristischen Datenquellen",
           "Quellenangaben zu Gesetzen und Vorschriften",
           "Kontextbewusst: Integration in den Editor"
@@ -65,7 +66,7 @@
           "description": "Behalten Sie den Überblick über alle laufenden Kaufverträge mit Status-Tracking und Fristenüberwachung."
         },
         "aiDrafting": {
-          "title": "KI-Drafting",
+        "title": "Entwürfe",
           "description": "Erstellen Sie erste Entwürfe in Minuten statt Stunden, basierend auf Ihren Vorlagen."
         },
         "clauseLibrary": {
@@ -76,27 +77,23 @@
           "title": "Integrierte Recherche",
           "description": "Stellen Sie Fragen zu Klauseln und Vorschriften mit kontextuellen Antworten."
         },
-        "compliance": {
-          "title": "Compliance & Sicherheit",
-          "description": "§203 StGB-konform, DSGVO-konform, mit lückenloser Dokumentation."
-        },
         "integrations": {
           "title": "Integrationen",
           "description": "Microsoft 365 Anbindung für Ihren gewohnten Workflow. Direkt bearbeiten und importieren."
         },
         "control": {
-          "title": "Kontrolle",
+          "title": "Analysen",
           "description": "Perspektivisch: Minutenschnelle Analyse großer Dokumentenmengen. (In Entwicklung)"
         }
       }
     },
     "documentTypes": {
       "label": "Urkunden",
-      "title": "Kaufverträge und mehr",
-      "description": "Kaufverträge bleiben unser Hauptfokus – aber Senury unterstützt auch bei weiteren urkundlichen Beurkundungen.",
+      "title": "Immobilienkaufverträge und mehr",
+      "description": "Immobilienkaufverträge bleiben unser Hauptfokus – aber Senury unterstützt auch bei weiteren urkundlichen Beurkundungen.",
       "types": {
         "purchaseContract": {
-          "title": "Kaufverträge",
+          "title": "Immobilienkaufverträge",
           "status": "Vollständig",
           "description": "Grundstücke, Wohnungseigentum, bebaute/unbebaute Grundstücke"
         },
@@ -128,18 +125,18 @@
         },
         "compliance": {
           "title": "§203 StGB-konform",
-          "description": "Speziell für den Berufsgeheimnis-Kontext entwickelt. Vertraulichkeitsvereinbarungen, geschultes Personal."
+          "description": "Die berufsrechtliche Verschwiegenheitsverpflichtung wird unmittelbar bei Beginn der Zusammenarbeit mit Senury abgeschlossen."
         },
         "hosting": {
           "title": "Deutsche Server",
-          "description": "ISO 27001-zertifizierte Rechenzentren in Deutschland. Keine Datenweitergabe an Dritte."
+          "description": "ISO-27001-zertifizierte Rechenzentren in Deutschland. Keine Datenweitergabe an Dritte. Vollständig DSGVO-konform."
         }
       }
     },
     "integrations": {
-      "label": "Integriert mit Ihren Tools",
-      "title": "Passend zu Ihrem Workflow",
-      "description": "Senury integriert sich nahtlos in Ihre bestehende Arbeitsumgebung. Arbeiten Sie dort weiter, wo Sie sich wohlfühlen.",
+      "label": "Integrationen",
+      "title": "Nahtlose Integration in Ihre Arbeitsumgebung",
+      "description": "Nutzen Sie Senury direkt in Microsoft Word. Dokumente lassen sich nahtlos importieren und exportieren, in Ihrer gewohnten Arbeitsumgebung, mit Senury im Hintergrund.",
       "word": {
         "title": "Word Add-In",
         "description": "Nutzen Sie Senury direkt in Microsoft Word. Importieren und exportieren Sie Dokumente nahtlos. Arbeiten Sie in der gewohnten Umgebung – mit Unterstützung von Senury im Hintergrund."

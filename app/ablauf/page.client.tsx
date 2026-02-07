@@ -54,13 +54,13 @@ export default function AblaufPageClient() {
               <div key={step.key} className="relative">
                 {/* Connection Line */}
                 {index < timelineSteps.length - 1 && (
-                  <div className="hidden lg:block absolute left-8 top-24 w-px h-24 bg-[#e8e8e8]"></div>
+                  <div className="hidden lg:block absolute left-8 top-24 w-px h-24 bg-[#e8e8e8] -z-10"></div>
                 )}
 
                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                   <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                     <div className="flex items-center gap-2 sm:gap-3 mb-4">
-                      <div className={`w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 ${step.color} text-white flex items-center justify-center rounded-lg font-serif text-lg sm:text-xl shadow-soft flex-shrink-0`}>
+                      <div className={`w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 ${step.color} text-white flex items-center justify-center rounded-lg font-serif text-lg sm:text-xl shadow-soft flex-shrink-0 z-10 relative`}>
                         {t(`timeline.steps.${step.key}.number`)}
                       </div>
                       <div className={`w-8 h-8 sm:w-9 sm:h-9 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg flex-shrink-0`}>
