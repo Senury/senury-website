@@ -34,7 +34,7 @@ const teamMembers = [
     },
     education: "Studiert Bioinformatik in Berlin",
     bio: [
-      "Meine Arbeit mit Notaren hat mir eine besondere Form von Respekt beigebracht. Hier geht es nicht um Tempo oder Effekte, sondern um Verlässlichkeit über Jahre hinweg. Entscheidungen müssen nachvollziehbar bleiben, Abläufe stabil, Ergebnisse eindeutig. Genau diese Konsequenz prägt meine Arbeit. Technik darf hier nichts versprechen, was sie nicht dauerhaft einlösen kann.",
+      "Schon seit meiner Jugend begeistert mich das Programmieren. Als ich mit 14 mein erstes eigenes Videospiel entwickelte, spürte ich zum ersten Mal dieses besondere Adrenalin ein Gefühl, das mich bis heute bei jeder neuen Zeile Code begleitet. Heute arbeite ich gemeinsam mit zwei weiteren Personen an einer echten Software mit realem Nutzen. Besonders fasziniert mich Künstliche Intelligenz und zu sehen, wie unser Modell beginnt, Sprache zu verstehen und schließlich ganze Verträge zu verfassen. Mit Senury erfülle ich mir den Traum, eine eigene Software zu bauen, die Menschen wirklich hilft.",
       "Was ist Senury für mich?",
       "Senury ist für mich wie eine gut geschriebene Urkunde. Klar, reduziert und ohne Spielereien. Alles hat Gewicht, alles ist bewusst gesetzt. Sie schafft Sicherheit, ohne sich in den Vordergrund zu drängen genau so soll Senury Notare unterstützen: leise, verlässlich und mit Respekt vor ihrer Arbeit."
     ],
