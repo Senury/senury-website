@@ -24,22 +24,22 @@
       "verantwortlicher": {
         "title": "Verantwortlicher",
         "p1": "Verantwortlicher im Sinne der Datenschutz-Grundverordnung und anderer nationaler Datenschutzgesetze ist:",
-        "company": "Senury GmbH",
-        "name": "Senury GmbH",
-        "street": "Musterstraße 1",
-        "city": "80333 München",
+        "company": "Senury UG (haftungsbeschränkt)",
+        "name": "Senury UG (haftungsbeschränkt)",
+        "street": "Baron-Voght-Straße 19d",
+        "city": "22609 Hamburg",
         "emailLabel": "E-Mail",
-        "email": "datenschutz@senury.de",
+        "email": "accounts@senury.com",
         "phoneLabel": "Telefon",
-        "phone": "+49 89 12345678"
+        "phone": "+49 157 58190952"
       },
       "datenschutzbeauftragter": {
         "title": "Datenschutzbeauftragter",
         "p1": "Wir haben einen Datenschutzbeauftragten bestellt, der bei allen Fragen zum Datenschutz zur Verfügung steht:",
         "contactTitle": "Kontakt Datenschutzbeauftragter",
-        "name": "Max Mustermann",
+        "name": "Jun Augustin Probst und Johan Kawamura",
         "emailLabel": "E-Mail",
-        "email": "dpo@senury.de"
+        "email": "accounts@senury.com"
       },
       "datenarten": {
         "title": "Arten der verarbeiteten Daten",
@@ -187,10 +187,10 @@
       "beschwerde": {
         "title": "Beschwerderecht",
         "p1": "Sie haben das Recht, jederzeit bei einer Datenschutz-Aufsichtsbehörde Beschwerde einzulegen. Zuständig ist die Aufsichtsbehörde des Bundeslandes, in dem wir unseren Sitz haben:",
-        "authority": "Bayerisches Landesamt für Datenschutzaufsicht",
-        "name": "Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)",
-        "street": "Promenade 27",
-        "city": "91522 Ansbach",
+        "authority": "Hamburgische Beauftragte für Datenschutz und Informationsfreiheit",
+        "name": "Hamburgische Beauftragte für Datenschutz und Informationsfreiheit (HmbBfDI)",
+        "street": "Ludwig-Erhard-Straße 22",
+        "city": "20459 Hamburg",
         "websiteLabel": "Website"
       }
     },
