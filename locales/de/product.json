@@ -24,11 +24,11 @@
       },
       "aiDrafting": {
         "label": "KI-gestütztes Drafting",
-        "title": "Entwürfe in Minuten, nicht Stunden",
-        "description": "Die KI erstellt einen ersten Entwurf auf Basis Ihrer Vorlagen und der erfassten Daten. Sie behalten jederzeit die volle Kontrolle und können alle Änderungen nachvollziehen sowie direkt in Word weiterbearbeiten.",
+        "title": "Rechtssichere Entwürfe in Minuten",
+        "description": "Der KI-Assistent erstellt auf Grundlage Ihrer Falldaten und Vorlagen einen strukturierten Erstentwurf. Sie können jede Änderungen gezielt nachvollziehen und den Entwurf in Word bearbeiten.",
         "benefits": [
-          "Template-basierte Generierung",
-          "Kontextbewusste Klausel-Vorschläge",
+          "Bewährte notarielle Vorlagen als Grundlage",
+          "Kontextbezogene Klausel-Vorschläge",
           "Versionsvergleich mit visueller Diff-Ansicht",
           "Nachvollziehbare Änderungsverfolgung"
         ]

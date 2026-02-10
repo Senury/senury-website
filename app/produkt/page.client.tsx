@@ -241,7 +241,7 @@ function AIChatMockup() {
     <div className="bg-white shadow-soft border border-[#e8e8e8] rounded-xl overflow-hidden">
       <div className="bg-[#fafafa] border-b border-[#e8e8e8] p-3 flex items-center gap-2">
         <Sparkles className="w-4 h-4 text-[#c9a66b]" />
-        <span className="text-xs font-medium text-[#1a1a1a]">KI-Assistent</span>
+        <span className="text-xs font-medium text-[#1a1a1a]">Entwurfsassistent</span>
       </div>
       <div className="p-3 space-y-3">
         <div className="flex gap-2">
@@ -250,7 +250,7 @@ function AIChatMockup() {
           </div>
           <div className="bg-[#f5f5f5] rounded-lg p-2 max-w-[80%]">
             <span className="text-[10px] text-[#1a1a1a]">
-              Wie lautet die Standardklausel für Auflassung?
+              Bitte gib mir eine bewährte Musterklausel für Auflassung
             </span>
           </div>
         </div>
