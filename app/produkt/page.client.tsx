@@ -344,7 +344,7 @@ export default function ProduktPageClient() {
 
   return (
     <div className="min-h-screen">
-      {/* 0. Hero Section */}
+      {/* Hero Section */}
       <section className="relative pt-24 pb-12 sm:pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-[#fdfcfb] to-white overflow-hidden">
         {/* Subtle document lines - suggests text/contract */}
         <div className="absolute inset-0 opacity-[0.02] hidden lg:block" style={{
@@ -371,7 +371,47 @@ export default function ProduktPageClient() {
         </div>
       </section>
 
-      {/* 1. Entwürfe in Minuten (KI-Drafting) - White Background */}
+      {/* Product Screenshot */}
+      <section className="pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-28 bg-white overflow-visible">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="relative mt-8 sm:mt-12">
+            <WorkspaceMockup />
+          </div>
+          <p className="text-center text-sm text-[#9a9a9a] mt-6">{t("screenshot.caption")}</p>
+        </div>
+      </section>
+
+      {/* Feature 1: Vorgangsverwaltung - Text Left, Mockup Right */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#faf8f7] border-y border-[#e8e8e8]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">
+                {t("features.caseManagement.label")}
+              </span>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
+                {t("features.caseManagement.title")}
+              </h2>
+              <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
+                {t("features.caseManagement.description")}
+              </p>
+              <ul className="space-y-3">
+                {[0, 1, 2, 3].map((i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
+                    <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
+                    <span>{t(`features.caseManagement.benefits.${i}`)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white p-8 border border-[#e8e8e8] shadow-soft rounded-xl">
+              <VorgangListMockup />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 2: KI-Drafting - Mockup Left, Text Right */}
       <section className="py-16 sm:py-24 lg:py-32 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -525,88 +565,8 @@ export default function ProduktPageClient() {
         </div>
       </section>
 
-      {/* 5. Chat-basierte Rechtsrecherche (Recherche) - White Background */}
+      {/* Security Section */}
       <section className="py-16 sm:py-24 lg:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1 bg-[#faf8f7] p-8 border border-[#e8e8e8] shadow-soft rounded-xl">
-              <AIChatMockup />
-            </div>
-            <div className="order-1 lg:order-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">
-                {t("features.aiResearch.label")}
-              </span>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                {t("features.aiResearch.title")}
-              </h2>
-              <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
-                {t("features.aiResearch.description")}
-              </p>
-              <ul className="space-y-3">
-                {[0, 1, 2, 3].map((i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
-                    <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
-                    <span>{t(`features.aiResearch.benefits.${i}`)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Alles, was Sie brauchen (Feature Detail Grid) - Cream Background */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-[#faf8f7]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12 sm:mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">
-              {t("detailGrid.label")}
-            </span>
-            <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-4">
-              {t("detailGrid.title")}
-            </h2>
-            <p className="text-[#6b6b6b] text-lg max-w-2xl mx-auto">
-              {t("detailGrid.description")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#e8e8e8]">
-            <FeatureDetailCard
-              icon={FolderOpen}
-              title={t("detailGrid.items.caseManagement.title")}
-              description={t("detailGrid.items.caseManagement.description")}
-            />
-            <FeatureDetailCard
-              icon={FileText}
-              title={t("detailGrid.items.aiDrafting.title")}
-              description={t("detailGrid.items.aiDrafting.description")}
-            />
-            <FeatureDetailCard
-              icon={BookOpen}
-              title={t("detailGrid.items.clauseLibrary.title")}
-              description={t("detailGrid.items.clauseLibrary.description")}
-            />
-            <FeatureDetailCard
-              icon={Search}
-              title={t("detailGrid.items.research.title")}
-              description={t("detailGrid.items.research.description")}
-            />
-            <FeatureDetailCard
-              icon={Zap}
-              title={t("detailGrid.items.integrations.title")}
-              description={t("detailGrid.items.integrations.description")}
-            />
-            <FeatureDetailCard
-              icon={GitCompare}
-              title={t("detailGrid.items.control.title")}
-              description={t("detailGrid.items.control.description")}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Sicherheit auf Notariats-Niveau (Security) - White Background */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-white border-y border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">
