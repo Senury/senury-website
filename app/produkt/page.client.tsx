@@ -447,12 +447,45 @@ export default function ProduktPageClient() {
         </div>
       </section>
 
-      {/* 2. Strukturiert von Anfang an (Intake/Data Capture) - Cream Background */}
+      {/* Feature 3: Recherche - Text Left, Mockup Right */}
       <section className="py-16 sm:py-24 lg:py-32 bg-[#faf8f7] border-y border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">
+                {t("features.aiResearch.label")}
+              </span>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
+                {t("features.aiResearch.title")}
+              </h2>
+              <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
+                {t("features.aiResearch.description")}
+              </p>
+              <ul className="space-y-3">
+                {[0, 1, 2, 3].map((i) => (
+                  <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
+                    <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
+                    <span>{t(`features.aiResearch.benefits.${i}`)}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white p-8 border border-[#e8e8e8] shadow-soft rounded-xl">
+              <AIChatMockup />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 4: Intake - Mockup Left, Text Right */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1 bg-[#faf8f7] p-8 border border-[#e8e8e8] rounded-xl">
+              <FormMockup />
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">
                 {t("features.dataCapture.label")}
               </span>
               <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
@@ -466,39 +499,6 @@ export default function ProduktPageClient() {
                   <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
                     <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
                     <span>{t(`features.dataCapture.benefits.${i}`)}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-white p-8 border border-[#e8e8e8] shadow-soft rounded-xl">
-              <FormMockup />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Behalten Sie den Überblick (Vorgangsverwaltung) - White Background */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1 bg-[#faf8f7] p-8 border border-[#e8e8e8] shadow-soft rounded-xl">
-              <VorgangListMockup />
-            </div>
-            <div className="order-1 lg:order-2">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#c9a66b] mb-4 block">
-                {t("features.caseManagement.label")}
-              </span>
-              <h2 className="font-serif font-medium text-3xl md:text-4xl text-[#1a1a1a] mb-6">
-                {t("features.caseManagement.title")}
-              </h2>
-              <p className="text-[#6b6b6b] text-lg leading-relaxed mb-8">
-                {t("features.caseManagement.description")}
-              </p>
-              <ul className="space-y-3">
-                {[0, 1, 2, 3, 4].map((i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#1a1a1a]">
-                    <Check className="w-5 h-5 text-[#c9a66b]" strokeWidth={1.5} />
-                    <span>{t(`features.caseManagement.benefits.${i}`)}</span>
                   </li>
                 ))}
               </ul>
