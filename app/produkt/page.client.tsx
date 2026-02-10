@@ -653,8 +653,8 @@ export default function ProduktPageClient() {
         </div>
       </section>
 
-      {/* 8. Nahtlose Integration (Integrations) - Cream Background */}
-      <section className="py-16 sm:py-24 lg:py-32 bg-[#faf8f7]">
+      {/* Integrations */}
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#faf8f7] border-y border-[#e8e8e8]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#9a9a9a] mb-4 block">
@@ -700,7 +700,7 @@ export default function ProduktPageClient() {
         </div>
       </section>
 
-      {/* Disclaimer - White Background */}
+      {/* Disclaimer */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="bg-[#faf8f7] border border-[#e8e8e8] p-4 sm:p-6 flex flex-col sm:flex-row gap-3 sm:gap-4 rounded-lg">
@@ -713,7 +713,7 @@ export default function ProduktPageClient() {
         </div>
       </section>
 
-      {/* Final CTA - Charcoal Background */}
+      {/* Final CTA */}
       <section className="py-16 sm:py-24 lg:py-32 bg-[#1a1a1a] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="font-serif font-medium text-3xl md:text-4xl lg:text-5xl mb-6">
