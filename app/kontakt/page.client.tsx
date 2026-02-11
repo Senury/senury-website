@@ -16,6 +16,7 @@ import {
   MessageSquare,
   Calendar,
   ArrowRight,
+  Loader2,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -28,10 +29,39 @@ export default function KontaktPageClient() {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Ein Fehler ist aufgetreten");
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+      );
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactMethods = [
@@ -139,6 +169,11 @@ export default function KontaktPageClient() {
                 </Card>
               ) : (
                 <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+                      {error}
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-[#1a1a1a]">
@@ -205,10 +240,20 @@ export default function KontaktPageClient() {
 
                   <Button
                     type="submit"
-                    className="w-full sm:w-auto bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white h-12 px-8 rounded-full transition-all duration-200"
+                    disabled={isLoading}
+                    className="w-full sm:w-auto bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white h-12 px-8 rounded-full transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    {t("form.submit")}
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        {t("form.submitting")}
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        {t("form.submit")}
+                      </>
+                    )}
                   </Button>
                 </form>
               )}

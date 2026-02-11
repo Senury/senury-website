@@ -21,6 +21,7 @@ import {
   ArrowRight,
   Shield,
   Sparkles,
+  Loader2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -64,6 +65,8 @@ export default function DemoPageClient() {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const days = generateDays();
 
@@ -76,13 +79,47 @@ export default function DemoPageClient() {
     setSelectedTime(time);
   };
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (step === 1 && selectedDate && selectedTime) {
       setStep(2);
     } else if (step === 2 && formData.name && formData.email) {
       setStep(3);
     } else if (step === 3) {
-      setIsSubmitted(true);
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const response = await fetch("/api/demo", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            notaryName: formData.notaryName,
+            message: formData.message,
+            date: selectedDate?.toISOString(),
+            time: selectedTime,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "Ein Fehler ist aufgetreten");
+        }
+
+        setIsSubmitted(true);
+      } catch (err) {
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+        );
+        setIsLoading(false);
+      }
     }
   };
 
@@ -455,6 +492,13 @@ export default function DemoPageClient() {
                     </div>
                   )}
 
+                  {/* Error Message */}
+                  {error && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm mb-6">
+                      {error}
+                    </div>
+                  )}
+
                   {/* Navigation Buttons */}
                   <div className="flex items-center justify-between pt-8 mt-8 border-t border-[#e8e8e8]">
                     {step > 1 ? (
@@ -478,13 +522,23 @@ export default function DemoPageClient() {
                     <Button
                       onClick={handleContinue}
                       disabled={
+                        isLoading ||
                         (step === 1 && (!selectedDate || !selectedTime)) ||
                         (step === 2 && (!formData.name || !formData.email))
                       }
                       className="bg-[#1a1a1a] hover:bg-[#2d2d2d] text-white rounded-full h-12 px-8 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {step === 3 ? t("buttons.confirm") : t("buttons.continue")}
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          {t("buttons.submitting")}
+                        </>
+                      ) : (
+                        <>
+                          {step === 3 ? t("buttons.confirm") : t("buttons.continue")}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </>
+                      )}
                     </Button>
                   </div>
                 </CardContent>
