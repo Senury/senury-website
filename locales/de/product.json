@@ -102,10 +102,10 @@
           "status": "Verfügbar",
           "description": "Schenkungsverträge mit Vorlagen und Klauseln"
         },
-        "transfer": {
-          "title": "Übertragungen",
+        "marriageContract": {
+          "title": "Eheverträge",
           "status": "Verfügbar",
-          "description": "Grundstücksübertragungen und Erbbaurechte"
+          "description": "Eheverträge und Scheidungsfolgenvereinbarungen mit strukturierter Erfassung"
         },
         "more": {
           "title": "Weitere",

@@ -22,6 +22,7 @@ import {
   Star,
   Gift,
   Settings,
+  Home,
 } from "lucide-react";
 
 // Enhanced UI Mockup Components
@@ -570,9 +571,9 @@ export default function ProduktPageClient() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
-              { key: "purchaseContract", icon: FileText },
+              { key: "purchaseContract", icon: Home },
               { key: "gift", icon: Gift },
-              { key: "transfer", icon: Scale },
+              { key: "marriageContract", icon: FileText },
               { key: "more", icon: Star },
             ].map((doc) => (
               <Card
@@ -672,7 +673,11 @@ export default function ProduktPageClient() {
             <Card className="bg-white border-[#e8e8e8] rounded-none">
               <CardContent className="p-8">
                 <div className="w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg mb-6">
-                  <FileText className="w-6 h-6 text-[#1a1a1a]" />
+                  <img
+                    src="/icons/microsoft-word-icon.svg"
+                    alt="Microsoft Word"
+                    className="w-6 h-6"
+                  />
                 </div>
                 <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">
                   {t("integrations.word.title")}
@@ -686,7 +691,29 @@ export default function ProduktPageClient() {
             <Card className="bg-white border-[#e8e8e8] rounded-none">
               <CardContent className="p-8">
                 <div className="w-12 h-12 bg-[#fafafa] border border-[#e8e8e8] flex items-center justify-center rounded-lg mb-6">
-                  <Mail className="w-6 h-6 text-[#1a1a1a]" />
+                  <svg className="w-6 h-6" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#0A2767" d="M512,267.91c0.03-4-2.04-7.73-5.45-9.82h-0.06l-0.21-0.12L328.86,152.95c-0.77-0.52-1.56-0.99-2.38-1.42c-6.85-3.53-14.99-3.53-21.84,0c-0.82,0.43-1.62,0.9-2.38,1.42L124.84,257.96l-0.21,0.12c-5.42,3.37-7.08,10.5-3.71,15.92c0.99,1.6,2.36,2.93,3.99,3.88L302.32,382.9c0.77,0.51,1.56,0.99,2.38,1.42c6.85,3.53,14.99,3.53,21.84,0c0.82-0.43,1.61-0.9,2.38-1.42l177.41-105.02C509.88,275.82,512.04,272.01,512,267.91z"/>
+                    <path fill="#0364B8" d="M145.53,197.79h116.43v106.72H145.53V197.79z M488.19,89.3V40.48c0.28-12.21-9.38-22.33-21.59-22.62H164.47c-12.21,0.29-21.87,10.42-21.59,22.62V89.3l178.6,47.63L488.19,89.3z"/>
+                    <path fill="#0078D4" d="M142.88,89.3h119.07v107.16H142.88V89.3z"/>
+                    <path fill="#28A8EA" d="M381.02,89.3H261.95v107.16l119.07,107.16h107.16V196.47L381.02,89.3z"/>
+                    <path fill="#0078D4" d="M261.95,196.47h119.07v107.16H261.95V196.47z"/>
+                    <path fill="#0364B8" d="M261.95,303.63h119.07v107.16H261.95V303.63z"/>
+                    <path fill="#14447D" d="M145.53,304.51h116.43v97.02H145.53V304.51z"/>
+                    <path fill="#0078D4" d="M381.02,303.63h107.16v107.16H381.02V303.63z"/>
+                    <linearGradient id="outlookGrad1" x1="315.53" y1="267.91" x2="315.53" y2="494.14" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stopColor="#35B8F1"/>
+                      <stop offset="1" stopColor="#28A8EA"/>
+                    </linearGradient>
+                    <path fill="url(#outlookGrad1)" d="M506.55,277.23l-0.23,0.12l-177.41,99.78c-0.77,0.48-1.56,0.93-2.38,1.33c-3.01,1.43-6.29,2.25-9.62,2.38l-9.69-5.67c-0.82-0.41-1.61-0.87-2.38-1.37l-179.8-102.61h-0.08l-5.88-3.29V469.9c0.09,13.48,11.09,24.33,24.56,24.24h344.18c0.2,0,0.38-0.1,0.6-0.1c2.85-0.18,5.65-0.77,8.33-1.74c1.16-0.49,2.28-1.07,3.35-1.74c0.8-0.45,2.17-1.44,2.17-1.44c6.1-4.51,9.71-11.64,9.74-19.23V267.91C512,271.77,509.91,275.33,506.55,277.23z"/>
+                    <linearGradient id="outlookGrad2" x1="45.51" y1="107.97" x2="216.45" y2="404.03" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stopColor="#1784D9"/>
+                      <stop offset="0.5" stopColor="#107AD5"/>
+                      <stop offset="1" stopColor="#0A63C9"/>
+                    </linearGradient>
+                    <path fill="url(#outlookGrad2)" d="M21.83,125.02h218.3c12.05,0,21.83,9.77,21.83,21.83v218.3c0,12.05-9.77,21.83-21.83,21.83H21.83C9.77,386.98,0,377.2,0,365.15v-218.3C0,134.8,9.77,125.02,21.83,125.02z"/>
+                    <path fill="#FFFFFF" d="M68.22,216.56c5.38-11.46,14.06-21.05,24.93-27.54c12.04-6.89,25.75-10.33,39.61-9.93c12.85-0.28,25.53,2.98,36.66,9.42c10.46,6.24,18.89,15.38,24.25,26.31c5.85,12.05,8.76,25.31,8.5,38.7c0.28,13.99-2.71,27.86-8.75,40.48c-5.49,11.33-14.19,20.79-25,27.23c-11.56,6.64-24.71,9.98-38.03,9.67c-13.13,0.32-26.09-2.98-37.47-9.53c-10.55-6.25-19.08-15.4-24.58-26.36c-5.88-11.87-8.83-24.99-8.6-38.23C59.5,242.91,62.4,229.16,68.22,216.56z M94.79,281.22c2.87,7.25,7.73,13.53,14.03,18.12c6.41,4.48,14.09,6.79,21.91,6.6c8.33,0.33,16.54-2.06,23.39-6.81c6.22-4.58,10.95-10.88,13.62-18.12c2.99-8.09,4.46-16.66,4.35-25.28c0.09-8.7-1.29-17.36-4.1-25.6c-2.48-7.44-7.06-14-13.19-18.88c-6.68-4.97-14.86-7.5-23.18-7.14c-7.99-0.21-15.84,2.12-22.42,6.66c-6.4,4.61-11.36,10.95-14.29,18.28c-6.5,16.79-6.54,35.4-0.1,52.21L94.79,281.22z"/>
+                    <path fill="#50D9FF" d="M381.02,89.3h107.16v107.16H381.02V89.3z"/>
+                  </svg>
                 </div>
                 <h3 className="font-serif text-xl font-medium text-[#1a1a1a] mb-3">
                   {t("integrations.outlook.title")}
