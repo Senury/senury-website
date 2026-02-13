@@ -34,7 +34,7 @@ const teamMembers = [
     },
     education: "Student der Bioinformatik in Berlin",
     bio: [
-      "Johan entwickelt die KI-Systeme von Senury. Schon seit seiner Jugend begeistert ihn das Programmieren – als er mit 14 sein erstes Videospiel entwickelte, spürte er das Adrenalin, das ihn bis heute bei jeder neuen Zeile Code begleitet.",
+      "Johan entwickelt die KI-Systeme von Senury.  Das Programmieren fasziniert ihn schon seit der Jugend. Mit vierzehn entwickelte er sein erstes Videospiel und spürte dabei ein Adrenalin, das ihn bis heute bei jeder neuen Zeile Code begleitet.",
       "Er studiert Bioinformatik in Berlin und verbindet seine technische Leidenschaft mit dem Ziel, Software zu bauen, die Menschen wirklich hilft. Besonders fasziniert ihn zu sehen, wie ihre Modelle beginnen, Sprache zu verstehen und schließlich ganze Verträge zu verfassen.",
       "Juristische Präzision lässt sich nicht erraten. Er baut KI, die nachvollziehbar bleibt, auch bei komplexen Fragen."
     ],
