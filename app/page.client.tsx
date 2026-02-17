@@ -631,7 +631,7 @@ export default function HomePageClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mb-12 max-w-md sm:max-w-none mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mb-12 max-w-md sm:max-w-none mx-auto">
             {/* ISO 27001 */}
             <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0">
               <div className="w-20 h-20 sm:w-full sm:aspect-[4/3] sm:h-auto relative flex-shrink-0 overflow-hidden">
@@ -678,7 +678,7 @@ export default function HomePageClient() {
                     {t("securitySection.cards.stgb.title")}
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-[#6b6b6b] leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#6b6b6b] leading-relaxed hyphens-auto" lang="de">
                   {t("securitySection.cards.stgb.description")}
                 </p>
               </div>
