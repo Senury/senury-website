@@ -336,11 +336,11 @@ export default function HomePageClient() {
                         {t("solution.chart.upload")}
                       </span>
                       <span className="text-[#1a1a1a] font-medium">
-                        5 {ct("timeUnits.minutes")}
+                        2 {ct("timeUnits.minutes")}
                       </span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full overflow-hidden">
-                      <div className="h-2 bg-[#c9a66b] rounded-full w-[25%]"></div>
+                      <div className="h-2 bg-[#c9a66b] rounded-full w-[13%]"></div>
                     </div>
                   </div>
                   <div>
@@ -349,11 +349,11 @@ export default function HomePageClient() {
                         {t("solution.chart.aiDraft")}
                       </span>
                       <span className="text-[#1a1a1a] font-medium">
-                        5 {ct("timeUnits.minutes")}
+                        3 {ct("timeUnits.minutes")}
                       </span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full overflow-hidden">
-                      <div className="h-2 bg-[#c9a66b] rounded-full w-[25%]"></div>
+                      <div className="h-2 bg-[#c9a66b] rounded-full w-[20%]"></div>
                     </div>
                   </div>
                   <div>
@@ -366,7 +366,7 @@ export default function HomePageClient() {
                       </span>
                     </div>
                     <div className="h-2 bg-[#f5f5f5] rounded-full overflow-hidden">
-                      <div className="h-2 bg-[#c9a66b] rounded-full w-[50%]"></div>
+                      <div className="h-2 bg-[#c9a66b] rounded-full w-[67%]"></div>
                     </div>
                   </div>
                 </div>
@@ -376,7 +376,7 @@ export default function HomePageClient() {
                       {t("solution.chart.total")}
                     </span>
                     <span className="text-2xl font-serif font-medium text-[#c9a66b]">
-                      ~20 {ct("timeUnits.minutes")}
+                      ~15 {ct("timeUnits.minutes")}
                     </span>
                   </div>
                 </div>
