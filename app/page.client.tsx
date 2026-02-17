@@ -685,7 +685,7 @@ export default function HomePageClient() {
             </div>
 
             {/* DSGVO */}
-            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0 sm:col-span-2 lg:col-span-1">
+            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0">
               <div className="w-20 h-20 sm:w-full sm:aspect-[4/3] sm:h-auto relative flex-shrink-0 overflow-hidden">
                 <Image
                   src="/security/DSGVO.webp"
