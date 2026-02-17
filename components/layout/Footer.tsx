@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { Linkedin, Github } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
@@ -20,6 +21,26 @@ export function Footer() {
             <p className="mt-4 text-sm text-[#6b6b6b] leading-relaxed">
               {t("brand.description")}
             </p>
+            <div className="mt-4 flex items-center gap-3">
+              <a
+                href="https://www.linkedin.com/company/senury"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9a9a9a] hover:text-[#1a1a1a] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://github.com/Senury"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#9a9a9a] hover:text-[#1a1a1a] transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Product Links */}

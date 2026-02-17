@@ -25,7 +25,7 @@ const teamMembers = [
     number: "01",
   },
   {
-    name: "Johan Kawamura",
+    name: "Johan Idler",
     role: "Co-founder & KI-Entwicklung",
     image: {
       avif: "/about/johan.avif",
