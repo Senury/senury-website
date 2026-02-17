@@ -631,16 +631,16 @@ export default function HomePageClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 max-w-md sm:max-w-none mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mb-12 max-w-md sm:max-w-none mx-auto">
             {/* ISO 27001 */}
-            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 lg:p-6 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0">
+            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0">
               <div className="w-20 h-20 sm:w-full sm:aspect-[4/3] sm:h-auto relative flex-shrink-0 overflow-hidden">
                 <Image
                   src="/security/ISO_27001.png"
                   alt="ISO 27001 Zertifizierung"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 80px, (max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 80px, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className="flex-1">
@@ -659,14 +659,14 @@ export default function HomePageClient() {
             </div>
 
             {/* §203 StGB */}
-            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 lg:p-6 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0">
+            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0">
               <div className="w-20 h-20 sm:w-full sm:aspect-[4/3] sm:h-auto relative flex-shrink-0 overflow-hidden">
                 <Image
                   src="/security/StGB.jpg"
                   alt="§203 StGB Berufsgeheimnis"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 80px, (max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 80px, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className="flex-1">
@@ -685,14 +685,14 @@ export default function HomePageClient() {
             </div>
 
             {/* DSGVO */}
-            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 lg:p-6 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0">
+            <div className="group bg-[#e5e5e5] border border-[#e8e8e8] p-4 sm:p-5 hover:border-[#c9a66b]/30 transition-all duration-300 flex flex-row sm:flex-col gap-4 sm:gap-0 sm:col-span-2 lg:col-span-1">
               <div className="w-20 h-20 sm:w-full sm:aspect-[4/3] sm:h-auto relative flex-shrink-0 overflow-hidden">
                 <Image
                   src="/security/DSGVO.webp"
                   alt="DSGVO Datenschutz"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 640px) 80px, (max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 80px, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
               <div className="flex-1">
