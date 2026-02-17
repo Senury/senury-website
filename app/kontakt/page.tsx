@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Kontaktieren Sie uns für Fragen zur Notariatssoftware, Preise oder Terminvereinbarung.",
     url: "https://senury.com/kontakt/",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.png"],
   },
 };
 

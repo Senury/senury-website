@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description:
       "Höchste Sicherheitsstandards für Ihr Notariat. AES-256 Verschlüsselung, deutsches Hosting, ISO 27001 orientiert.",
     url: "https://senury.com/sicherheit/",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.png"],
   },
 };
 

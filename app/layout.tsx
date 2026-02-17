@@ -65,26 +65,23 @@ export const metadata: Metadata = {
       "Senury hilft Notaren bei der effizienten Erstellung von Kaufverträgen und Urkunden. §203 StGB-konform, DSGVO-konform, Made in Germany.",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
         alt: "Senury - KI-gestützte Notariatssoftware",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Senury | KI-gestützte Notariatssoftware",
     description:
       "Senury hilft Notaren bei der effizienten Erstellung von Kaufverträgen und Urkunden.",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.png"],
     creator: "@senury",
   },
   alternates: {
     canonical: "/",
-  },
-  verification: {
-    google: "google-site-verification-code", // Replace with actual code when available
   },
   category: "technology",
   classification: "Legal Technology",

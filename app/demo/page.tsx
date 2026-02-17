@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Vereinbaren Sie eine persönliche Demo. Lassen Sie sich Senury in einem 30-minütigen Videoanruf vorstellen.",
     url: "https://senury.com/demo/",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.png"],
   },
 };
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description:
       "Pilot-Paket ab 299€/Monat, Professional ab 599€/Monat. §203 StGB-konform, DSGVO-konform, Made in Germany.",
     url: "https://senury.com/preis/",
-    images: ["/og-image.jpg"],
+    images: ["/favicon.png"],
   },
 };
 
