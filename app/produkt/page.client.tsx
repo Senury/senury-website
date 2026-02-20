@@ -130,7 +130,7 @@ function WorkspaceMockup() {
                       <span className="text-[7px] text-[#c9a66b] font-serif">§3</span>
                     </div>
                     <div className="flex-1">
-                      <div className="font-serif text-[10px] sm:text-xs text-[#1a1a1a] font-medium mb-0.5">Auflassungc</div>
+                      <div className="font-serif text-[10px] sm:text-xs text-[#1a1a1a] font-medium mb-0.5">Auflassung</div>
                       <div className="text-[10px] text-[#6b6b6b] leading-relaxed">
                         Der Verkäufer lässt sich das Eigentum...
                       </div>
