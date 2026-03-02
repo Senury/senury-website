@@ -584,11 +584,11 @@ export default function DemoPageClient() {
                     </h3>
                     <p className="text-sm text-[#9a9a9a] mb-4">{t("sidebar.contact.text")}</p>
                     <a
-                      href="mailto:demo@senury.com"
+                      href="mailto:contact@senury.com"
                       className="inline-flex items-center gap-2 text-sm text-[#c9a66b] hover:text-white transition-colors"
                     >
                       <Mail className="w-4 h-4" />
-                      demo@senury.com
+                      contact@senury.com
                     </a>
                   </CardContent>
                 </Card>

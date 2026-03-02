@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { createContactEmail } from "@/lib/emails/contact-template";
 
 let resend: Resend | null = null;
 
@@ -92,65 +93,49 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send email
+    // Generate email using template
+    const { html, text } = createContactEmail({
+      name: sanitizedName,
+      email: sanitizedEmail,
+      company: sanitizedCompany,
+      message: sanitizedMessage,
+      submittedAt: new Date(),
+    });
+
+    // Configure recipient via env var
+    const recipient = process.env.EMAIL_RECIPIENT || "contact@senury.com";
+    const bcc = process.env.EMAIL_BCC;
+
+    // Send notification to admin
     const { data, error } = await getResend().emails.send({
-      from: "Senury Contact <contact@senury.com>",
-      to: ["contact@senury.com"],
+      from: "Senury <contact@senury.com>",
+      to: [recipient],
+      ...(bcc ? { bcc: [bcc] } : {}),
       replyTo: sanitizedEmail,
       subject: `Neue Kontaktanfrage von ${sanitizedName}`,
-      html: `
-        <div style="font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a1a1a;">
-          <h1 style="font-size: 24px; font-weight: 600; margin-bottom: 24px; color: #1a1a1a;">Neue Kontaktanfrage</h1>
-
-          <div style="background: #faf8f7; border: 1px solid #e8e8e8; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr>
-                <td style="padding: 8px 0; color: #6b6b6b; width: 120px;">Name:</td>
-                <td style="padding: 8px 0; font-weight: 500;">${sanitizedName}</td>
-              </tr>
-              <tr>
-                <td style="padding: 8px 0; color: #6b6b6b;">E-Mail:</td>
-                <td style="padding: 8px 0;">
-                  <a href="mailto:${sanitizedEmail}" style="color: #c9a66b; text-decoration: none;">${sanitizedEmail}</a>
-                </td>
-              </tr>
-              ${sanitizedCompany ? `
-              <tr>
-                <td style="padding: 8px 0; color: #6b6b6b;">Unternehmen:</td>
-                <td style="padding: 8px 0; font-weight: 500;">${sanitizedCompany}</td>
-              </tr>
-              ` : ""}
-              <tr>
-                <td style="padding: 8px 0; color: #6b6b6b; vertical-align: top;">Zeitpunkt:</td>
-                <td style="padding: 8px 0;">${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}</td>
-              </tr>
-            </table>
-          </div>
-
-          <div style="background: white; border: 1px solid #e8e8e8; border-radius: 12px; padding: 24px;">
-            <h2 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Nachricht</h2>
-            <p style="line-height: 1.6; color: #6b6b6b; white-space: pre-wrap;">${sanitizedMessage}</p>
-          </div>
-
-          <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #e8e8e8; font-size: 12px; color: #9a9a9a;">
-            <p>Diese E-Mail wurde über das Kontaktformular auf senury.com gesendet.</p>
-          </div>
-        </div>
-      `,
-      text: `
-Neue Kontaktanfrage
-
-Name: ${sanitizedName}
-E-Mail: ${sanitizedEmail}
-${sanitizedCompany ? `Unternehmen: ${sanitizedCompany}\n` : ""}Zeitpunkt: ${new Date().toLocaleString("de-DE", { timeZone: "Europe/Berlin" })}
-
-Nachricht:
-${sanitizedMessage}
-
----
-Diese E-Mail wurde über das Kontaktformular auf senury.com gesendet.
-      `.trim(),
+      html,
+      text,
     });
+
+    // Send confirmation to user (non-blocking)
+    try {
+      const { createConfirmationEmail } = await import("@/lib/emails/confirmation-template");
+      const { html: confirmHtml, text: confirmText } = createConfirmationEmail({
+        name: sanitizedName,
+        type: "contact",
+      });
+
+      await getResend().emails.send({
+        from: "Senury <contact@senury.com>",
+        to: [sanitizedEmail],
+        subject: "Ihre Anfrage bei Senury",
+        html: confirmHtml,
+        text: confirmText,
+      });
+    } catch (confirmError) {
+      // Log but don't fail the request if confirmation fails
+      console.error("Confirmation email error:", confirmError);
+    }
 
     if (error) {
       console.error("Resend error:", error);
