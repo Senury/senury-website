@@ -4,11 +4,12 @@ import { createContactEmail } from "@/lib/emails/contact-template";
 
 let resend: Resend | null = null;
 
-function getResend(): Resend {
+function getResend(): Resend | null {
   if (!resend) {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
-      throw new Error("RESEND_API_KEY is not configured");
+      console.error("RESEND_API_KEY is not configured");
+      return null;
     }
     resend = new Resend(apiKey);
   }
@@ -45,13 +46,16 @@ function sanitizeInput(input: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  console.log("[Contact API] Request received");
   try {
     // Get IP for rate limiting
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
                request.headers.get("x-real-ip") ??
                "unknown";
+    console.log("[Contact API] IP:", ip);
 
     if (!checkRateLimit(ip)) {
+      console.log("[Contact API] Rate limited");
       return NextResponse.json(
         { error: "Too many requests. Please try again later." },
         { status: 429 }
@@ -60,6 +64,7 @@ export async function POST(request: NextRequest) {
 
     // Parse and validate request body
     const body = await request.json();
+    console.log("[Contact API] Body parsed:", { name: body.name, email: body.email });
     const { name, email, company, message } = body;
 
     // Validate required fields
@@ -93,6 +98,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Check Resend configuration
+    const resendClient = getResend();
+    if (!resendClient) {
+      return NextResponse.json(
+        { error: "Email service not configured. Please set RESEND_API_KEY environment variable." },
+        { status: 500 }
+      );
+    }
+
     // Generate email using template
     const { html, text } = createContactEmail({
       name: sanitizedName,
@@ -107,7 +121,7 @@ export async function POST(request: NextRequest) {
     const bcc = process.env.EMAIL_BCC;
 
     // Send notification to admin
-    const { data, error } = await getResend().emails.send({
+    const { data, error } = await resendClient.emails.send({
       from: "Senury <contact@senury.com>",
       to: [recipient],
       ...(bcc ? { bcc: [bcc] } : {}),
@@ -125,7 +139,7 @@ export async function POST(request: NextRequest) {
         type: "contact",
       });
 
-      await getResend().emails.send({
+      await resendClient.emails.send({
         from: "Senury <contact@senury.com>",
         to: [sanitizedEmail],
         subject: "Ihre Anfrage bei Senury",
@@ -145,12 +159,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    console.log("[Contact API] Success:", data?.id);
     return NextResponse.json(
       { success: true, messageId: data?.id },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("[Contact API] Error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
