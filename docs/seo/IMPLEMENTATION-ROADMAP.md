@@ -1,4 +1,8 @@
-# SEO Implementation Roadmap
+# Marketing Website Roadmap (Public)
+
+**Fokus:** Conversion-Optimierung und Vertrauensaufbau für Neukunden. 
+
+*Hinweis: Interne Daten aus dem `senury-hub` oder der Wissens-DB werden hier NICHT indexiert oder öffentlich gemacht.*
 
 ## Overview
 

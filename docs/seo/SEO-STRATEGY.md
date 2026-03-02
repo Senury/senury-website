@@ -1,8 +1,10 @@
-# Senury SEO Strategy 2026
+# Senury SEO Strategy 2026 (Public Marketing)
+
+**WICHTIG:** Diese Strategie bezieht sich ausschließlich auf die öffentliche Marketing-Website zur Kundengewinnung. Sie ist strikt getrennt von internen Systemen oder der Wissensdatenbank (`senury-hub`).
 
 ## Executive Summary
 
-Senury is a German legal-tech SaaS company providing AI-assisted notary software. This strategy outlines a 12-month plan to establish Senury as the leading organic search presence for AI-powered notary software in Germany.
+Senury ist ein deutsches Legal-Tech SaaS-Unternehmen. Diese Strategie zielt darauf ab, Senury als führende organische Präsenz für KI-Notariatssoftware in Deutschland zu etablieren.
 
 **Current State**: New website (12 pages), minimal backlink profile, no established organic presence
 **Target State**: 100+ indexed pages, 30+ top-10 rankings, 150% organic traffic growth
