@@ -168,7 +168,7 @@ export default function KontaktPageClient() {
                   </CardContent>
                 </Card>
               ) : (
-                <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
+                <form id="contact-form" onSubmit={handleSubmit} className="space-y-6" noValidate>
                   {error && (
                     <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
                       {error}
