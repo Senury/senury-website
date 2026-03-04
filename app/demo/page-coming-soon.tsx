@@ -221,7 +221,7 @@ export default function DemoComingSoon() {
           <div className="max-w-3xl mx-auto text-center">
             {/* Title */}
             <h1 className="font-serif font-medium text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] mb-6 tracking-tight">
-              Demo-Termin vereinbaren
+              Senury live erleben
             </h1>
 
             {/* Description */}
