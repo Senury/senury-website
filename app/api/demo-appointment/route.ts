@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { getDb } from "@/lib/db";
 
 let resend: Resend | null = null;
 
@@ -43,12 +44,6 @@ function sanitizeInput(input: string): string {
     .trim();
 }
 
-interface DatePreference {
-  priority: number;
-  date: string;
-  time: string;
-}
-
 function createAppointmentRequestEmail(data: {
   name: string;
   email: string;
@@ -56,7 +51,8 @@ function createAppointmentRequestEmail(data: {
   notaryName: string;
   position: string | null;
   message: string | null;
-  preferences: DatePreference[];
+  date: string;
+  time: string;
   submittedAt: Date;
 }): { html: string; text: string } {
   const formatDate = (dateStr: string) => {
@@ -80,8 +76,7 @@ function createAppointmentRequestEmail(data: {
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
     .header { background: #1a1a1a; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
     .content { background: #fdfcfb; padding: 30px; border: 1px solid #e8e8e8; border-top: none; }
-    .preference { background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 15px; margin-bottom: 10px; }
-    .priority { display: inline-block; width: 28px; height: 28px; background: #c9a66b; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: bold; margin-right: 10px; }
+    .appointment { background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 20px; margin-bottom: 20px; text-align: center; }
     .field { margin-bottom: 15px; }
     .label { font-weight: 600; color: #6b6b6b; font-size: 14px; }
     .value { color: #1a1a1a; }
@@ -94,17 +89,15 @@ function createAppointmentRequestEmail(data: {
       <h1 style="margin: 0; font-size: 24px; font-weight: 600;">Neue Demo-Terminanfrage</h1>
     </div>
     <div class="content">
-      <h2 style="margin-top: 0; color: #1a1a1a;">Terminvorschläge</h2>
-      ${data.preferences
-        .map(
-          (pref) => `
-      <div class="preference">
-        <span class="priority">${pref.priority}</span>
-        <strong>${formatDate(pref.date)}</strong> um <strong>${pref.time} Uhr</strong>
+      <h2 style="margin-top: 0; color: #1a1a1a;">Gewünschter Termin</h2>
+      <div class="appointment">
+        <div style="font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px;">
+          ${formatDate(data.date)}
+        </div>
+        <div style="font-size: 16px; color: #c9a66b; font-weight: 500;">
+          ${data.time} Uhr
+        </div>
       </div>
-      `
-        )
-        .join("")}
 
       <h2 style="margin-top: 30px; color: #1a1a1a;">Kontaktdaten</h2>
       <div class="field">
@@ -173,13 +166,8 @@ function createAppointmentRequestEmail(data: {
   const text = `
 Neue Demo-Terminanfrage
 
-TERMINVORSCHLÄGE
-${data.preferences
-  .map(
-    (pref) =>
-      `${pref.priority}. Wahl: ${formatDate(pref.date)} um ${pref.time} Uhr`
-  )
-  .join("\n")}
+GEWÜNSCHTER TERMIN
+${formatDate(data.date)} um ${data.time} Uhr
 
 KONTAKTDATEN
 Name: ${data.name}
@@ -198,7 +186,8 @@ Eingereicht am ${data.submittedAt.toLocaleDateString("de-DE")} um ${data.submitt
 
 function createAppointmentConfirmationEmail(data: {
   name: string;
-  preferences: DatePreference[];
+  date: string;
+  time: string;
 }): { html: string; text: string } {
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
@@ -232,21 +221,19 @@ function createAppointmentConfirmationEmail(data: {
     </div>
     <div class="content">
       <p style="margin-top: 0;">Hallo ${data.name},</p>
-      <p>vielen Dank für Ihr Interesse an Senury. Wir haben Ihre Terminanfrage erhalten und werden Ihre Terminvorschläge prüfen.</p>
+      <p>vielen Dank für Ihr Interesse an Senury. Wir haben Ihre Terminanfrage erhalten.</p>
 
-      <h3 style="color: #1a1a1a; margin-bottom: 15px;">Ihre Terminvorschläge:</h3>
-      ${data.preferences
-        .map(
-          (pref) => `
-      <div class="preference">
-        <span class="priority">${pref.priority}</span>
-        ${formatDate(pref.date)} • ${pref.time} Uhr
+      <h3 style="color: #1a1a1a; margin-bottom: 15px;">Ihr gewünschter Termin:</h3>
+      <div style="background: white; border: 1px solid #e8e8e8; border-radius: 8px; padding: 20px; margin-bottom: 20px; text-align: center;">
+        <div style="font-size: 16px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px;">
+          ${formatDate(data.date)}
+        </div>
+        <div style="font-size: 14px; color: #c9a66b; font-weight: 500;">
+          ${data.time} Uhr
+        </div>
       </div>
-      `
-        )
-        .join("")}
 
-      <p style="margin-top: 25px;">Wir melden uns <strong>innerhalb von 24 Stunden</strong> mit einer Terminbestätigung bei Ihnen. Sie erhalten dann auch den Zugangslink für die Videokonferenz.</p>
+      <p style="margin-top: 25px;">Wir melden uns <strong>innerhalb von 24 Stunden</strong> mit einer Bestätigung bei Ihnen. Sie erhalten dann auch den Zugangslink für die Videokonferenz.</p>
 
       <p>Bei Fragen erreichen Sie uns jederzeit unter <a href="mailto:contact@senury.com" style="color: #c9a66b;">contact@senury.com</a>.</p>
 
@@ -266,14 +253,12 @@ Vielen Dank für Ihre Anfrage
 
 Hallo ${data.name},
 
-vielen Dank für Ihr Interesse an Senury. Wir haben Ihre Terminanfrage erhalten und werden Ihre Terminvorschläge prüfen.
+vielen Dank für Ihr Interesse an Senury. Wir haben Ihre Terminanfrage erhalten.
 
-IHRE TERMINVORSCHLÄGE:
-${data.preferences
-  .map((pref) => `${pref.priority}. ${formatDate(pref.date)} • ${pref.time} Uhr`)
-  .join("\n")}
+IHR GEWÜNSCHTER TERMIN:
+${formatDate(data.date)} um ${data.time} Uhr
 
-Wir melden uns innerhalb von 24 Stunden mit einer Terminbestätigung bei Ihnen. Sie erhalten dann auch den Zugangslink für die Videokonferenz.
+Wir melden uns innerhalb von 24 Stunden mit einer Bestätigung bei Ihnen. Sie erhalten dann auch den Zugangslink für die Videokonferenz.
 
 Bei Fragen erreichen Sie uns jederzeit unter contact@senury.com.
 
@@ -304,24 +289,14 @@ export async function POST(request: NextRequest) {
 
     // Parse and validate request body
     const body = await request.json();
-    const { name, email, phone, notaryName, position, message, preferences } = body;
+    const { name, email, phone, notaryName, position, message, date, time } = body;
 
     // Validate required fields
-    if (!name || !email || !notaryName || !preferences || !Array.isArray(preferences) || preferences.length !== 3) {
+    if (!name || !email || !notaryName || !date || !time) {
       return NextResponse.json(
-        { error: "Name, E-Mail, Notariat und 3 Terminvorschläge sind erforderlich" },
+        { error: "Name, E-Mail, Notariat, Datum und Uhrzeit sind erforderlich" },
         { status: 400 }
       );
-    }
-
-    // Validate preferences
-    for (const pref of preferences) {
-      if (!pref.date || !pref.time || !pref.priority) {
-        return NextResponse.json(
-          { error: "Jeder Terminvorschlag muss Datum, Uhrzeit und Priorität enthalten" },
-          { status: 400 }
-        );
-      }
     }
 
     // Validate email format
@@ -341,6 +316,26 @@ export async function POST(request: NextRequest) {
     const sanitizedPosition = position ? sanitizeInput(position) : null;
     const sanitizedMessage = message ? sanitizeInput(message) : null;
 
+    // Check if slot is already booked (if DB is configured)
+    const dbConfigured = !!process.env.DATABASE_URL;
+    if (dbConfigured) {
+      const sql = getDb();
+
+      const existing = await sql`
+        SELECT id FROM appointments
+        WHERE date = ${date}::date
+          AND time = ${time}
+          AND status != 'cancelled'
+      `;
+
+      if (existing.length > 0) {
+        return NextResponse.json(
+          { error: "Dieser Termin ist leider bereits vergeben. Bitte wählen Sie einen anderen Zeitpunkt." },
+          { status: 409 }
+        );
+      }
+    }
+
     // Check Resend configuration
     const resendClient = getResend();
     if (!resendClient) {
@@ -358,7 +353,8 @@ export async function POST(request: NextRequest) {
       notaryName: sanitizedNotaryName,
       position: sanitizedPosition,
       message: sanitizedMessage,
-      preferences,
+      date,
+      time,
       submittedAt: new Date(),
     });
 
@@ -385,11 +381,35 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Save appointment to database (if configured)
+    if (dbConfigured) {
+      try {
+        const sql = getDb();
+        await sql`
+          INSERT INTO appointments (date, time, name, email, phone, notary_name, position, message)
+          VALUES (
+            ${date}::date,
+            ${time},
+            ${sanitizedName},
+            ${sanitizedEmail},
+            ${sanitizedPhone},
+            ${sanitizedNotaryName},
+            ${sanitizedPosition},
+            ${sanitizedMessage}
+          )
+        `;
+      } catch (dbError) {
+        // Log but don't fail — email was already sent
+        console.error("Database insert error:", dbError);
+      }
+    }
+
     // Send confirmation to user (non-blocking)
     try {
       const { html: confirmHtml, text: confirmText } = createAppointmentConfirmationEmail({
         name: sanitizedName,
-        preferences,
+        date,
+        time,
       });
 
       await resendClient.emails.send({

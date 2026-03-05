@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -52,18 +52,12 @@ const timeSlots = [
   "14:00", "14:30", "15:00", "15:30", "16:00", "16:30",
 ];
 
-type DateTimeSelection = {
-  date: Date | null;
-  time: string | null;
-};
+type BookedSlot = { date: string; time: string };
 
 export default function DemoComingSoon() {
-  const [selections, setSelections] = useState<DateTimeSelection[]>([
-    { date: null, time: null },
-    { date: null, time: null },
-    { date: null, time: null },
-  ]);
-  const [currentSelection, setCurrentSelection] = useState(0);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [bookedSlots, setBookedSlots] = useState<BookedSlot[]>([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -78,40 +72,48 @@ export default function DemoComingSoon() {
 
   const days = generateAprilDays();
 
+  // Fetch booked slots on mount
+  useEffect(() => {
+    async function fetchAvailability() {
+      try {
+        const response = await fetch("/api/appointments/available?month=2026-04");
+        if (response.ok) {
+          const data = await response.json();
+          setBookedSlots(data.bookedSlots);
+        }
+      } catch {
+        // Silently fail — slots will just all appear available
+      }
+    }
+    fetchAvailability();
+  }, []);
+
+  const isSlotBooked = (date: Date, time: string) => {
+    const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+    return bookedSlots.some(
+      (slot) => slot.date === dateStr && slot.time === time
+    );
+  };
+
+  const isDayFullyBooked = (date: Date) => {
+    return timeSlots.every((time) => isSlotBooked(date, time));
+  };
+
   const handleDateSelect = (date: Date) => {
-    const newSelections = [...selections];
-    newSelections[currentSelection] = { ...newSelections[currentSelection], date, time: null };
-    setSelections(newSelections);
+    setSelectedDate(date);
+    setSelectedTime(null);
   };
 
   const handleTimeSelect = (time: string) => {
-    const newSelections = [...selections];
-    newSelections[currentSelection] = { ...newSelections[currentSelection], time };
-    setSelections(newSelections);
-
-    // Auto-advance to next appointment if not on the last one
-    if (currentSelection < 2) {
-      setTimeout(() => {
-        setCurrentSelection(currentSelection + 1);
-      }, 300);
-    }
-  };
-
-  const removeSelection = (index: number) => {
-    const newSelections = [...selections];
-    newSelections[index] = { date: null, time: null };
-    setSelections(newSelections);
-    if (currentSelection === index) {
-      setCurrentSelection(0);
-    }
+    setSelectedTime(time);
   };
 
   const formatSelectedDate = (date: Date | null) => {
     if (!date) return "";
     const options: Intl.DateTimeFormatOptions = {
-      weekday: "short",
+      weekday: "long",
       day: "numeric",
-      month: "short",
+      month: "long",
     };
     return date.toLocaleDateString("de-DE", options);
   };
@@ -133,11 +135,8 @@ export default function DemoComingSoon() {
           notaryName: formData.notaryName,
           position: formData.position,
           message: formData.message,
-          preferences: selections.map((sel, idx) => ({
-            priority: idx + 1,
-            date: sel.date?.toISOString(),
-            time: sel.time,
-          })),
+          date: selectedDate?.toISOString(),
+          time: selectedTime,
         }),
       });
 
@@ -158,9 +157,7 @@ export default function DemoComingSoon() {
     }
   };
 
-  const allSelectionsValid = selections.every((sel) => sel.date && sel.time);
-  const formValid = formData.name && formData.email && formData.notaryName;
-  const canSubmit = allSelectionsValid && formValid;
+  const canSubmit = selectedDate && selectedTime && formData.name && formData.email && formData.notaryName;
 
   if (isSubmitted) {
     return (
@@ -176,20 +173,21 @@ export default function DemoComingSoon() {
               Vielen Dank für Ihre Anfrage
             </h1>
             <p className="text-lg text-[#6b6b6b] mb-8 max-w-md mx-auto">
-              Wir prüfen Ihre Terminvorschläge und melden uns innerhalb von 24 Stunden mit einer Bestätigung bei Ihnen.
+              Wir bestätigen Ihren Termin innerhalb von 24 Stunden und senden Ihnen den Zugangslink für die Videokonferenz.
             </p>
-            <div className="bg-white border border-[#e8e8e8] rounded-xl p-6 mb-8 max-w-md mx-auto text-left">
-              <h3 className="font-serif text-lg text-[#1a1a1a] mb-4">Ihre Terminvorschläge:</h3>
-              {selections.map((sel, idx) => (
-                <div key={idx} className="flex items-center gap-3 mb-3 pb-3 border-b border-[#e8e8e8] last:border-0 last:mb-0 last:pb-0">
-                  <div className="w-6 h-6 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center text-xs font-medium">
-                    {idx + 1}
-                  </div>
-                  <div className="flex-1 text-sm text-[#6b6b6b]">
-                    {formatSelectedDate(sel.date)} • {sel.time} Uhr
-                  </div>
-                </div>
-              ))}
+            <div className="bg-white border border-[#e8e8e8] rounded-xl p-6 mb-8 max-w-sm mx-auto">
+              <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#e8e8e8]">
+                <Calendar className="w-5 h-5 text-[#c9a66b]" />
+                <span className="text-[#1a1a1a] font-medium">{formatSelectedDate(selectedDate)}</span>
+              </div>
+              <div className="flex items-center gap-3 mb-4 pb-4 border-b border-[#e8e8e8]">
+                <Clock className="w-5 h-5 text-[#c9a66b]" />
+                <span className="text-[#1a1a1a] font-medium">{selectedTime} Uhr</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Video className="w-5 h-5 text-[#c9a66b]" />
+                <span className="text-[#1a1a1a]">Videoanruf (30 Minuten)</span>
+              </div>
             </div>
             <Button
               asChild
@@ -229,7 +227,7 @@ export default function DemoComingSoon() {
               Senury befindet sich in der finalen Entwicklungsphase. Sichern Sie sich jetzt einen der ersten Demo-Termine im April und erleben Sie live, wie Senury Ihren Notariatsalltag transformiert.
             </p>
             <p className="text-base text-[#9a9a9a] max-w-xl mx-auto">
-              Nennen Sie uns drei Wunschtermine. Wir bestätigen Ihnen den passenden Termin innerhalb von 24 Stunden.
+              Wählen Sie Ihren Wunschtermin. Wir bestätigen Ihnen die Buchung innerhalb von 24 Stunden.
             </p>
           </div>
         </div>
@@ -243,90 +241,9 @@ export default function DemoComingSoon() {
             <div className="lg:col-span-8">
               <Card className="bg-white border-[#e8e8e8] rounded-xl overflow-hidden mb-6">
                 <CardContent className="p-6 lg:p-8">
-                  <div className="flex items-center justify-between mb-6">
-                    <h2 className="font-serif text-2xl font-medium text-[#1a1a1a]">
-                      Ihre Terminvorschläge
-                    </h2>
-                    <div className="flex gap-2">
-                      {[0, 1, 2].map((idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setCurrentSelection(idx)}
-                          className={cn(
-                            "w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all",
-                            currentSelection === idx
-                              ? "bg-[#1a1a1a] text-white"
-                              : selections[idx].date && selections[idx].time
-                              ? "bg-[#c9a66b] text-white"
-                              : "bg-[#f5f5f5] text-[#9a9a9a]"
-                          )}
-                        >
-                          {idx + 1}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Selected Preferences Summary */}
-                  {selections.some((sel) => sel.date && sel.time) && (
-                    <div className="mb-6 p-4 bg-[#faf8f7] border border-[#e8e8e8] rounded-lg">
-                      <h3 className="text-sm font-semibold text-[#1a1a1a] mb-3">Gewählte Termine:</h3>
-                      {selections.map((sel, idx) => {
-                        if (!sel.date || !sel.time) return null;
-                        return (
-                          <div
-                            key={idx}
-                            className={cn(
-                              "flex items-center justify-between mb-2 last:mb-0 text-sm p-2 rounded transition-colors",
-                              currentSelection === idx ? "bg-white border border-[#c9a66b]" : ""
-                            )}
-                          >
-                            <div className="flex items-center gap-3">
-                              <span className={cn(
-                                "w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium",
-                                currentSelection === idx
-                                  ? "bg-[#c9a66b] text-white"
-                                  : "bg-[#1a1a1a] text-white"
-                              )}>
-                                {idx + 1}
-                              </span>
-                              <span className="text-[#6b6b6b]">
-                                {formatSelectedDate(sel.date)} • {sel.time} Uhr
-                              </span>
-                            </div>
-                            <div className="flex gap-2">
-                              <button
-                                onClick={() => setCurrentSelection(idx)}
-                                className="text-[#c9a66b] hover:text-[#1a1a1a] transition-colors text-xs font-medium"
-                              >
-                                Bearbeiten
-                              </button>
-                              <button
-                                onClick={() => removeSelection(idx)}
-                                className="text-[#9a9a9a] hover:text-[#1a1a1a] transition-colors"
-                              >
-                                <X className="w-4 h-4" />
-                              </button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
-
-                  <div className="mb-6 p-3 bg-[#c9a66b] bg-opacity-5 border border-[#c9a66b] border-opacity-20 rounded-lg">
-                    <p className="text-sm text-[#1a1a1a]">
-                      {selections[currentSelection].date && selections[currentSelection].time ? (
-                        <>
-                          <strong>Termin {currentSelection + 1}</strong> ausgewählt. Sie können unten einen anderen Termin wählen oder zu einem anderen Termin wechseln.
-                        </>
-                      ) : (
-                        <>
-                          Wählen Sie für <strong>Termin {currentSelection + 1}</strong> ein Datum und eine Uhrzeit:
-                        </>
-                      )}
-                    </p>
-                  </div>
+                  <h2 className="font-serif text-2xl font-medium text-[#1a1a1a] mb-6">
+                    Wählen Sie Ihren Wunschtermin
+                  </h2>
 
                   {/* Date Selection */}
                   <div className="mb-6">
@@ -334,65 +251,76 @@ export default function DemoComingSoon() {
                       Datum wählen (April 2026)
                     </h3>
                     <div className="grid grid-cols-5 sm:grid-cols-7 gap-2 max-h-[280px] overflow-y-auto p-1">
-                      {days.map((day, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleDateSelect(day.date)}
-                          className={cn(
-                            "flex flex-col items-center p-2 sm:p-3 rounded-lg border transition-all",
-                            "hover:border-[#c9a66b] cursor-pointer",
-                            selections[currentSelection].date?.toDateString() === day.date.toDateString()
-                              ? "border-[#1a1a1a] bg-[#1a1a1a] text-white"
-                              : "border-[#e8e8e8] bg-white"
-                          )}
-                        >
-                          <span
+                      {days.map((day, index) => {
+                        const fullyBooked = isDayFullyBooked(day.date);
+                        const isSelected = selectedDate?.toDateString() === day.date.toDateString();
+                        return (
+                          <button
+                            key={index}
+                            onClick={() => !fullyBooked && handleDateSelect(day.date)}
+                            disabled={fullyBooked}
                             className={cn(
-                              "text-xs mb-1",
-                              selections[currentSelection].date?.toDateString() === day.date.toDateString()
-                                ? "text-[#c9a66b]"
-                                : "text-[#9a9a9a]"
+                              "flex flex-col items-center p-2 sm:p-3 rounded-lg border transition-all",
+                              fullyBooked && "opacity-40 cursor-not-allowed bg-[#f5f5f5]",
+                              !fullyBooked && "hover:border-[#c9a66b] cursor-pointer",
+                              isSelected
+                                ? "border-[#1a1a1a] bg-[#1a1a1a] text-white"
+                                : !fullyBooked && "border-[#e8e8e8] bg-white"
                             )}
                           >
-                            {day.dayName}
-                          </span>
-                          <span className="text-lg font-medium">{day.dayNum}</span>
-                          <span
-                            className={cn(
-                              "text-[10px] mt-0.5",
-                              selections[currentSelection].date?.toDateString() === day.date.toDateString()
-                                ? "text-white/70"
-                                : "text-[#9a9a9a]"
-                            )}
-                          >
-                            {day.month}
-                          </span>
-                        </button>
-                      ))}
+                            <span
+                              className={cn(
+                                "text-xs mb-1",
+                                isSelected
+                                  ? "text-[#c9a66b]"
+                                  : "text-[#9a9a9a]"
+                              )}
+                            >
+                              {day.dayName}
+                            </span>
+                            <span className="text-lg font-medium">{day.dayNum}</span>
+                            <span
+                              className={cn(
+                                "text-[10px] mt-0.5",
+                                isSelected
+                                  ? "text-white/70"
+                                  : "text-[#9a9a9a]"
+                              )}
+                            >
+                              {fullyBooked ? "belegt" : day.month}
+                            </span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
                   {/* Time Selection */}
-                  {selections[currentSelection].date && (
+                  {selectedDate && (
                     <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
                       <h3 className="text-sm font-semibold uppercase tracking-wider text-[#9a9a9a] mb-4">
                         Uhrzeit wählen
                       </h3>
                       <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-                        {timeSlots.map((time) => (
-                          <button
-                            key={time}
-                            onClick={() => handleTimeSelect(time)}
-                            className={cn(
-                              "py-3 rounded-lg border text-sm font-medium transition-all",
-                              selections[currentSelection].time === time
-                                ? "border-[#1a1a1a] bg-[#1a1a1a] text-white"
-                                : "border-[#e8e8e8] bg-white hover:border-[#c9a66b] text-[#6b6b6b]"
-                            )}
-                          >
-                            {time}
-                          </button>
-                        ))}
+                        {timeSlots.map((time) => {
+                          const booked = selectedDate ? isSlotBooked(selectedDate, time) : false;
+                          return (
+                            <button
+                              key={time}
+                              onClick={() => !booked && handleTimeSelect(time)}
+                              disabled={booked}
+                              className={cn(
+                                "py-3 rounded-lg border text-sm font-medium transition-all",
+                                booked && "opacity-40 cursor-not-allowed bg-[#f5f5f5] text-[#9a9a9a] line-through",
+                                selectedTime === time
+                                  ? "border-[#1a1a1a] bg-[#1a1a1a] text-white"
+                                  : !booked && "border-[#e8e8e8] bg-white hover:border-[#c9a66b] text-[#6b6b6b]"
+                              )}
+                            >
+                              {time}
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
@@ -605,7 +533,7 @@ export default function DemoComingSoon() {
                           1
                         </div>
                         <p className="text-sm text-[#9a9a9a]">
-                          Sie senden uns drei Terminvorschläge
+                          Sie wählen Ihren Wunschtermin
                         </p>
                       </div>
                       <div className="flex gap-3">
@@ -613,7 +541,7 @@ export default function DemoComingSoon() {
                           2
                         </div>
                         <p className="text-sm text-[#9a9a9a]">
-                          Wir bestätigen einen Termin innerhalb von 24 Stunden
+                          Wir bestätigen innerhalb von 24 Stunden
                         </p>
                       </div>
                       <div className="flex gap-3">
